@@ -1,0 +1,50 @@
+#include "Solvers.h"
+
+//solve ax^2 + bx + c = 0
+Roots SquareFind(double a, double b, double c, double *x1, double *x2)
+{
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
+
+    assert(x1 != NULL);
+    assert(x2 != NULL);
+    assert(x1 != x2);
+
+    if (fabs(a) < EPSILON) {
+        return LineFind(b, -c, x1);;
+    }
+    else { // a != 0
+        double d = b*b - 4*a*c;
+        if (fabs(d) < EPSILON) {
+            *x1 = (-b)/(2*a);
+            return ONE_ROOT;
+        }
+        else if (d > 0) {
+            double sqrt_d = sqrt(d);
+            *x1 = (-b + sqrt_d) / (2*a);
+            *x2 = (-b - sqrt_d) / (2*a);
+            return TWO_ROOTS;
+        }
+        else {
+            return NO_ROOTS;
+        }
+    }
+}
+
+
+// solve ax = b
+Roots LineFind(double a, double b, double *x1)
+{
+    assert(isfinite(a));
+    assert(isfinite(b));
+
+    assert(x1 != NULL);
+
+    if (fabs(a) < EPSILON)
+            return (fabs(b) < EPSILON)? INF_ROOTS : NO_ROOTS;
+    else {
+        *x1 = b/a;
+        return ONE_ROOT;
+    }
+}
