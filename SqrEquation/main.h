@@ -4,5 +4,6 @@
 #include "Solvers.h"
 #include "UserCon.h"
 #include "structs.h"
+#include "color.h"
 
 #endif

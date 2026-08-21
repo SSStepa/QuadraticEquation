@@ -1,57 +1,61 @@
 #include "UserCon.h"
 
-
 void ClearBuffer()
 {
     while (getchar() != '\n');
 }
 
-void ShowAns(Roots NumRoots, double x1, double x2)
+void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
 {
     switch (NumRoots) {
         case NO_ROOTS:
-            printf("No Roots!");
+            printf("%sNo Roots!" COLOR_RESET, OutColor);
             break;
 
         case ONE_ROOT:
-            printf("One root: %lg", x1);
+            printf("%sOne root: %lg" COLOR_RESET, OutColor, x1);
             break;
 
         case TWO_ROOTS:
-            printf("Two Roots: %lg %lg", x1, x2);
+            printf("%sTwo Roots: %lg %lg" COLOR_RESET, OutColor, x1, x2);
             break;
 
         case INF_ROOTS:
-            printf("There are infinity Roots");
+            printf("%sThere are infinity Roots" COLOR_RESET, OutColor);
             break;
 
         default:
-            printf("Sorry, input is incorrect!");
+            printf("%sSorry, input is incorrect!" COLOR_RESET, OutColor);
     };
 
     printf("\n");
 }
 
-void GetCoeffs(double *a, double *b, double *c)
+void GetCoeffs(double *a, double *b, double *c, const char *InColor, const char *OutColor)
 {
-    printf("Enter a: ");
-    GetCoeff(a);
+    assert(a);
 
-    printf("Enter b: ");
-    GetCoeff(b);
+    printf("%sEnter a: " COLOR_RESET, OutColor);
+    GetCoeff(a, InColor, OutColor);
 
-    printf("Enter c: ");
-    GetCoeff(c);
+    printf("%sEnter b: " COLOR_RESET, OutColor);
+    GetCoeff(b, InColor, OutColor);
+
+    printf("%sEnter c: " COLOR_RESET, OutColor);
+    GetCoeff(c, InColor, OutColor);
 }
 
-bool SolveEquaAgain()
+bool SolveEquaAgain(const char *InColor, const char *OutColor)
 {
     char ans = 0;
 
-    printf("If you want to finish write 0, otherwise anything else: ");
+    printf("%sIf you want to finish write 0, otherwise anything else: " COLOR_RESET, OutColor);
 
     ClearBuffer(); // ничего не осталось с прошлого
-    scanf("%c", &ans);
+
+    printf("%s", InColor);
+    scanf("%c" , &ans);
+    printf(COLOR_RESET);
 
     if (ans != '\n')
         ClearBuffer(); // для нового случая буфер пуст
@@ -64,12 +68,18 @@ bool SolveEquaAgain()
     }
 }
 
-void GetCoeff(double *a)
+void GetCoeff(double *a, const char *InColor, const char *OutColor)
 {
+    assert(a);
+
+    printf("%s", InColor);
     while (scanf("%lg", a) != 1){
-        printf("Sorry, your input is wrong!!!!\n");
-        printf("Try again: ");
+        printf("%sSorry, your input is wrong!!!!\n" COLOR_RESET, OutColor);
+        printf("%sTry again: " COLOR_RESET, OutColor);
+
+        printf("%s", InColor); // подготовились к следующему вводу
 
         ClearBuffer();
     }
+    printf(COLOR_RESET);
 }
