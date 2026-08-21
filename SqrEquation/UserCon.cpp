@@ -52,6 +52,7 @@ bool SolveEquaAgain()
 
     ClearBuffer(); // ничего не осталось с прошлого
     scanf("%c", &ans);
+
     if (ans != '\n')
         ClearBuffer(); // для нового случая буфер пуст
 

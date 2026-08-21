@@ -13,7 +13,6 @@ void ShowAns(Roots NumRoots, double x1, double x2);
 void GetCoeffs(double *a, double *b, double *c);
 void GetCoeff(double *a);
 
-
 bool SolveEquaAgain();
 
 #endif
