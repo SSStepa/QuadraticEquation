@@ -13,7 +13,7 @@ struct Colors {
 };
 
 #define COLORNUM 9
-static Colors color[] = {
+const Colors color[] = {
     {"default", COLOR_RESET},
     {"black", BLK},
     {"red", RED},
@@ -27,7 +27,7 @@ static Colors color[] = {
 
 void AskColorSettings(const char **InColor, const char **OutColor);
 void ChangeColorSettings(const char **InColor, const char **OutColor);
-const char *ChangeColor(char *);
+const char *ChangeColor();
 void ShowColors();
 
 void GetLine(char *ans);

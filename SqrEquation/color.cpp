@@ -17,26 +17,32 @@ void AskColorSettings(const char **InColor, const char **OutColor)
 
 void ChangeColorSettings(const char **InColor, const char **OutColor)
 {
-    char ans[] = "\n";
 
     printf("Write a colour you want for input(more for list): ");
-    GetLine(ans);
-    *InColor = ChangeColor(ans);
+    *InColor = ChangeColor();
 
     printf("Write a colour you want for output(more for list): ");
-    GetLine(ans);
-    *OutColor = ChangeColor(ans);
+    *OutColor = ChangeColor();
 }
 
-const char *ChangeColor(char *ans)
+const char *ChangeColor()
 {
-    for (int i = 0; i < COLORNUM; i++) {
-        if (strcmp(color[i].name, ans) == 0) {
-            return color[i].code;
+    char ans[MAXWORD] = {};
+
+    while (true) {
+        GetLine(ans);
+        for (int i = 0; i < COLORNUM; i++) {
+            if (strcmp(color[i].name, ans) == 0) {
+                return color[i].code;
+            }
         }
-    }
-    if (strcmp("more", ans) == 0) {
-        ShowColors();
+        if (strcmp("more", ans) == 0) {
+            ShowColors();
+            printf("So, your choise: ");
+        }
+        else {
+            printf("Sorry, try again: ");
+        }
     }
     return COLOR_RESET;
 }

@@ -7,6 +7,9 @@ void ClearBuffer()
 
 void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
 {
+    assert(isfinite(x1));
+    
+
     switch (NumRoots) {
         case NO_ROOTS:
             printf("%sNo Roots!" COLOR_RESET, OutColor);
@@ -33,7 +36,11 @@ void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
 
 void GetCoeffs(double *a, double *b, double *c, const char *InColor, const char *OutColor)
 {
-    assert(a);
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(c != NULL);
+    assert(InColor != NULL);
+    assert(OutColor != NULL);
 
     printf("%sEnter a: " COLOR_RESET, OutColor);
     GetCoeff(a, InColor, OutColor);
@@ -47,6 +54,9 @@ void GetCoeffs(double *a, double *b, double *c, const char *InColor, const char 
 
 bool SolveEquaAgain(const char *InColor, const char *OutColor)
 {
+    assert(InColor != NULL);
+    assert(OutColor != NULL);
+
     char ans = 0;
 
     printf("%sIf you want to finish write 0, otherwise anything else: " COLOR_RESET, OutColor);

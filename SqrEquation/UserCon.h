@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <math.h>
 
 #include "structs.h"
 #include "color.h"
