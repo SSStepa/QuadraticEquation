@@ -51,8 +51,6 @@ bool SolveEquaAgain(const char *InColor, const char *OutColor)
 
     printf("%sIf you want to finish write 0, otherwise anything else: " COLOR_RESET, OutColor);
 
-    ClearBuffer(); // ничего не осталось с прошлого
-
     printf("%s", InColor);
     scanf("%c" , &ans);
     printf(COLOR_RESET);
@@ -70,7 +68,9 @@ bool SolveEquaAgain(const char *InColor, const char *OutColor)
 
 void GetCoeff(double *a, const char *InColor, const char *OutColor)
 {
-    assert(a);
+    assert(a != NULL);
+    assert(InColor != NULL);
+    assert(OutColor != NULL);
 
     printf("%s", InColor);
     while (scanf("%lg", a) != 1){
@@ -81,5 +81,7 @@ void GetCoeff(double *a, const char *InColor, const char *OutColor)
 
         ClearBuffer();
     }
+
+    ClearBuffer();
     printf(COLOR_RESET);
 }

@@ -17,16 +17,14 @@ void AskColorSettings(const char **InColor, const char **OutColor)
 
 void ChangeColorSettings(const char **InColor, const char **OutColor)
 {
-    char ans[50];
+    char ans[] = "\n";
 
     printf("Write a colour you want for input(more for list): ");
-    scanf("%s" , ans);
-    ClearBuffer();
+    GetLine(ans);
     *InColor = ChangeColor(ans);
 
     printf("Write a colour you want for output(more for list): ");
-    scanf("%s" , ans);
-    ClearBuffer();
+    GetLine(ans);
     *OutColor = ChangeColor(ans);
 }
 
@@ -37,7 +35,9 @@ const char *ChangeColor(char *ans)
             return color[i].code;
         }
     }
-    if (strcmp("more", ans)) ShowColors();
+    if (strcmp("more", ans) == 0) {
+        ShowColors();
+    }
     return COLOR_RESET;
 }
 
@@ -48,4 +48,14 @@ void ShowColors()
         printf("%s", color[i].name);
         printf("\n");
     }
+}
+
+void GetLine(char *ans)
+{
+    fgets(ans, MAXWORD, stdin);
+    int i = 0;
+    while(ans[i] != '\n') {
+        i++;
+    }
+    ans[i] = '\0';
 }

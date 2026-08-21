@@ -6,6 +6,7 @@
 #include "ColorsList.h"
 #include "UserCon.h"
 
+
 struct Colors {
     const char *name;
     const char *code;
@@ -28,5 +29,7 @@ void AskColorSettings(const char **InColor, const char **OutColor);
 void ChangeColorSettings(const char **InColor, const char **OutColor);
 const char *ChangeColor(char *);
 void ShowColors();
+
+void GetLine(char *ans);
 
 #endif

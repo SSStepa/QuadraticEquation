@@ -12,8 +12,6 @@ int main()
     const char *InColor = COLOR_RESET;
     AskColorSettings(&InColor, &OutColor);
 
-    printf(RED "%shfh\n", InColor);
-
     double a = 0, b = 0, c = 0; // coefficients
     double x1 = 0, x2 = 0; // Roots
 

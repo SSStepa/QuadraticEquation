@@ -1,6 +1,8 @@
 #ifndef __USERCON__
 #define __USERCON__
 
+#define MAXWORD 20
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <assert.h>
