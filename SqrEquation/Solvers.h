@@ -4,6 +4,7 @@
 
 #include <math.h>
 #include <assert.h>
+#include <stdbool.h>
 
 #include "structs.h"
 
@@ -12,5 +13,7 @@ Roots SquareFind(
         double *x1, double *x2
     );
 Roots LineFind(double a, double b, double *x1);
+
+bool IsZero(double a);
 
 #endif

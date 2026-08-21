@@ -11,12 +11,12 @@ Roots SquareFind(double a, double b, double c, double *x1, double *x2)
     assert(x2 != NULL);
     assert(x1 != x2);
 
-    if (fabs(a) < EPSILON) {
+    if (IsZero(a)) {
         return LineFind(b, -c, x1);;
     }
     else { // a != 0
         double d = b*b - 4*a*c;
-        if (fabs(d) < EPSILON) {
+        if (IsZero(d)) {
             *x1 = (-b)/(2*a);
             return ONE_ROOT;
         }
@@ -41,10 +41,15 @@ Roots LineFind(double a, double b, double *x1)
 
     assert(x1 != NULL);
 
-    if (fabs(a) < EPSILON)
-            return (fabs(b) < EPSILON)? INF_ROOTS : NO_ROOTS;
+    if (IsZero(a))
+            return (IsZero(b))? INF_ROOTS : NO_ROOTS;
     else {
         *x1 = b/a;
         return ONE_ROOT;
     }
+}
+
+bool IsZero(double a)
+{
+     return fabs(a) < EPSILON;
 }
