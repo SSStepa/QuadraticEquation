@@ -58,5 +58,7 @@ Roots LineFind(double a, double b, double *x1)
 
 bool IsZero(double a)
 {
+    assert(isfinite(a));
+
      return fabs(a) < EPSILON;
 }

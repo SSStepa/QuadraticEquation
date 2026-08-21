@@ -60,8 +60,11 @@ void GetLine(char *ans)
 {
     fgets(ans, MAXWORD, stdin);
     int i = 0;
-    while(ans[i] != '\n') {
+    while(ans[i] != '\n' && i < MAXWORD) {
         i++;
     }
+    if (ans[i] != '\n')
+        ClearBuffer();
     ans[i] = '\0';
+
 }

@@ -8,8 +8,9 @@ void ClearBuffer()
 void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
 {
     assert(isfinite(x1));
+    assert(isfinite(x2));
+    assert(OutColor != NULL);
     
-
     switch (NumRoots) {
         case NO_ROOTS:
             printf("%sNo Roots!" COLOR_RESET, OutColor);
