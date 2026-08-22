@@ -8,9 +8,12 @@
 #include "color.h"
 
 void RunTests();
-int RunTest(double a, double b, double c, Roots nRootsExp, double x1Exp, double x2Exp);
-void TestErrorMessage(double a, double b, double c,
-                     Roots nRootsExp, double x1Exp, double x2Exp, 
-                     Roots nRoots, double x1, double x2);
+int RunTest(double a, double b, double c, int nRootsExp, double x1Exp, double x2Exp);
+void TestErrorMessage(
+    double a, double b, double c,
+    int nRootsExp, double x1Exp, double x2Exp, 
+    int nRoots, double x1, double x2
+);
+int GetTestcase(int testNum, double *a, double *b, double *c, int *nRoots, double *x1, double *x2);
 
 #endif
