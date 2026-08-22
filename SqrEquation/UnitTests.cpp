@@ -22,6 +22,13 @@ void RunTests()
 
 int RunTest(double a, double b, double c, int nRootsExp, double x1Exp, double x2Exp)
 {
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
+    assert(isfinite(nRootsExp));
+    assert(isfinite(x1Exp));
+    assert(isfinite(x2Exp));
+
     double x1 = 0, x2 = 0;
 
     int nRoots = (int) SquareFind(a, b, c, &x1, &x2);
@@ -53,6 +60,16 @@ void TestErrorMessage(double a, double b, double c,
                     int nRootsExp, double x1Exp, double x2Exp, 
                     int nRoots, double x1, double x2)
 {
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
+    assert(isfinite(nRootsExp));
+    assert(isfinite(nRoots));
+    assert(isfinite(x1));
+    assert(isfinite(x2));
+    assert(isfinite(x1Exp));
+    assert(isfinite(x2Exp));
+
     printf(RED "Testing FAILED:\n" COLOR_RESET);
     printf("Input params: a = %lg b = %lg c = %lg\n\n", a, b, c);
 
@@ -82,6 +99,14 @@ void TestErrorMessage(double a, double b, double c,
 
 int GetTestcase(int testNum, double *a, double *b, double *c, int *nRoots, double *x1, double *x2)
 {
+    assert(isfinite(testNum));
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(c != NULL);
+    assert(nRoots != NULL);
+    assert(x1 != NULL);
+    assert(x2 != NULL);
+
     FILE *file = fopen("Testcases.txt", "r");
 
     if (file == NULL) {

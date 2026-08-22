@@ -3,11 +3,12 @@
 // ?Файл с базовыми фунциями
 // ?Флаги
 
-int main()
+int main(int argc,char *argv[])
 {
     printf("Hi! I can help you to solve your square equation \n");
     printf("form of equation ax^2 + bx + c = 0\n");
-
+    
+    //запустили тест
     RunTests();
 
     const char *OutColor = COLOR_RESET;

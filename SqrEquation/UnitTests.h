@@ -2,6 +2,7 @@
 #define __UNITTESTS__
 
 #include <stdio.h>
+#include <assert.h>
 
 #include "Solvers.h"
 #include "structs.h"
