@@ -1,12 +1,14 @@
 #include "main.h"
 
-// доделать цвета
-// проставить ассерты 
+// ?Файл с базовыми фунциями
+// ?Флаги
 
 int main()
 {
     printf("Hi! I can help you to solve your square equation \n");
     printf("form of equation ax^2 + bx + c = 0\n");
+
+    RunTests();
 
     const char *OutColor = COLOR_RESET;
     const char *InColor = COLOR_RESET;

@@ -5,5 +5,6 @@
 #include "UserCon.h"
 #include "structs.h"
 #include "color.h"
+#include "UnitTests.h"
 
 #endif

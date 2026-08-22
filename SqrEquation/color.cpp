@@ -3,6 +3,9 @@
 
 void AskColorSettings(const char **InColor, const char **OutColor)
 {
+    assert(InColor != NULL);
+    assert(OutColor != NULL);
+
     char ans = 0;
     printf("If you want to change color settings press s: ");
     scanf("%c" , &ans);
@@ -17,6 +20,8 @@ void AskColorSettings(const char **InColor, const char **OutColor)
 
 void ChangeColorSettings(const char **InColor, const char **OutColor)
 {
+    assert(InColor != NULL);
+    assert(OutColor != NULL);
 
     printf("Write a colour you want for input(more for list): ");
     *InColor = ChangeColor();
@@ -58,6 +63,8 @@ void ShowColors()
 
 void GetLine(char *ans)
 {
+    assert(ans);
+
     fgets(ans, MAXWORD, stdin);
     int i = 0;
     while(ans[i] != '\n' && i < MAXWORD) {
