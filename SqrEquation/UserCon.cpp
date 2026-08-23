@@ -78,16 +78,21 @@ void GetUserCoeff(double *a, const char *InColor, const char *OutColor)
     assert(OutColor != NULL);
 
     printf("%s", InColor);
-    while (scanf("%lg", a) != 1){
+    bool rightInput = false;
+    while (!rightInput){
+        char buf[MAXWORD] = {};
+        if (scanf("%lg", a) == 1) {
+            fgets(buf, MAXWORD, stdin);
+            if (strcmp(buf, "\n") == 0) break;
+        }
+        else
+            fgets(buf, MAXWORD, stdin);
         printf("%sSorry, your input is wrong!!!!\n" COLOR_RESET, OutColor);
         printf("%sTry again: " COLOR_RESET, OutColor);
 
         printf("%s", InColor); // подготовились к следующему вводу
-
-        ClearBuffer();
     }
 
-    ClearBuffer();
     printf(COLOR_RESET);
 }
 
