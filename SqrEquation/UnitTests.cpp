@@ -44,7 +44,7 @@ int RunOneTest(TestCase test)
                 return 0;
             
             case TWO_ROOTS:
-                if ((IsZero(x1 - test.x1Exp) && IsZero(x2 - test.x2Exp)) || (IsZero(x1 - test.x2Exp) && IsZero(x2 - test.x1Exp)))
+                if ((IsZero(x1 - test.x1Exp) && IsZero(x2 - test.x2Exp)))
                     return 1;
                 TestErrorMessage(test, nRoots, x1, x2);
                 return 0;
@@ -114,10 +114,19 @@ int GetTestcase(int testNum, TestCase *test)
 
     if (fscanf( file, "%lg %lg %lg %d %lg %lg", 
                 &(test -> a), &(test -> b), &(test -> c),
-                &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF)
-
+                &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { // new func 
+        SortArgs(&(test -> x1Exp), &(test -> x2Exp));
         return 1;
+    }
     else 
         return NULL;
 }
 
+void SortArgs(double *x1Exp, double *x2Exp)
+{
+    if (*x1Exp > *x2Exp) {
+        double i = *x1Exp;
+        *x1Exp = *x2Exp;
+        *x2Exp = i;
+    }
+}
