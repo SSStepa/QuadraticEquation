@@ -1,6 +1,9 @@
 #include "main.h"
 
-int main(int argc,char *argv[])
+// инициаализация nan
+// с теста - в массив, упорядоичит и потом сравнить
+
+int main(int argc, char *argv[])
 {
     printf("Hi! I can help you to solve your square equation \n");
     printf("form of equation ax^2 + bx + c = 0\n");
@@ -13,8 +16,8 @@ int main(int argc,char *argv[])
         if (status != 0) return 1;
     }
     
-    double a = 0, b = 0, c = 0; // Коэфиценты
-    double x1 = 0, x2 = 0; // Корни
+    double a = NAN, b = NAN, c = NAN; // Коэфиценты
+    double x1 = NAN, x2 = NAN; // Корни
 
     do {
         GetCoeffs(&a, &b, &c, InColor, OutColor);

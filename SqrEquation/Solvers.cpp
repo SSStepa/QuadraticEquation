@@ -16,9 +16,8 @@ Roots SquareFind(double a, double b, double c, double *x1, double *x2)
     }
     else { // a != 0
         if (IsZero(c)) { // x(ax+b) = 0 
-            if (IsZero(b)) return ONE_ROOT;
-            
             *x1 = 0;
+            if (IsZero(b)) return ONE_ROOT;
             LineFind(a, -b, x2);
             return TWO_ROOTS;
         }
@@ -31,8 +30,8 @@ Roots SquareFind(double a, double b, double c, double *x1, double *x2)
         }
         else if (d > 0) {
             double sqrt_d = sqrt(d);
-            *x1 = (-b + sqrt_d) / (2*a);
-            *x2 = (-b - sqrt_d) / (2*a);
+            *x1 = (-b - sqrt_d) / (2*a);
+            *x2 = (-b + sqrt_d) / (2*a);
             return TWO_ROOTS;
         }
         else {
@@ -41,7 +40,6 @@ Roots SquareFind(double a, double b, double c, double *x1, double *x2)
     }
 }
 
-
 // solve ax = b
 Roots LineFind(double a, double b, double *x1)
 {
@@ -49,7 +47,6 @@ Roots LineFind(double a, double b, double *x1)
     assert(isfinite(b));
 
     assert(x1 != NULL);
-
     if (IsZero(a))
             return (IsZero(b))? INF_ROOTS : NO_ROOTS;
     else {
@@ -60,7 +57,7 @@ Roots LineFind(double a, double b, double *x1)
 
 bool IsZero(double a)
 {
-    assert(isfinite(a));
+    // assert(isfinite(a));
 
      return fabs(a) < EPSILON;
 }
