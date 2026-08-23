@@ -6,5 +6,6 @@
 #include "structs.h"
 #include "color.h"
 #include "UnitTests.h"
+#include "Flags.h"
 
 #endif

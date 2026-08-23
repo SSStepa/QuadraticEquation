@@ -5,7 +5,8 @@
 
 #include "ColorsList.h"
 #include "UserCon.h"
-
+#include "BasicText.h"
+#include "structs.h"
 
 struct Colors {
     const char *name;
@@ -25,11 +26,8 @@ const Colors color[] = {
     {"white", WHT},
 };
 
-void AskColorSettings(const char **InColor, const char **OutColor);
 void ChangeColorSettings(const char **InColor, const char **OutColor);
 const char *ChangeColor();
 void ShowColors();
-
-void GetLine(char *ans);
 
 #endif

@@ -30,7 +30,6 @@ int RunTest(double a, double b, double c, int nRootsExp, double x1Exp, double x2
     assert(isfinite(x2Exp));
 
     double x1 = 0, x2 = 0;
-
     int nRoots = (int) SquareFind(a, b, c, &x1, &x2);
     if (nRoots == nRootsExp){
         switch (nRoots) {
@@ -115,7 +114,7 @@ int GetTestcase(int testNum, double *a, double *b, double *c, int *nRoots, doubl
     }
 
     // на нужную строку
-    char buf[50] = {};
+    char buf[100] = {};
     while (testNum-- > 0) {
         fgets(buf, sizeof(buf), file);
     } 

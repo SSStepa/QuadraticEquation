@@ -1,8 +1,6 @@
 #ifndef __USERCON__
 #define __USERCON__
 
-#define MAXWORD 20
-
 #include <stdio.h>
 #include <stdbool.h>
 #include <assert.h>
@@ -10,8 +8,7 @@
 
 #include "structs.h"
 #include "color.h"
-
-void ClearBuffer();
+#include "BasicText.h"
 
 void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor);
 

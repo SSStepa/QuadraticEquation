@@ -1,23 +1,5 @@
 #include "color.h"
 
-
-void AskColorSettings(const char **InColor, const char **OutColor)
-{
-    assert(InColor != NULL);
-    assert(OutColor != NULL);
-
-    char ans = 0;
-    printf("If you want to change color settings press s: ");
-    scanf("%c" , &ans);
-
-    if (ans != '\n')
-        ClearBuffer();
-
-    if (ans == 's') {
-        ChangeColorSettings(InColor, OutColor);
-    }
-}
-
 void ChangeColorSettings(const char **InColor, const char **OutColor)
 {
     assert(InColor != NULL);
@@ -59,19 +41,4 @@ void ShowColors()
         printf("%s", color[i].name);
         printf("\n");
     }
-}
-
-void GetLine(char *ans)
-{
-    assert(ans);
-
-    fgets(ans, MAXWORD, stdin);
-    int i = 0;
-    while(ans[i] != '\n' && i < MAXWORD) {
-        i++;
-    }
-    if (ans[i] != '\n')
-        ClearBuffer();
-    ans[i] = '\0';
-
 }

@@ -1,9 +1,5 @@
 #include "UserCon.h"
 
-void ClearBuffer()
-{
-    while (getchar() != '\n');
-}
 
 void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
 {

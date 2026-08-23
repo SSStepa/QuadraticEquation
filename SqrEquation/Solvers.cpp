@@ -16,6 +16,8 @@ Roots SquareFind(double a, double b, double c, double *x1, double *x2)
     }
     else { // a != 0
         if (IsZero(c)) { // x(ax+b) = 0 
+            if (IsZero(b)) return ONE_ROOT;
+            
             *x1 = 0;
             LineFind(a, -b, x2);
             return TWO_ROOTS;
