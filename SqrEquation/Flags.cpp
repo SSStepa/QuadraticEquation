@@ -26,10 +26,10 @@ int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutCol
                 return 1;
             break;
         case '?':
-            printf(RED "WRONG FLAG" COLOR_RESET);
+            slowPrintf(RED "WRONG FLAG" COLOR_RESET);
             return 1;
         default:
-            printf(RED "WRONG FLAG USAGE" COLOR_RESET);
+            slowPrintf(RED "WRONG FLAG USAGE" COLOR_RESET);
             break;
         }
     }
@@ -38,10 +38,10 @@ int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutCol
 
 void ShowHelp()
 {
-    printf("Our flags:\n");
-    printf("-h --help           Info about flags\n");
-    printf("-s --settings       Change color of input and output\n");
-    printf("-t --test           Run tests\n");
-    printf("-i --insert_file    File to take input from\n");
+    slowPrintf("Our flags:\n");
+    slowPrintf("-h --help           Info about flags\n");
+    slowPrintf("-s --settings       Change color of input and output\n");
+    slowPrintf("-t --test           Run tests\n");
+    slowPrintf("-i --insert_file    File to take input from\n");
 }
 

@@ -5,16 +5,16 @@ void ChangeColorSettings(const char **InColor, const char **OutColor)
     assert(InColor != NULL);
     assert(OutColor != NULL);
 
-    printf("Write a colour you want for input(more for list): ");
+    slowPrintf("Write a colour you want for input(more for list): ");
     *InColor = ChangeColor();
 
-    printf("Write a colour you want for output(more for list): ");
+    slowPrintf("Write a colour you want for output(more for list): ");
     *OutColor = ChangeColor();
 }
 
 const char *ChangeColor()
 {
-    char ans[MAXWORD] = {};
+    char ans[MAXWORDLEN] = {};
 
     while (true) {
         GetLine(ans);
@@ -25,10 +25,10 @@ const char *ChangeColor()
         }
         if (strcmp("more", ans) == 0) {
             ShowColors();
-            printf("So, your choise: ");
+            slowPrintf("So, your choise: ");
         }
         else {
-            printf("Sorry, try again: ");
+            slowPrintf("Sorry, try again: ");
         }
     }
     return COLOR_RESET;
@@ -37,8 +37,8 @@ const char *ChangeColor()
 void ShowColors()
 {
     for (int i = 0; i < COLORNUM; i++) {
-        printf("%s", color[i].code);
-        printf("%s", color[i].name);
-        printf("\n");
+        slowPrintf("%s", color[i].code);
+        slowPrintf("%s", color[i].name);
+        slowPrintf("\n");
     }
 }

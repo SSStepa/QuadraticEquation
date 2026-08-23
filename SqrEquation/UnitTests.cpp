@@ -12,7 +12,7 @@ void RunTests()
         nGoodTests += RunOneTest(test);
     }
     const char *resultColor = (nGoodTests == nTests) ? GRN : RED;
-    printf("%sGood tests are %d of %d\n" COLOR_RESET, resultColor, nGoodTests, nTests);
+    slowPrintf("%sGood tests are %d of %d\n" COLOR_RESET, resultColor, nGoodTests, nTests);
 }
 
 int RunOneTest(TestCase test)
@@ -50,7 +50,7 @@ int RunOneTest(TestCase test)
                 return 0;
             
             default:
-                printf("WRONG TYPE OF OUTPUT");
+                slowPrintf("WRONG TYPE OF OUTPUT");
                 return 0;
         }
     }
@@ -67,30 +67,30 @@ void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)
     assert(isfinite(test.nRootsExp));
     assert(isfinite(nRoots));
 
-    printf(RED "Testing FAILED:\n" COLOR_RESET);
-    printf("Input params: a = %lg b = %lg c = %lg\n\n",test.a, test.b, test.c);
+    slowPrintf(RED "Testing FAILED:\n" COLOR_RESET);
+    slowPrintf("Input params: a = %lg b = %lg c = %lg\n\n",test.a, test.b, test.c);
 
     // не совпало количество корней
     if (test.nRootsExp == NO_ROOTS || test.nRootsExp == INF_ROOTS || nRoots != test.nRootsExp){
         if (test.nRootsExp == NO_ROOTS)
-            printf("Expected: No roots\n");
+            slowPrintf("Expected: No roots\n");
         else if(test.nRootsExp == INF_ROOTS)
-            printf("Expected: Inf roots\n");
+            slowPrintf("Expected: Inf roots\n");
         else 
-            printf("Expected: %d roots\n", test.nRootsExp);
-        printf("Got:      %d  roots\n", nRoots);
+            slowPrintf("Expected: %d roots\n", test.nRootsExp);
+        slowPrintf("Got:      %d  roots\n", nRoots);
     
     // неверный 1 корень
     } else if (nRoots == ONE_ROOT){
-        printf("One root\n");
-        printf("Expected: x1 = %lg\n", test.x1Exp);
-        printf("Got:      x1 = %lg\n", x1);
+        slowPrintf("One root\n");
+        slowPrintf("Expected: x1 = %lg\n", test.x1Exp);
+        slowPrintf("Got:      x1 = %lg\n", x1);
 
     // неверные 2 корня
     } else {
-        printf("Two roots\n");
-        printf("Expected: x1 = %lg, x2 = %lg\n", test.x1Exp, test.x2Exp);
-        printf("Got:      x1 = %lg, x2 = %lg\n", x1, x2);
+        slowPrintf("Two roots\n");
+        slowPrintf("Expected: x1 = %lg, x2 = %lg\n", test.x1Exp, test.x2Exp);
+        slowPrintf("Got:      x1 = %lg, x2 = %lg\n", x1, x2);
     }
 }
 
@@ -102,7 +102,7 @@ int GetTestcase(int testNum, TestCase *test)
     FILE *file = fopen("Testcases.txt", "r");
 
     if (file == NULL) {
-        printf(RED "NO FILE WITH TESTS\n" COLOR_RESET);
+        slowPrintf(RED "NO FILE WITH TESTS\n" COLOR_RESET);
         return NULL;
     }
 
@@ -125,6 +125,9 @@ int GetTestcase(int testNum, TestCase *test)
 
 void SortArgs(double *x1Exp, double *x2Exp)
 {
+    if (isnan(*x1Exp) || isnan(*x2Exp)) 
+        return;
+
     if (*x1Exp > *x2Exp) {
         double i = *x1Exp;
         *x1Exp = *x2Exp;

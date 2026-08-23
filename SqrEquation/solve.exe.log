@@ -1,0 +1,460 @@
+
+--------------------------------------------------
+TXLib пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ...
+
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe,
+
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: signal (11, 0x00): SIGSEGV: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ! 
+
+пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ signal() пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF76440C7D0 (64-bit), Flags: Cmdre0, Thread: 0x35A4 (Main). 
+
+--------------------------------------------------
+пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ:
+
+# 0 0x00007FF7643BAE8B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF7643BB700 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txOnSignal() at C:/Users/user/Downloads/TX/TXLib.h:11338
+# 2 0x00007FFA454EF2E4 in C:\WINDOWS\System32\ucrtbase.dll: seh_filter_exe()
+# 3 0x00007FF7643E5280 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_SEH_error_handler() at D:/W/B/src/mingw-w64/mingw-w64-crt/crt/crt_handler.c:105
+# 4 0x00007FFA48224ABF in C:\WINDOWS\SYSTEM32\ntdll.dll: _chkstk()
+# 5 0x00007FFA48105E97 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlLocateExtendedFeature()
+# 6 0x00007FFA482243FE in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+# 7 0x00007FF7643E8AE8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_pformat() at D:/W/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_pformat.c:2631
+# 8 0x00007FF7643E9530 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_vsslowPrintf() at D:/W/B/src/mingw-w64/mingw-w64-crt/stdio/mingw_vsslowPrintf.c:52
+
+# 9 0x00007FF7643EFCDB in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: vsslowPrintf() at C:/msys64/ucrt64/include/stdio.h:394:
+
+    392:   }
+    393: #endif
+=>  394:   return __mingw_vsslowPrintf( __stream, __format, __local_argv );
+    395: }
+    396: /* #ifndef __NO_ISOCEXT */  /* externs in libmingwex.a */
+
+#10 0x00007FF7643E328B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: slowPrintf() at C:/Users/user/Desktop/cpp/SqrEquation/BasicText.cpp:42:
+
+     40:     char buf[100] = {};
+     41: 
+=>   42:     vsslowPrintf(buf, output, args);
+     43: 
+     44:     slowPrintf("%s", buf);
+
+#11 0x00007FF7643A150C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/main.cpp:13:
+
+     11:     const char *InColor = COLOR_RESET;
+     12: 
+=>   13:     slowPrintf("hah%d", 50);
+     14: 
+     15:     char *fileToRead = NULL; // С„Р°Р№Р» РґР»СЏ С‡С‚РµРЅРёСЏ
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 23 2026 20:41:32, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 23 2026 20:41:37
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF7E243C7D0 (64-bit), Flags: Cmdre0, Thread: 0x3C58 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7E23EAE7B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF7E23EB6F0 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txOnSignal() at C:/Users/user/Downloads/TX/TXLib.h:11338
+# 2 0x00007FFA45556EAF in C:\WINDOWS\System32\ucrtbase.dll: memcpy()
+# 3 0x00007FF7E2415260 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_SEH_error_handler() at D:/W/B/src/mingw-w64/mingw-w64-crt/crt/crt_handler.c:105
+# 4 0x00007FFA48224ABF in C:\WINDOWS\SYSTEM32\ntdll.dll: _chkstk()
+# 5 0x00007FFA48105E97 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlLocateExtendedFeature()
+# 6 0x00007FFA482243FE in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+
+# 7 0x00007FF7E23D2E52 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: SortArgs() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:128:
+
+    126: void SortArgs(double *x1Exp, double *x2Exp)
+    127: {
+=>  128:     if (*x1Exp > *x2Exp) {
+    129:         double i = *x1Exp;
+    130:         *x1Exp = *x2Exp;
+
+# 8 0x00007FF7E23D2E04 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: GetTestcase() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:118:
+
+    116:                 &(test -> a), &(test -> b), &(test -> c),
+    117:                 &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
+=>  118:         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
+    119:         fclose(file);
+    120:         return 1;
+
+# 9 0x00007FF7E23D251C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: RunTests() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:10:
+
+      8:     TestCase test = {};
+      9: 
+=>   10:     while (GetTestcase(nTests, &test) != NULL) {
+     11:         nTests++;
+     12:         nGoodTests += RunOneTest(test);
+
+#10 0x00007FF7E23D2F45 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: FlagsCheck() at C:/Users/user/Desktop/cpp/SqrEquation/Flags.cpp:15:
+
+     13:         {
+     14:         case 't':
+=>   15:             RunTests();
+     16:             break;
+     17:         case 's':
+
+#11 0x00007FF7E23D1525 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/main.cpp:16:
+
+     14: 
+     15:     if (argc != 1) {
+=>   16:         int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
+     17:         if (status != 0) return 1;
+     18:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 23 2026 21:05:45, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 23 2026 21:10:33
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF7E243C7D0 (64-bit), Flags: Cmdre0, Thread: 0x6DDC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7E23EAE7B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF7E23EB6F0 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txOnSignal() at C:/Users/user/Downloads/TX/TXLib.h:11338
+# 2 0x00007FFA45556EAF in C:\WINDOWS\System32\ucrtbase.dll: memcpy()
+# 3 0x00007FF7E2415260 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_SEH_error_handler() at D:/W/B/src/mingw-w64/mingw-w64-crt/crt/crt_handler.c:105
+# 4 0x00007FFA48224ABF in C:\WINDOWS\SYSTEM32\ntdll.dll: _chkstk()
+# 5 0x00007FFA48105E97 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlLocateExtendedFeature()
+# 6 0x00007FFA482243FE in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+
+# 7 0x00007FF7E23D2E52 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: SortArgs() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:128:
+
+    126: void SortArgs(double *x1Exp, double *x2Exp)
+    127: {
+=>  128:     if (*x1Exp > *x2Exp) {
+    129:         double i = *x1Exp;
+    130:         *x1Exp = *x2Exp;
+
+# 8 0x00007FF7E23D2E04 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: GetTestcase() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:118:
+
+    116:                 &(test -> a), &(test -> b), &(test -> c),
+    117:                 &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
+=>  118:         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
+    119:         fclose(file);
+    120:         return 1;
+
+# 9 0x00007FF7E23D251C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: RunTests() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:10:
+
+      8:     TestCase test = {};
+      9: 
+=>   10:     while (GetTestcase(nTests, &test) != NULL) {
+     11:         nTests++;
+     12:         nGoodTests += RunOneTest(test);
+
+#10 0x00007FF7E23D2F45 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: FlagsCheck() at C:/Users/user/Desktop/cpp/SqrEquation/Flags.cpp:15:
+
+     13:         {
+     14:         case 't':
+=>   15:             RunTests();
+     16:             break;
+     17:         case 's':
+
+#11 0x00007FF7E23D1525 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/main.cpp:16:
+
+     14: 
+     15:     if (argc != 1) {
+=>   16:         int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
+     17:         if (status != 0) return 1;
+     18:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 23 2026 21:05:45, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 23 2026 21:12:48
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF7E243C7D0 (64-bit), Flags: Cmdre0, Thread: 0x6C4C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7E23EAE7B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF7E23EB6F0 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txOnSignal() at C:/Users/user/Downloads/TX/TXLib.h:11338
+# 2 0x00007FFA45556EAF in C:\WINDOWS\System32\ucrtbase.dll: memcpy()
+# 3 0x00007FF7E2415260 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_SEH_error_handler() at D:/W/B/src/mingw-w64/mingw-w64-crt/crt/crt_handler.c:105
+# 4 0x00007FFA48224ABF in C:\WINDOWS\SYSTEM32\ntdll.dll: _chkstk()
+# 5 0x00007FFA48105E97 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlLocateExtendedFeature()
+# 6 0x00007FFA482243FE in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+
+# 7 0x00007FF7E23D2E52 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: SortArgs() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:128:
+
+    126: void SortArgs(double *x1Exp, double *x2Exp)
+    127: {
+=>  128:     if (*x1Exp > *x2Exp) {
+    129:         double i = *x1Exp;
+    130:         *x1Exp = *x2Exp;
+
+# 8 0x00007FF7E23D2E04 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: GetTestcase() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:118:
+
+    116:                 &(test -> a), &(test -> b), &(test -> c),
+    117:                 &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
+=>  118:         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
+    119:         fclose(file);
+    120:         return 1;
+
+# 9 0x00007FF7E23D251C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: RunTests() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:10:
+
+      8:     TestCase test = {};
+      9: 
+=>   10:     while (GetTestcase(nTests, &test) != NULL) {
+     11:         nTests++;
+     12:         nGoodTests += RunOneTest(test);
+
+#10 0x00007FF7E23D2F45 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: FlagsCheck() at C:/Users/user/Desktop/cpp/SqrEquation/Flags.cpp:15:
+
+     13:         {
+     14:         case 't':
+=>   15:             RunTests();
+     16:             break;
+     17:         case 's':
+
+#11 0x00007FF7E23D1525 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/main.cpp:16:
+
+     14: 
+     15:     if (argc != 1) {
+=>   16:         int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
+     17:         if (status != 0) return 1;
+     18:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 23 2026 21:05:45, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 23 2026 21:13:05
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF7E243C7D0 (64-bit), Flags: Cmdre0, Thread: 0x3F04 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7E23EAE7B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF7E23EB6F0 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txOnSignal() at C:/Users/user/Downloads/TX/TXLib.h:11338
+# 2 0x00007FFA45556EAF in C:\WINDOWS\System32\ucrtbase.dll: memcpy()
+# 3 0x00007FF7E2415260 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_SEH_error_handler() at D:/W/B/src/mingw-w64/mingw-w64-crt/crt/crt_handler.c:105
+# 4 0x00007FFA48224ABF in C:\WINDOWS\SYSTEM32\ntdll.dll: _chkstk()
+# 5 0x00007FFA48105E97 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlLocateExtendedFeature()
+# 6 0x00007FFA482243FE in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+
+# 7 0x00007FF7E23D2E52 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: SortArgs() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:128:
+
+    126: void SortArgs(double *x1Exp, double *x2Exp)
+    127: {
+=>  128:     if (*x1Exp > *x2Exp) {
+    129:         double i = *x1Exp;
+    130:         *x1Exp = *x2Exp;
+
+# 8 0x00007FF7E23D2E04 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: GetTestcase() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:118:
+
+    116:                 &(test -> a), &(test -> b), &(test -> c),
+    117:                 &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
+=>  118:         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
+    119:         fclose(file);
+    120:         return 1;
+
+# 9 0x00007FF7E23D251C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: RunTests() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:10:
+
+      8:     TestCase test = {};
+      9: 
+=>   10:     while (GetTestcase(nTests, &test) != NULL) {
+     11:         nTests++;
+     12:         nGoodTests += RunOneTest(test);
+
+#10 0x00007FF7E23D2F45 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: FlagsCheck() at C:/Users/user/Desktop/cpp/SqrEquation/Flags.cpp:15:
+
+     13:         {
+     14:         case 't':
+=>   15:             RunTests();
+     16:             break;
+     17:         case 's':
+
+#11 0x00007FF7E23D1525 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/main.cpp:16:
+
+     14: 
+     15:     if (argc != 1) {
+=>   16:         int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
+     17:         if (status != 0) return 1;
+     18:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 23 2026 21:05:45, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 23 2026 21:15:19
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF7E243C7D0 (64-bit), Flags: Cmdre0, Thread: 0xE60 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7E23EAE7B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF7E23EB6F0 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txOnSignal() at C:/Users/user/Downloads/TX/TXLib.h:11338
+# 2 0x00007FFA45556EAF in C:\WINDOWS\System32\ucrtbase.dll: memcpy()
+# 3 0x00007FF7E2415260 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: __mingw_SEH_error_handler() at D:/W/B/src/mingw-w64/mingw-w64-crt/crt/crt_handler.c:105
+# 4 0x00007FFA48224ABF in C:\WINDOWS\SYSTEM32\ntdll.dll: _chkstk()
+# 5 0x00007FFA48105E97 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlLocateExtendedFeature()
+# 6 0x00007FFA482243FE in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserExceptionDispatcher()
+
+# 7 0x00007FF7E23D2E52 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: SortArgs() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:128:
+
+    126: void SortArgs(double *x1Exp, double *x2Exp)
+    127: {
+=>  128:     if (*x1Exp > *x2Exp) {
+    129:         double i = *x1Exp;
+    130:         *x1Exp = *x2Exp;
+
+# 8 0x00007FF7E23D2E04 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: GetTestcase() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:118:
+
+    116:                 &(test -> a), &(test -> b), &(test -> c),
+    117:                 &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
+=>  118:         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
+    119:         fclose(file);
+    120:         return 1;
+
+# 9 0x00007FF7E23D251C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: RunTests() at C:/Users/user/Desktop/cpp/SqrEquation/UnitTests.cpp:10:
+
+      8:     TestCase test = {};
+      9: 
+=>   10:     while (GetTestcase(nTests, &test) != NULL) {
+     11:         nTests++;
+     12:         nGoodTests += RunOneTest(test);
+
+#10 0x00007FF7E23D2F45 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: FlagsCheck() at C:/Users/user/Desktop/cpp/SqrEquation/Flags.cpp:15:
+
+     13:         {
+     14:         case 't':
+=>   15:             RunTests();
+     16:             break;
+     17:         case 's':
+
+#11 0x00007FF7E23D1525 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/main.cpp:16:
+
+     14: 
+     15:     if (argc != 1) {
+=>   16:         int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
+     17:         if (status != 0) return 1;
+     18:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 23 2026 21:05:45, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 23 2026 21:15:48
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------

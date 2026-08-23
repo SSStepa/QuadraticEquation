@@ -7,26 +7,26 @@ void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
     
     switch (NumRoots) {
         case NO_ROOTS:
-            printf("%sNo Roots!" COLOR_RESET, OutColor);
+            slowPrintf("%sNo Roots!" COLOR_RESET, OutColor);
             break;
 
         case ONE_ROOT:
-            printf("%sOne root: %lg" COLOR_RESET, OutColor, x1);
+            slowPrintf("%sOne root: %lg" COLOR_RESET, OutColor, x1);
             break;
 
         case TWO_ROOTS:
-            printf("%sTwo Roots: %lg %lg" COLOR_RESET, OutColor, x1, x2);
+            slowPrintf("%sTwo Roots: %lg %lg" COLOR_RESET, OutColor, x1, x2);
             break;
 
         case INF_ROOTS:
-            printf("%sThere are infinity Roots" COLOR_RESET, OutColor);
+            slowPrintf("%sThere are infinity Roots" COLOR_RESET, OutColor);
             break;
 
         default:
-            printf("%sSorry, input is incorrect!" COLOR_RESET, OutColor);
+            slowPrintf("%sSorry, input is incorrect!" COLOR_RESET, OutColor);
     };
 
-    printf("\n");
+    slowPrintf("\n");
 }
 
 void GetUserCoeffs(double *a, double *b, double *c, const char *InColor, const char *OutColor)
@@ -37,13 +37,13 @@ void GetUserCoeffs(double *a, double *b, double *c, const char *InColor, const c
     assert(InColor != NULL);
     assert(OutColor != NULL);
 
-    printf("%sEnter a: " COLOR_RESET, OutColor);
+    slowPrintf("%sEnter a: " COLOR_RESET, OutColor);
     GetUserCoeff(a, InColor, OutColor);
 
-    printf("%sEnter b: " COLOR_RESET, OutColor);
+    slowPrintf("%sEnter b: " COLOR_RESET, OutColor);
     GetUserCoeff(b, InColor, OutColor);
 
-    printf("%sEnter c: " COLOR_RESET, OutColor);
+    slowPrintf("%sEnter c: " COLOR_RESET, OutColor);
     GetUserCoeff(c, InColor, OutColor);
 }
 
@@ -54,11 +54,11 @@ bool SolveEquaAgain(const char *InColor, const char *OutColor)
 
     char ans = 0;
 
-    printf("%sIf you want to finish write 0, otherwise anything else: " COLOR_RESET, OutColor);
+    slowPrintf("%sIf you want to finish write 0, otherwise anything else: " COLOR_RESET, OutColor);
 
-    printf("%s", InColor);
+    slowPrintf("%s", InColor);
     scanf("%c" , &ans);
-    printf(COLOR_RESET);
+    slowPrintf(COLOR_RESET);
 
     if (ans != '\n')
         ClearBuffer(); // для нового случая буфер пуст
@@ -77,23 +77,27 @@ void GetUserCoeff(double *a, const char *InColor, const char *OutColor)
     assert(InColor != NULL);
     assert(OutColor != NULL);
 
-    printf("%s", InColor);
+    slowPrintf("%s", InColor);
     bool rightInput = false;
     while (!rightInput){
-        char buf[MAXWORD] = {};
+        char buf[MAXWORDLEN] = {};
         if (scanf("%lg", a) == 1) {
-            fgets(buf, MAXWORD, stdin);
-            if (strcmp(buf, "\n") == 0) break;
+            fgets(buf, MAXWORDLEN, stdin);
+            int i = 0;
+            for (i = 0; buf[i] != '\0'; i++) 
+                if(!isspace(buf[i])) break;
+            if (buf[i] == '\0') break;
+
         }
         else
-            fgets(buf, MAXWORD, stdin);
-        printf("%sSorry, your input is wrong!!!!\n" COLOR_RESET, OutColor);
-        printf("%sTry again: " COLOR_RESET, OutColor);
+            fgets(buf, MAXWORDLEN, stdin);
+        slowPrintf("%sSorry, your input is wrong!!!!\n" COLOR_RESET, OutColor);
+        slowPrintf("%sTry again: " COLOR_RESET, OutColor);
 
-        printf("%s", InColor); // подготовились к следующему вводу
+        slowPrintf("%s", InColor); // подготовились к следующему вводу
     }
 
-    printf(COLOR_RESET);
+    slowPrintf(COLOR_RESET);
 }
 
 int GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
@@ -114,9 +118,9 @@ int GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
     int st = 0;
     if ((st = fscanf(file, "%lg %lg %lg", a, b, c)) == EOF || st != 3) {
         if (st == EOF)
-            printf(GRN "END OF READING\n" COLOR_RESET);
+            slowPrintf(GRN "END OF READING\n" COLOR_RESET);
         else
-            printf(RED "WRONG SYMBOLS IN FILE\n" COLOR_RESET);
+            slowPrintf(RED "WRONG SYMBOLS IN FILE\n" COLOR_RESET);
         return 1;
     }
     return 0;
