@@ -22,22 +22,33 @@ int RunOneTest(TestCase test)
     assert(isfinite(test.c));
     assert(isfinite(test.nRootsExp));
 
-    double x1 = 0, x2 = 0;
+    double x1 = NAN, x2 = NAN;
     int nRoots = (int) SquareFind(test.a, test.b, test.c, &x1, &x2);
     if (nRoots == test.nRootsExp){
         switch (nRoots) {
             case NO_ROOTS: case INF_ROOTS:
+                if (!isnan(x1) && !isnan(x2)) {
+                    TestErrorMessage(test, nRoots, x1, x2);  
+                    return 0; 
+                }
                 return 1;
+            
             case ONE_ROOT:
+                if (!isnan(x2)) {
+                    TestErrorMessage(test, nRoots, x1, x2);  
+                    return 0; 
+                }
                 if (IsZero(x1 - test.x1Exp) || IsZero(x1 - test.x2Exp))
                     return 1;
                 TestErrorMessage(test, nRoots, x1, x2);
                 return 0;
+            
             case TWO_ROOTS:
                 if ((IsZero(x1 - test.x1Exp) && IsZero(x2 - test.x2Exp)) || (IsZero(x1 - test.x2Exp) && IsZero(x2 - test.x1Exp)))
                     return 1;
                 TestErrorMessage(test, nRoots, x1, x2);
                 return 0;
+            
             default:
                 printf("WRONG TYPE OF OUTPUT");
                 return 0;

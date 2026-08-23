@@ -1,6 +1,5 @@
 #include "main.h"
 
-// инициаализация nan
 // с теста - в массив, упорядоичит и потом сравнить
 
 int main(int argc, char *argv[])
