@@ -20,3 +20,16 @@ void GetLine(char *ans)
     ans[i] = '\0';
 
 }
+
+bool FileIsValid(char *fileName)
+{
+    FILE *file = fopen(fileName, "r");
+
+    if (file == NULL) {
+        printf(RED "NO FILE TO READ FROM\n" COLOR_RESET);
+        return false;
+    }
+
+    fclose(file);
+    return true;
+}

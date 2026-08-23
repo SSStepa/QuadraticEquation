@@ -1,6 +1,6 @@
 #include "Flags.h"
 
-int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor)
+int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead)
 {
     int arg = 0;
     int usedFlags[FLAGSNUM] = {};
@@ -20,10 +20,16 @@ int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutCol
         case 'h':
             ShowHelp();
             break;
+        case 'f':
+            *fileToRead = optarg;
+            if (!FileIsValid(*fileToRead))
+                return 1;
+            break;
         case '?':
             printf(RED "WRONG FLAG" COLOR_RESET);
             return 1;
         default:
+            printf(RED "WRONG FLAG USAGE" COLOR_RESET);
             break;
         }
     }
@@ -33,8 +39,9 @@ int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutCol
 void ShowHelp()
 {
     printf("Our flags:\n");
-    printf("-h --help        Info about flags\n");
-    printf("-s --settings    Change color of input and output\n");
-    printf("-t --test        Run tests\n");
+    printf("-h --help           Info about flags\n");
+    printf("-s --settings       Change color of input and output\n");
+    printf("-t --test           Run tests\n");
+    printf("-i --insert_file    File to take input from\n");
 }
 

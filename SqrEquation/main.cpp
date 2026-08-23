@@ -10,20 +10,22 @@ int main(int argc, char *argv[])
     const char *OutColor = COLOR_RESET;
     const char *InColor = COLOR_RESET;
 
+    char *fileToRead = NULL; // файл для чтения
+
     if (argc != 1) {
-        int status = FlagsCheck(argc, argv, &InColor, &OutColor);
+        int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
         if (status != 0) return 1;
     }
     
-    double a = NAN, b = NAN, c = NAN; // Коэфиценты
-    double x1 = NAN, x2 = NAN; // Корни
+    while (fileToRead != NULL) {    
+       if(WorkWithFileInput(fileToRead, OutColor) == 1) return 0;
+    //    if(WorkWithFileInput(fileToRead, OutColor) == 1) break; 
+
+        // WorkWithFileInput(fileToRead, OutColor);
+    }
 
     do {
-        GetCoeffs(&a, &b, &c, InColor, OutColor);
-
-        Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
-        ShowAns(NumRoots, x1, x2, OutColor);
-
+        WorkWithUserInput(InColor, OutColor);
     } while (SolveEquaAgain(InColor, OutColor));
 
     return 0;

@@ -114,12 +114,13 @@ int GetTestcase(int testNum, TestCase *test)
 
     if (fscanf( file, "%lg %lg %lg %d %lg %lg", 
                 &(test -> a), &(test -> b), &(test -> c),
-                &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { // new func 
+                &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
+        fclose(file);
         return 1;
-    }
-    else 
-        return NULL;
+    } 
+    fclose(file);
+    return NULL;
 }
 
 void SortArgs(double *x1Exp, double *x2Exp)

@@ -5,8 +5,10 @@
 #include <assert.h>
 
 #include "structs.h"
+#include "color.h"
 
 void ClearBuffer();
 void GetLine(char *ans);
+bool FileIsValid(char *fileName);
 
 #endif

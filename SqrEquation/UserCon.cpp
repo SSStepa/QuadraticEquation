@@ -29,7 +29,7 @@ void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
     printf("\n");
 }
 
-void GetCoeffs(double *a, double *b, double *c, const char *InColor, const char *OutColor)
+void GetUserCoeffs(double *a, double *b, double *c, const char *InColor, const char *OutColor)
 {
     assert(a != NULL);
     assert(b != NULL);
@@ -38,13 +38,13 @@ void GetCoeffs(double *a, double *b, double *c, const char *InColor, const char 
     assert(OutColor != NULL);
 
     printf("%sEnter a: " COLOR_RESET, OutColor);
-    GetCoeff(a, InColor, OutColor);
+    GetUserCoeff(a, InColor, OutColor);
 
     printf("%sEnter b: " COLOR_RESET, OutColor);
-    GetCoeff(b, InColor, OutColor);
+    GetUserCoeff(b, InColor, OutColor);
 
     printf("%sEnter c: " COLOR_RESET, OutColor);
-    GetCoeff(c, InColor, OutColor);
+    GetUserCoeff(c, InColor, OutColor);
 }
 
 bool SolveEquaAgain(const char *InColor, const char *OutColor)
@@ -71,7 +71,7 @@ bool SolveEquaAgain(const char *InColor, const char *OutColor)
     }
 }
 
-void GetCoeff(double *a, const char *InColor, const char *OutColor)
+void GetUserCoeff(double *a, const char *InColor, const char *OutColor)
 {
     assert(a != NULL);
     assert(InColor != NULL);
@@ -89,4 +89,56 @@ void GetCoeff(double *a, const char *InColor, const char *OutColor)
 
     ClearBuffer();
     printf(COLOR_RESET);
+}
+
+int GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
+{
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(c != NULL);
+    assert(fileName != NULL);
+    assert(isfinite(fileLine));
+
+    FILE *file = fopen(fileName, "r");
+
+    // на нужную строку
+    char buf[100] = {};
+    while (fileLine-- > 0) {
+        fgets(buf, sizeof(buf), file);
+    }
+    int st = 0;
+    if ((st = fscanf(file, "%lg %lg %lg", a, b, c)) == EOF || st != 3) {
+        if (st == EOF)
+            printf(GRN "END OF READING\n" COLOR_RESET);
+        else
+            printf(RED "WRONG SYMBOLS IN FILE\n" COLOR_RESET);
+        return 1;
+    }
+    return 0;
+}
+
+int WorkWithFileInput(char *fileToRead, const char *OutColor)
+{
+    double a = NAN, b = NAN, c = NAN;
+    double x1 = NAN, x2 = NAN;
+    static int fileLine = 0;
+
+    int status = GetFileCoeffs(&a, &b, &c, fileToRead, fileLine++);
+    if (status != 0) return 1;
+
+    Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
+    ShowAns(NumRoots, x1, x2, OutColor);
+    return 0;
+}
+
+int WorkWithUserInput(const char *InColor, const char *OutColor)
+{
+    double a = NAN, b = NAN, c = NAN;
+    double x1 = NAN, x2 = NAN;
+
+    GetUserCoeffs(&a, &b, &c, InColor, OutColor);
+
+    Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
+    ShowAns(NumRoots, x1, x2, OutColor);
+    return 0;
 }
