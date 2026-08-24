@@ -36,6 +36,8 @@ bool FileIsValid(char *fileName)
 
 void slowPrintf(const char *output, ...)
 {
+    srand((unsigned int) time(NULL));
+
     va_list args;
     va_start(args, output);
 
@@ -43,7 +45,13 @@ void slowPrintf(const char *output, ...)
     vsprintf(buf, output, args);
 
     for (int i = 0; buf[i] != '\0'; i++) {
-        putchar(buf[i]);
-        txSleep(5);
+        int port = rand()%4 + 3;
+        for (int j = 0; j < port; j++){
+            putchar(buf[i]);
+            txSleep(5);
+            i++;
+        }
+        i--;
+        txSleep(rand()%120+70);
     }
 }

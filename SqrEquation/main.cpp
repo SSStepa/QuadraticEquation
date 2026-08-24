@@ -4,9 +4,6 @@
 
 int main(int argc, char *argv[])
 {
-    slowPrintf("Hi! I can help you to solve your square equation \n");
-    slowPrintf("form of equation ax^2 + bx + c = 0\n");
-
     const char *OutColor = COLOR_RESET;
     const char *InColor = COLOR_RESET;
 
@@ -16,6 +13,9 @@ int main(int argc, char *argv[])
         int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
         if (status != 0) return 1;
     }
+
+    slowPrintf("Hi! I can help you to solve your square equation \n");
+    slowPrintf("form of equation ax^2 + bx + c = 0\n");
     
     while (fileToRead != NULL) {    
        if(WorkWithFileInput(fileToRead, OutColor) == 1) return 0;
