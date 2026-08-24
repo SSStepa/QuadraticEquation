@@ -15,7 +15,7 @@ Roots SquareFind(double a, double b, double c, double *x1, double *x2)
         return LineFind(b, -c, x1);;
     }
     else { // a != 0
-        if (IsZero(c)) { // x(ax+b) = 0 
+        if (IsZero(c)) { // x(ax+b) = 0
             *x1 = 0;
             if (IsZero(b)) return ONE_ROOT;
             LineFind(a, -b, x2);
@@ -35,13 +35,15 @@ Roots SquareFind(double a, double b, double c, double *x1, double *x2)
         }
         else if (d > 0) {
             double sqrt_d = sqrt(d);
+
             *x1 = (-b - sqrt_d) / (2*a);
             *x2 = (-b + sqrt_d) / (2*a);
+
             if (*x2 < *x1) {
                 double i = *x1;
                 *x1 = *x2;
                 *x2 = i;
-            } 
+            }
             return TWO_ROOTS;
         }
         else {

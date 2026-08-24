@@ -14,16 +14,17 @@ struct Colors {
 };
 
 #define COLORNUM 9
+
 const Colors color[] = {
-    {"default", COLOR_RESET},
-    {"black", BLK},
-    {"red", RED},
-    {"green", GRN},
-    {"yellow", YEL},
-    {"blue", BLU},
-    {"purple", MAG},
+    {"default",   COLOR_RESET},
+    {"black",     BLK},
+    {"red",       RED},
+    {"green",     GRN},
+    {"yellow",    YEL},
+    {"blue",      BLU},
+    {"purple",    MAG},
     {"turquoise", CYN},
-    {"white", WHT},
+    {"white",     WHT},
 };
 
 void ChangeColorSettings(const char **InColor, const char **OutColor);

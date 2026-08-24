@@ -36,19 +36,18 @@ bool FileIsValid(char *fileName)
 
 void slowPrintf(const char *output, ...)
 {
-    srand((unsigned int) time(NULL));
-
     va_list args;
     va_start(args, output);
 
-    char buf[100] = {};
+    char buf[MAXPRINTF] = {};
     vsprintf(buf, output, args);
 
     for (int i = 0; buf[i] != '\0'; i++) {
         int port = rand()%4 + 3;
         for (int j = 0; j < port; j++){
             putchar(buf[i]);
-            txSleep(5);
+            txSleep(50);
+            if (output[0] != '\a' && rand() % 10 == 0) slowPrintf ("\a...\b\b\b");
             i++;
         }
         i--;
