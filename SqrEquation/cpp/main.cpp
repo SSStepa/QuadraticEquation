@@ -1,5 +1,5 @@
 #include <TXLib.h>
-#include "main.h"
+#include "../headers/main.h"
 
 // ?Если ввести число и симфолы за ним, то схавает
 
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     if (argc != 1) {
         int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead, &Graphic);
-        if (status != 0) return 1;
+        if (status != ALL_GOOD) return 1;
     }
 
     slowPrintf("Hi! I can help you to solve your square equation \n");

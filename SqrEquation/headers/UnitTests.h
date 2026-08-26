@@ -15,9 +15,9 @@ struct TestCase {
 };
 
 void RunTests();
-int RunOneTest(TestCase test);
+WORK_RESULT RunOneTest(TestCase test);
 void TestErrorMessage(TestCase test, int nRoots, double x1, double x2);
-int GetTestcase(int testNum, TestCase *test);
+WORK_RESULT GetTestcase(int testNum, TestCase *test);
 void SortArgs(double *x1Exp, double *x2Exp);
 
 #endif

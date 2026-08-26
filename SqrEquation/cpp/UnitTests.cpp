@@ -1,4 +1,4 @@
-#include "UnitTests.h"
+#include "../headers/UnitTests.h"
 
 void RunTests()
 {
@@ -7,7 +7,7 @@ void RunTests()
 
     TestCase test = {};
 
-    while (GetTestcase(nTests, &test) != NULL) {
+    while (GetTestcase(nTests, &test) != SMTH_BAD) {
         nTests++;
         nGoodTests += RunOneTest(test);
     }
@@ -15,7 +15,7 @@ void RunTests()
     slowPrintf("%sGood tests are %d of %d\n" COLOR_RESET, resultColor, nGoodTests, nTests);
 }
 
-int RunOneTest(TestCase test)
+WORK_RESULT RunOneTest(TestCase test)
 {
     assert(isfinite(test.a));
     assert(isfinite(test.b));
@@ -29,33 +29,33 @@ int RunOneTest(TestCase test)
             case NO_ROOTS: case INF_ROOTS:
                 if (!isnan(x1) && !isnan(x2)) {
                     TestErrorMessage(test, nRoots, x1, x2);  
-                    return 0; 
+                    return SMTH_BAD; 
                 }
-                return 1;
+                return ALL_GOOD;
             
             case ONE_ROOT:
                 if (!isnan(x2)) {
                     TestErrorMessage(test, nRoots, x1, x2);  
-                    return 0; 
+                    return SMTH_BAD; 
                 }
                 if (IsZero(x1 - test.x1Exp) || IsZero(x1 - test.x2Exp))
-                    return 1;
+                    return ALL_GOOD;
                 TestErrorMessage(test, nRoots, x1, x2);
-                return 0;
+                return SMTH_BAD;
             
             case TWO_ROOTS:
                 if ((IsZero(x1 - test.x1Exp) && IsZero(x2 - test.x2Exp)))
-                    return 1;
+                    return ALL_GOOD;
                 TestErrorMessage(test, nRoots, x1, x2);
-                return 0;
+                return SMTH_BAD;
             
             default:
                 slowPrintf("WRONG TYPE OF OUTPUT");
-                return 0;
+                return SMTH_BAD;
         }
     }
     TestErrorMessage(test, nRoots, x1, x2);
-    return 0;
+    return SMTH_BAD;
 
 }
 
@@ -94,16 +94,16 @@ void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)
     }
 }
 
-int GetTestcase(int testNum, TestCase *test)
+WORK_RESULT GetTestcase(int testNum, TestCase *test)
 {
     assert(isfinite(testNum));
     assert(test != 0);
 
-    FILE *file = fopen("Testcases.txt", "r");
+    FILE *file = fopen("../text/Testcases.txt", "r");
 
     if (file == NULL) {
         slowPrintf(RED "NO FILE WITH TESTS\n" COLOR_RESET);
-        return NULL;
+        return SMTH_BAD;
     }
 
     // на нужную строку
@@ -117,10 +117,10 @@ int GetTestcase(int testNum, TestCase *test)
                 &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
         fclose(file);
-        return 1;
+        return ALL_GOOD;
     } 
     fclose(file);
-    return NULL;
+    return SMTH_BAD;
 }
 
 void SortArgs(double *x1Exp, double *x2Exp)

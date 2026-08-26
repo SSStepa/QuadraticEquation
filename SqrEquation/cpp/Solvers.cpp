@@ -1,4 +1,4 @@
-#include "Solvers.h"
+#include "../headers/Solvers.h"
 
 //solve ax^2 + bx + c = 0
 Roots SquareFind(double a, double b, double c, double *x1, double *x2)

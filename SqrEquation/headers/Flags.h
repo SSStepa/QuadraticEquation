@@ -8,8 +8,9 @@
 
 #include "UnitTests.h"
 #include "graphics.h"
+#include "structs.h"
 
-int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic);
+WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic);
 void ShowHelp();
 
 const char *const SHORTFLAGS = "gtshf:";

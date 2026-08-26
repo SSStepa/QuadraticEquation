@@ -1,5 +1,5 @@
 #include <TXLib.h>
-#include "graphics.h"
+#include "../headers/graphics.h"
 
 
 void BuiltGraphic(double a, double b, double c)

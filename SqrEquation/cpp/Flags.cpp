@@ -1,6 +1,6 @@
-#include "Flags.h"
+#include "../headers/Flags.h"
 
-int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic)
+WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic)
 {
     int arg = 0;
     int usedFlags[FLAGSNUM] = {};
@@ -19,24 +19,24 @@ int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutCol
             break;
         case 'h':
             ShowHelp();
-            return 1;
+            return SMTH_BAD;
         case 'f':
             *fileToRead = optarg;
             if (!FileIsValid(*fileToRead))
-                return 1;
+                return SMTH_BAD;
             break;
         case 'g':
             *Graphic = true;
             break;
         case '?':
             slowPrintf(RED "WRONG FLAG" COLOR_RESET);
-            return 1;
+            return SMTH_BAD;
         default:
             slowPrintf(RED "WRONG FLAG USAGE" COLOR_RESET);
             break;
         }
     }
-    return 0;
+    return ALL_GOOD;
 }
 
 void ShowHelp()

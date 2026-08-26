@@ -1,5 +1,5 @@
 #include <TXLib.h>
-#include "BasicText.h"
+#include "../headers/BasicText.h"
 
 void ClearBuffer()
 {
@@ -23,7 +23,9 @@ void GetLine(char *ans)
 
 bool FileIsValid(char *fileName)
 {
-    FILE *file = fopen(fileName, "r");
+    char filePath[MAXWORDLEN] = {};
+    sprintf(filePath, "../text/%s", fileName);
+    FILE *file = fopen(filePath, "r");
 
     if (file == NULL) {
         slowPrintf(RED "NO FILE TO READ FROM\n" COLOR_RESET);
@@ -46,7 +48,7 @@ void slowPrintf(const char *output, ...)
         int port = rand() % 4 + 3;
         for (int j = 0; j < port; j++) {
             putchar(buf[i]);
-            txSleep(50);
+            txSleep(20);
             
             i++;
         }

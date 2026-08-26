@@ -1,4 +1,4 @@
-#include "UserCon.h"
+#include "../headers/UserCon.h"
 
 
 void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)
@@ -100,7 +100,7 @@ void GetUserCoeff(double *a, const char *InColor, const char *OutColor)
     slowPrintf(COLOR_RESET);
 }
 
-int GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
+WORK_RESULT GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
 {
     assert(a != NULL);
     assert(b != NULL);
@@ -121,19 +121,19 @@ int GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
             slowPrintf(GRN "END OF READING\n" COLOR_RESET);
         else
             slowPrintf(RED "WRONG SYMBOLS IN FILE\n" COLOR_RESET);
-        return 1;
+        return SMTH_BAD;
     }
-    return 0;
+    return ALL_GOOD;
 }
 
-int WorkWithFileInput(char *fileToRead, const char *OutColor, bool Graphic)
+WORK_RESULT WorkWithFileInput(char *fileToRead, const char *OutColor, bool Graphic)
 {
     double a = NAN, b = NAN, c = NAN;
     double x1 = NAN, x2 = NAN;
     static int fileLine = 0;
 
     int status = GetFileCoeffs(&a, &b, &c, fileToRead, fileLine++);
-    if (status != 0) return 1;
+    if (status != ALL_GOOD) return SMTH_BAD;
 
     if (Graphic) {
         BuiltGraphic(a, b, c);
@@ -142,10 +142,10 @@ int WorkWithFileInput(char *fileToRead, const char *OutColor, bool Graphic)
         Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
         ShowAns(NumRoots, x1, x2, OutColor);
     }
-    return 0;
+    return ALL_GOOD;
 }
 
-int WorkWithUserInput(const char *InColor, const char *OutColor, bool Graphic)
+WORK_RESULT WorkWithUserInput(const char *InColor, const char *OutColor, bool Graphic)
 {
     double a = NAN, b = NAN, c = NAN;
     double x1 = NAN, x2 = NAN;
@@ -159,5 +159,5 @@ int WorkWithUserInput(const char *InColor, const char *OutColor, bool Graphic)
         Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
         ShowAns(NumRoots, x1, x2, OutColor);
     }
-    return 0;
+    return ALL_GOOD;
 }

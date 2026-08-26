@@ -1,4 +1,4 @@
-#include "color.h"
+#include "../headers/color.h"
 
 void ChangeColorSettings(const char **InColor, const char **OutColor)
 {
