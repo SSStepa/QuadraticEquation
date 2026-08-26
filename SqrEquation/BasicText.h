@@ -13,9 +13,9 @@
 void ClearBuffer();
 void GetLine(char *ans);
 bool FileIsValid(char *fileName);
+void GetStrFromInt(char lable[], int num);
+
 void slowPrintf(const char *output, ...);
-void printLongWord(char *word, int len);
-int GetWord(char *word, char *symb);
 
 const int MAXPRINTF = 100;
 

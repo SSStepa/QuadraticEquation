@@ -2,13 +2,13 @@
 
 void ChangeColorSettings(const char **InColor, const char **OutColor)
 {
-    assert(InColor != NULL);
+    assert(InColor  != NULL);
     assert(OutColor != NULL);
 
-    slowPrintf("Write a colour you want for input(more for list): ");
+    slowPrintf("Write a colour you want for input (more for list): ");
     *InColor = ChangeColor();
 
-    slowPrintf("Write a colour you want for output(more for list): ");
+    slowPrintf("Write a colour you want for output (more for list): ");
     *OutColor = ChangeColor();
 }
 

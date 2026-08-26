@@ -11,6 +11,7 @@
 #include "color.h"
 #include "BasicText.h"
 #include "Solvers.h"
+#include "graphics.h"
 
 void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor);
 
@@ -20,7 +21,7 @@ int GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
 
 bool SolveEquaAgain(const char *InColor, const char *OutColor);
 
-int WorkWithFileInput(char *fileToRead, const char *OutColor);
-int WorkWithUserInput(const char *InColor, const char *OutColor);
+int WorkWithFileInput(char *fileToRead, const char *OutColor, bool Graphic);
+int WorkWithUserInput(const char *InColor, const char *OutColor, bool Graphic);
 
 #endif

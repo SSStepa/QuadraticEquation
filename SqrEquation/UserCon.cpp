@@ -126,7 +126,7 @@ int GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
     return 0;
 }
 
-int WorkWithFileInput(char *fileToRead, const char *OutColor)
+int WorkWithFileInput(char *fileToRead, const char *OutColor, bool Graphic)
 {
     double a = NAN, b = NAN, c = NAN;
     double x1 = NAN, x2 = NAN;
@@ -135,19 +135,29 @@ int WorkWithFileInput(char *fileToRead, const char *OutColor)
     int status = GetFileCoeffs(&a, &b, &c, fileToRead, fileLine++);
     if (status != 0) return 1;
 
-    Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
-    ShowAns(NumRoots, x1, x2, OutColor);
+    if (Graphic) {
+        BuiltGraphic(a, b, c);
+    }
+    else {
+        Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
+        ShowAns(NumRoots, x1, x2, OutColor);
+    }
     return 0;
 }
 
-int WorkWithUserInput(const char *InColor, const char *OutColor)
+int WorkWithUserInput(const char *InColor, const char *OutColor, bool Graphic)
 {
     double a = NAN, b = NAN, c = NAN;
     double x1 = NAN, x2 = NAN;
 
     GetUserCoeffs(&a, &b, &c, InColor, OutColor);
 
-    Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
-    ShowAns(NumRoots, x1, x2, OutColor);
+    if (Graphic) {
+        BuiltGraphic(a, b, c);
+    }
+    else {
+        Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
+        ShowAns(NumRoots, x1, x2, OutColor);
+    }
     return 0;
 }

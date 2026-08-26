@@ -8,12 +8,13 @@ int main(int argc, char *argv[])
     srand((unsigned int) time(NULL));
     
     const char *OutColor = COLOR_RESET;
-    const char *InColor = COLOR_RESET;
+    const char *InColor  = COLOR_RESET;
 
     char *fileToRead = NULL; // файл для чтения
+    bool Graphic = false; // хочет ли пользователь график
 
     if (argc != 1) {
-        int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead);
+        int status = FlagsCheck(argc, argv, &InColor, &OutColor, &fileToRead, &Graphic);
         if (status != 0) return 1;
     }
 
@@ -21,11 +22,11 @@ int main(int argc, char *argv[])
     slowPrintf("form of equation ax^2 + bx + c = 0\n");
 
     while (fileToRead != NULL) {
-       if(WorkWithFileInput(fileToRead, OutColor) == 1) return 0;
+       if(WorkWithFileInput(fileToRead, OutColor, Graphic) == 1) return 0;
     }
 
     do {
-        WorkWithUserInput(InColor, OutColor);
+        WorkWithUserInput(InColor, OutColor, Graphic);
     } while (SolveEquaAgain(InColor, OutColor));
 
     return 0;

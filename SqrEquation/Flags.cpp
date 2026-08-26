@@ -1,12 +1,12 @@
 #include "Flags.h"
 
-int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead)
+int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic)
 {
     int arg = 0;
     int usedFlags[FLAGSNUM] = {};
     while((arg = getopt_long(argc, argv, SHORTFLAGS, long_options, NULL)) != -1) {
         int i = 0;
-        for (i = 0; i < FLAGSNUM && usedFlags[i] != 0; i++) 
+        for (i = 0; i < FLAGSNUM && usedFlags[i] != 0; i++)
             if (arg == usedFlags[i]) arg = 0;
         usedFlags[i] = arg;
         switch (arg)
@@ -24,6 +24,9 @@ int FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutCol
             *fileToRead = optarg;
             if (!FileIsValid(*fileToRead))
                 return 1;
+            break;
+        case 'g':
+            *Graphic = true;
             break;
         case '?':
             slowPrintf(RED "WRONG FLAG" COLOR_RESET);
