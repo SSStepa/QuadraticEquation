@@ -8,7 +8,7 @@ void BuiltGraphic(double a, double b, double c)
     assert(isfinite(b));
     assert(isfinite(c));
 
-    int mult = 1; // масштабчик
+    double mult = 1; // масштабчик
 
     if (!IsZero(a)) {
         double X_main = -b/(2*a);
@@ -41,7 +41,7 @@ void SettingWindow()
 
 }
 
-void PaintGraphic(int mult, double a, double b, double c, Point startPoint)
+void PaintGraphic(double mult, double a, double b, double c, Point startPoint)
 {
 
     // Поле
@@ -57,11 +57,11 @@ void PaintGraphic(int mult, double a, double b, double c, Point startPoint)
     for (int i =  -startPoint.x%TEXTSTART; i <= FIELD_X - startPoint.x%TEXTSTART; i += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
         txLine(i, FIELD_Y/2 - DELTA/2 - startPoint.y, i, FIELD_Y/2 + DELTA/2 - startPoint.y);
-        GetStrFromInt(lable, mult*(i-FIELD_X/2 + startPoint.x));
+        GetStrFromDouble(lable, mult*(double)(i-FIELD_X/2 + startPoint.x));
         txDrawText(
                 i - TEXTMAXLEN/2, 
                 FIELD_Y/2 + DELTA - startPoint.y, 
-                i + TEXTMAXLEN/2, 
+                i + TEXTMAXLEN/2,   
                 FIELD_Y/2 + DELTA + TEXTHIGN - startPoint.y, 
                 lable
         );
@@ -70,7 +70,7 @@ void PaintGraphic(int mult, double a, double b, double c, Point startPoint)
     for (int i = -startPoint.y; i <= FIELD_Y - startPoint.y; i += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
         txLine(FIELD_X/2 - DELTA/2 - startPoint.x, i, FIELD_X/2 + DELTA/2 - startPoint.x, i);
-        GetStrFromInt(lable, -mult*(i-FIELD_Y/2 + startPoint.y)); // минус тк нумирация не сверху а снизу
+        GetStrFromDouble(lable, -mult*(double)(i-FIELD_Y/2 + startPoint.y)); // минус тк нумирация не сверху а снизу
         txDrawText(
                 FIELD_X/2 - TEXTMAXLEN - DELTA - startPoint.x, 
                 i - TEXTHIGN/2, 
@@ -96,7 +96,7 @@ void PaintGraphic(int mult, double a, double b, double c, Point startPoint)
     txUpdateWindow(false);
 }
 
-WORK_RESULT CheckButtonIsPressed(Point *StartPoint, int *mult)
+WORK_RESULT CheckButtonIsPressed(Point *StartPoint, double *mult)
 {
     assert(StartPoint != NULL);
     assert(mult != NULL);
@@ -105,7 +105,6 @@ WORK_RESULT CheckButtonIsPressed(Point *StartPoint, int *mult)
         if (txGetAsyncKeyState(A)) {
             (StartPoint -> x) -= MOOVE;
             return ALL_GOOD;
-
         }
         else if (txGetAsyncKeyState(D)) {
             (StartPoint -> x) += MOOVE;
@@ -119,12 +118,14 @@ WORK_RESULT CheckButtonIsPressed(Point *StartPoint, int *mult)
             (StartPoint -> y) += MOOVE;
             return ALL_GOOD;
         }
-        // else if (txGetAsyncKeyState(E)) {
-        //     *mult += 1;
-        // }
-        // else if (txGetAsyncKeyState(R)) {
-        //     *mult += 1;
-        // }
+        else if (txGetAsyncKeyState(E)) {
+            *mult *= 1.1;
+            return ALL_GOOD;
+        }
+        else if (txGetAsyncKeyState(R)) {
+            *mult /= 1.1;
+            return ALL_GOOD;
+        }
 
     }
     return SMTH_BAD;

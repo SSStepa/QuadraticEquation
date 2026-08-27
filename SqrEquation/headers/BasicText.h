@@ -13,7 +13,7 @@
 void ClearBuffer();
 void GetLine(char *ans);
 bool FileIsValid(char *fileName);
-void GetStrFromInt(char lable[], int num);
+void GetStrFromDouble(char lable[], double num);
 
 void slowPrintf(const char *output, ...);
 

@@ -30,8 +30,8 @@ struct Point {
 };
 
 void BuiltGraphic(double a, double b, double c);
-void PaintGraphic(int mult, double a, double b, double c, Point startPoint);
+void PaintGraphic(double mult, double a, double b, double c, Point startPoint);
 void SettingWindow();
-WORK_RESULT CheckButtonIsPressed(Point *StartPoint, int *mult);
+WORK_RESULT CheckButtonIsPressed(Point *StartPoint, double *mult);
 
 #endif

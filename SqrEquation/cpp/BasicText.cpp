@@ -57,26 +57,7 @@ void slowPrintf(const char *output, ...)
     va_end(args);
 }
 
-void GetStrFromInt(char lable[], int num)
+void GetStrFromDouble(char lable[], double num)
 {
-    int i   = 0;
-    int ind = 0;
-
-    if (num < 0) {
-        lable[0] = '-';
-        i++;
-        ind++;
-    }
-    num = (int) fabs(num);
-    while (num > 0) {
-        lable[ind++] = (char)( num % 10 + int('0'));
-        num /= 10;
-    }
-    ind--;
-    for (; i < ind; i++, ind--) {
-        char el  = lable[i];
-        lable[i] = lable[ind];
-        lable[ind] = el;
-
-    }
+    sprintf(lable, "%.2lg", num);
 }
