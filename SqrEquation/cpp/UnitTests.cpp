@@ -7,11 +7,21 @@ void RunTests()
 
     TestCase test = {};
 
-    while (GetTestcase(nTests, &test) != SMTH_BAD) {
-        nTests++;
-        nGoodTests += RunOneTest(test);
+    FILE *file = fopen("./texts/Testcases.txt", "r");
+    if (file == NULL) {
+        slowPrintf(RED "NO FILE WITH TESTS\n" COLOR_RESET);
     }
-    const char *resultColor = (nGoodTests == nTests) ? GRN : RED;
+    else {
+        while (GetTestcase(nTests, &test, file) != SMTH_BAD) {
+            nTests++;
+            if (RunOneTest(test) == ALL_GOOD) 
+                nGoodTests++;
+        }
+    }
+
+    fclose(file);
+
+    const char *resultColor = (nGoodTests == nTests && nTests != 0) ? GRN : RED;
     slowPrintf("%sGood tests are %d of %d\n" COLOR_RESET, resultColor, nGoodTests, nTests);
 }
 
@@ -24,6 +34,7 @@ WORK_RESULT RunOneTest(TestCase test)
 
     double x1 = NAN, x2 = NAN;
     int nRoots = (int) SquareFind(test.a, test.b, test.c, &x1, &x2);
+
     if (nRoots == test.nRootsExp){
         switch (nRoots) {
             case NO_ROOTS: case INF_ROOTS:
@@ -94,32 +105,18 @@ void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)
     }
 }
 
-WORK_RESULT GetTestcase(int testNum, TestCase *test)
+WORK_RESULT GetTestcase(int testNum, TestCase *test, FILE *file)
 {
     assert(isfinite(testNum));
     assert(test != 0);
-
-    FILE *file = fopen("../text/Testcases.txt", "r");
-
-    if (file == NULL) {
-        slowPrintf(RED "NO FILE WITH TESTS\n" COLOR_RESET);
-        return SMTH_BAD;
-    }
-
-    // на нужную строку
-    char buf[100] = {};
-    while (testNum-- > 0) {
-        fgets(buf, sizeof(buf), file);
-    } 
+    assert(file != NULL);
 
     if (fscanf( file, "%lg %lg %lg %d %lg %lg", 
                 &(test -> a), &(test -> b), &(test -> c),
                 &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
         SortArgs(&(test -> x1Exp), &(test -> x2Exp));
-        fclose(file);
         return ALL_GOOD;
     } 
-    fclose(file);
     return SMTH_BAD;
 }
 

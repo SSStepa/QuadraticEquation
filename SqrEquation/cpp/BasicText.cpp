@@ -23,9 +23,7 @@ void GetLine(char *ans)
 
 bool FileIsValid(char *fileName)
 {
-    char filePath[MAXWORDLEN] = {};
-    sprintf(filePath, "../text/%s", fileName);
-    FILE *file = fopen(filePath, "r");
+    FILE *file = fopen(fileName, "r");
 
     if (file == NULL) {
         slowPrintf(RED "NO FILE TO READ FROM\n" COLOR_RESET);

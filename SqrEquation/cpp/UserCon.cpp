@@ -100,21 +100,13 @@ void GetUserCoeff(double *a, const char *InColor, const char *OutColor)
     slowPrintf(COLOR_RESET);
 }
 
-WORK_RESULT GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine)
+WORK_RESULT GetFileCoeffs(double *a, double *b, double *c, FILE *file)
 {
     assert(a != NULL);
     assert(b != NULL);
     assert(c != NULL);
-    assert(fileName != NULL);
-    assert(isfinite(fileLine));
+    assert(file != NULL);
 
-    FILE *file = fopen(fileName, "r");
-
-    // на нужную строку
-    char buf[100] = {};
-    while (fileLine-- > 0) {
-        fgets(buf, sizeof(buf), file);
-    }
     int st = 0;
     if ((st = fscanf(file, "%lg %lg %lg", a, b, c)) == EOF || st != 3) {
         if (st == EOF)
@@ -130,19 +122,22 @@ WORK_RESULT WorkWithFileInput(char *fileToRead, const char *OutColor, bool Graph
 {
     double a = NAN, b = NAN, c = NAN;
     double x1 = NAN, x2 = NAN;
-    static int fileLine = 0;
 
-    int status = GetFileCoeffs(&a, &b, &c, fileToRead, fileLine++);
-    if (status != ALL_GOOD) return SMTH_BAD;
+    FILE *file = fopen(fileToRead, "r");
 
-    if (Graphic) {
-        BuiltGraphic(a, b, c);
+    while (GetFileCoeffs(&a, &b, &c, file) == ALL_GOOD) {
+
+        if (Graphic) {
+            BuiltGraphic(a, b, c);
+        }
+        else {
+            Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
+            ShowAns(NumRoots, x1, x2, OutColor);
+        }
     }
-    else {
-        Roots NumRoots = SquareFind(a, b, c, &x1, &x2);
-        ShowAns(NumRoots, x1, x2, OutColor);
-    }
-    return ALL_GOOD;
+
+    fclose(file);
+    return SMTH_BAD;
 }
 
 WORK_RESULT WorkWithUserInput(const char *InColor, const char *OutColor, bool Graphic)

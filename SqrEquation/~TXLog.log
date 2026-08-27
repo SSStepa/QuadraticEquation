@@ -1,0 +1,1150 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 8956, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF6ACBA3030 (64-bit), Flags: cMdRe0, Thread: 0x4EE8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6ACABA97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF6ACAA584A in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::txCreateWindow() at C:/Users/user/Downloads/TX/TXLib.h:8956
+
+# 2 0x00007FF6ACAE2F12 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: BuiltGraphic() at C:/Users/user/Desktop/cpp/SqrEquation/cpp/graphics.cpp:23:
+
+     21: 
+     22:     // РџРѕР»Рµ
+=>   23:     txCreateWindow(FIELD_X, FIELD_Y);
+     24:     txSetFillColor(TX_BLACK);
+     25:     txClearConsole();
+
+# 3 0x00007FF6ACAE5968 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: WorkWithUserInput() at C:/Users/user/Desktop/cpp/SqrEquation/cpp/UserCon.cpp:151:
+
+    149: 
+    150:     if (Graphic) {
+=>  151:         BuiltGraphic(a, b, c);
+    152:     }
+    153:     else {
+
+# 4 0x00007FF6ACAA1604 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/cpp/main.cpp:29:
+
+     27: 
+     28:     do {
+=>   29:         WorkWithUserInput(InColor, OutColor, Graphic);
+     30:     } while (SolveEquaAgain(InColor, OutColor));
+     31: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HWND__* {anonymous}::TX::txCreateWindow(double, double, bool) at C:\Users\user\Downloads\TX\TXLib.h:8956:
+
+   8954:         {
+   8955: $       SetLastErrorEx (ERROR_INVALID_DATA, 0);
+=> 8956: $       _TX_ON_DEBUG (TX_ERROR ("\a" "Окно рисования уже создано!"));
+   8957: $       return wnd;
+   8958:         }
+
+# 1 in void BuiltGraphic(double, double, double) at cpp/graphics.cpp:23:
+
+     21: 
+     22:     // РџРѕР»Рµ
+=>   23:     txCreateWindow(FIELD_X, FIELD_Y);
+     24:     txSetFillColor(TX_BLACK);
+     25:     txClearConsole();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 12:28:42, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 12:31:10
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF6B1723030 (64-bit), Flags: cMdRE0, Thread: 0x3D00 (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6B163A97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF6B1633072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF6B16322A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF6B16327E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF6B16327E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF6B16327E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF6B162FE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:09:08, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:09:26
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF79B093030 (64-bit), Flags: cMdRE0, Thread: 0x14C (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF79AFAA97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF79AFA3072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF79AFA22A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF79AFA27E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF79AFA27E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF79AFA27E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF79AF9FE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:11:13, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:15:32
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF66A5F3030 (64-bit), Flags: cMdRE0, Thread: 0x76F8 (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF66A50A97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF66A503072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF66A5022A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF66A5027E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF66A5027E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF66A5027E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF66A4FFE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:18:35, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:18:45
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF6FAE83030 (64-bit), Flags: cMdRE0, Thread: 0x1B90 (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6FAD9A97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF6FAD93072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF6FAD922A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF6FAD927E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF6FAD927E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF6FAD927E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF6FAD8FE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:23:21, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:23:31
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF699253030 (64-bit), Flags: cMdRE0, Thread: 0x47BC (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF69916A97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF699163072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF6991622A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF6991627E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF6991627E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF6991627E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF69915FE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:28:35, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:28:45
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF72DD73030 (64-bit), Flags: cMdRE0, Thread: 0x61A4 (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF72DC8A97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF72DC83072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF72DC822A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF72DC827E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF72DC827E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF72DC827E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF72DC7FE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:29:53, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:30:03
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF66F763030 (64-bit), Flags: cMdRE0, Thread: 0x367C (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF66F67A97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF66F673072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF66F6722A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF66F6727E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF66F6727E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF66F6727E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF66F66FE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:35:55, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:36:06
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 10397, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF7A6743030 (64-bit), Flags: cMdRE0, Thread: 0x3E4C (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7A665A97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF7A6653072 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_OnDESTROY() at C:/Users/user/Downloads/TX/TXLib.h:10397
+# 2 0x00007FF7A66522A7 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10314
+# 3 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+# 4 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+# 5 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+# 6 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+# 8 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+# 9 0x00007FFA47C088FE in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#10 0x00007FF7A66527E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#11 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#12 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#13 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#14 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#16 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#17 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#18 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#19 0x00007FFA41EEDC36 in C:\WINDOWS\system32\uxtheme.dll: Ordinal140()
+#20 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#21 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#22 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#23 0x00007FF7A66527E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#24 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#25 0x00007FFA47BFBBEC in C:\WINDOWS\System32\USER32.dll: SendMessageW()
+#26 0x00007FFA47C30A23 in C:\WINDOWS\System32\USER32.dll: GetWindowDpiAwarenessContext()
+#27 0x00007FFA482243A4 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#28 0x00007FFA457B1364 in C:\WINDOWS\System32\win32u.dll: NtUserMessageCall()
+#29 0x00007FFA47BF8E1B in C:\WINDOWS\System32\USER32.dll: GetSystemMetrics()
+#30 0x00007FFA47BF8A69 in C:\WINDOWS\System32\USER32.dll: GetSystemMetricsForDpi()
+#31 0x00007FFA41EA759D in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#32 0x00007FFA41EE73F9 in C:\WINDOWS\system32\uxtheme.dll: SetWindowThemeAttribute()
+#33 0x00007FFA41EA95FF in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#34 0x00007FFA41EA835E in C:\WINDOWS\system32\uxtheme.dll: GetImmersiveUserColorSetPreference()
+#35 0x00007FFA47C0891C in C:\WINDOWS\System32\USER32.dll: SetScrollInfo()
+#36 0x00007FF7A66527E8 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_WndProc() at C:/Users/user/Downloads/TX/TXLib.h:10353
+#37 0x00007FFA47BFC366 in C:\WINDOWS\System32\USER32.dll: CallWindowProcW()
+#38 0x00007FFA47BFA7BD in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#39 0x00007FF7A664FE3C in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at C:/Users/user/Downloads/TX/TXLib.h:10097
+#40 0x00007FFA4681F0AD in C:\WINDOWS\System32\msvcrt.dll: beginthreadex()
+#41 0x00007FFA4681F17C in C:\WINDOWS\System32\msvcrt.dll: endthreadex()
+#42 0x00007FFA4796CCB7 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#43 0x00007FFA4816AD6C in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\user\Downloads\TX\TXLib.h:10397:
+
+  10395: $   bool locked = false;
+  10396: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=>10397: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+  10398: 
+  10399:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10314:
+
+  10312: 
+  10313:         case WM_CLOSE:          {$ if (_txCanvas_OnCLOSE      (wnd))  break;       else return 0; }
+=>10314:         case WM_DESTROY:        {$     _txCanvas_OnDESTROY    (wnd);                    return 0; }
+  10315: 
+  10316:         case WM_ERASEBKGND:     {$ if (!bkErased) { bkErased = true;  break; }     else return 1; }
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 4 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\user\Downloads\TX\TXLib.h:10353:
+
+  10351:         }
+  10352: 
+=>10353: $   return DefWindowProc (wnd, msg, wpar, lpar);
+  10354:     }
+  10355: 
+
+# 5 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\user\Downloads\TX\TXLib.h:10097:
+
+  10095: 
+  10096: $       TranslateMessage (&msg);
+=>10097: $       DispatchMessage  (&msg);
+  10098: 
+  10099: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 13:39:00, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 13:40:29
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\user\Desktop\cpp\SqrEquation\solve.exe, файл: C:\Users\user\Downloads\TX\TXLib.h, строка: 8956, функция: HWND__* {anonymous}::TX::txCreateWindow(double, double, bool),
+
+Сообщение: Окно рисования уже создано!
+
+#1: TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400], Instance: 0x00007FF62D0E3030 (64-bit), Flags: cMdRe0, Thread: 0x2F4C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF62CFFA97B in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::_txError() at C:/Users/user/Downloads/TX/TXLib.h:11254
+# 1 0x00007FF62CFE584A in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: (anonymous namespace)::TX::txCreateWindow() at C:/Users/user/Downloads/TX/TXLib.h:8956
+
+# 2 0x00007FF62D022F2A in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: BuiltGraphic() at C:/Users/user/Desktop/cpp/SqrEquation/cpp/graphics.cpp:22:
+
+     20: 
+     21:     // РџРѕР»Рµ
+=>   22:     txCreateWindow(FIELD_X, FIELD_Y);
+     23:     txSetFillColor(TX_BLACK);
+     24:     txClearConsole();
+
+# 3 0x00007FF62D025998 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: WorkWithUserInput() at C:/Users/user/Desktop/cpp/SqrEquation/cpp/UserCon.cpp:151:
+
+    149: 
+    150:     if (Graphic) {
+=>  151:         BuiltGraphic(a, b, c);
+    152:     }
+    153:     else {
+
+# 4 0x00007FF62CFE1604 in C:\Users\user\Desktop\cpp\SqrEquation\solve.exe: main() at C:/Users/user/Desktop/cpp/SqrEquation/cpp/main.cpp:29:
+
+     27: 
+     28:     do {
+=>   29:         WorkWithUserInput(InColor, OutColor, Graphic);
+     30:     } while (SolveEquaAgain(InColor, OutColor));
+     31: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HWND__* {anonymous}::TX::txCreateWindow(double, double, bool) at C:\Users\user\Downloads\TX\TXLib.h:8956:
+
+   8954:         {
+   8955: $       SetLastErrorEx (ERROR_INVALID_DATA, 0);
+=> 8956: $       _TX_ON_DEBUG (TX_ERROR ("\a" "Окно рисования уже создано!"));
+   8957: $       return wnd;
+   8958:         }
+
+# 1 in void BuiltGraphic(double, double, double) at cpp/graphics.cpp:22:
+
+     20: 
+     21:     // РџРѕР»Рµ
+=>   22:     txCreateWindow(FIELD_X, FIELD_Y);
+     23:     txSetFillColor(TX_BLACK);
+     24:     txClearConsole();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 175, Date: 2025-12-31 23:02:50 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\Downloads\TX\TXLib.h
+Compiled:	Aug 27 2026 14:03:17, GNU g++ 16.1.0, std=202002L, MinGW-W64 Runtime 15.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, DEBUG
+Started:	Aug 27 2026 14:05:49
+
+Run file:	C:\Users\user\Desktop\cpp\SqrEquation\solve.exe
+Directory:	C:\Users\user\Desktop\cpp\SqrEquation
+
+--------------------------------------------------

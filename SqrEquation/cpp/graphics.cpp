@@ -4,17 +4,24 @@
 
 void BuiltGraphic(double a, double b, double c)
 {
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
+
     int mult = 1;
 
-    double X_main = -b/(2*a);
-    double Y_main = -(a*X_main*X_main + b*X_main + c);
-
-    while (X_main > FIELD_X/4*mult || Y_main > FIELD_Y/4*mult) {
-        mult *=2;
+    if (!IsZero(a)) {
+        double X_main = -b/(2*a);
+        double Y_main = a*X_main*X_main + b*X_main + c;
+        while (fabs(X_main) > FIELD_X/4*mult || fabs(Y_main) > FIELD_Y/4*mult) {
+            mult *=2;
+        }
     }
 
     // Поле
-    txCreateWindow(FIELD_X, FIELD_Y);
+    if (txWindow() == NULL)
+        txCreateWindow(FIELD_X, FIELD_Y);
+    txTextCursor(false);  
     txSetFillColor(TX_BLACK);
     txClearConsole();
 
@@ -23,6 +30,7 @@ void BuiltGraphic(double a, double b, double c)
     txLine(0, FIELD_Y/2, FIELD_X, FIELD_Y/2);
     txLine(FIELD_X/2, 0, FIELD_X/2, FIELD_Y);
 
+    // оцифровка осей
     txSetTextAlign(TA_RIGHT);
     for (unsigned int i = TEXTSTART; i <= FIELD_X - TEXTSTART; i += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
@@ -34,17 +42,22 @@ void BuiltGraphic(double a, double b, double c)
     for (unsigned int i = TEXTSTART; i <= FIELD_Y - TEXTSTART; i += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
         txLine(FIELD_X/2 - DELTA/2, i, FIELD_X/2 + DELTA/2, i);
-        GetStrFromInt(lable, mult*(i-FIELD_Y/2));
+        GetStrFromInt(lable, -mult*(i-FIELD_Y/2)); // минус тк нумирация не сверху а снизу
         txDrawText(FIELD_X/2 - TEXTMAXLEN - DELTA, i - TEXTHIGN/2, FIELD_X/2 - DELTA, i + TEXTHIGN/2, lable);
     }
     txSetTextAlign();
-    txBegin();
-    for(double x = -FIELD_X/2; x <= FIELD_X; x+=STEP){
-        double y = -(a*x*x + b*x + c);
-        if (y > -400 || y < 400) {
-            txSetPixel(FIELD_X/2 + x, FIELD_Y/2 + y, TX_LIGHTRED);
+
+    txUpdateWindow(false);
+
+    // порабола
+    for(double x_pix = 0; x_pix <= FIELD_X; x_pix += STEP){
+        double x = (x_pix - FIELD_X/2)*mult;
+        double y = a*x*x + b*x + c;
+        double y_pix = FIELD_Y/2 - y/mult;
+        if (y_pix > 0 || y_pix < FIELD_Y) {
+            txSetPixel(x_pix, y_pix, TX_LIGHTRED);
         }
     }
-    txEnd();
-    txBegin();
+    txUpdateWindow(true);
+    txUpdateWindow(false);
 }

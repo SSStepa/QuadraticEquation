@@ -1,7 +1,10 @@
 #ifndef __GRAPHICS__
 #define __GRAPHICS__
 
+#include <assert.h>
+
 #include "BasicText.h"
+#include "Solvers.h"
 
 const int FIELD_X = 1000;
 const int FIELD_Y = 800;

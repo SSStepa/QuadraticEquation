@@ -17,7 +17,7 @@ void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor);
 
 void GetUserCoeffs(double *a, double *b, double *c, const char *, const char *);
 void GetUserCoeff(double *a, const char *, const char *);
-WORK_RESULT GetFileCoeffs(double *a, double *b, double *c, char *fileName, int fileLine);
+WORK_RESULT GetFileCoeffs(double *a, double *b, double *c, FILE *file);
 
 bool SolveEquaAgain(const char *InColor, const char *OutColor);
 
