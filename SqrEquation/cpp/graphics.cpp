@@ -8,7 +8,7 @@ void BuiltGraphic(double a, double b, double c)
     assert(isfinite(b));
     assert(isfinite(c));
 
-    int mult = 1;
+    int mult = 1; // масштабчик
 
     if (!IsZero(a)) {
         double X_main = -b/(2*a);
@@ -18,32 +18,66 @@ void BuiltGraphic(double a, double b, double c)
         }
     }
 
-    // Поле
-    if (txWindow() == NULL)
+    Point startPoint = {.x = 0, .y = 0};
+
+    SettingWindow();
+
+    do {
+    PaintGraphic(mult, a, b, c, startPoint);
+    } while (CheckButtonIsPressed(&startPoint, &mult) == ALL_GOOD);
+
+
+}
+
+void SettingWindow()
+{
+    if (txDC() == NULL) {
         txCreateWindow(FIELD_X, FIELD_Y);
+    }
     txTextCursor(false);  
     txSetFillColor(TX_BLACK);
     txClearConsole();
+    txClear();
 
+}
+
+void PaintGraphic(int mult, double a, double b, double c, Point startPoint)
+{
+
+    // Поле
+    txClear();
     txSetColor(TX_WHITE);
     txSelectFont("Calibri", TEXTHIGN);
-    txLine(0, FIELD_Y/2, FIELD_X, FIELD_Y/2);
-    txLine(FIELD_X/2, 0, FIELD_X/2, FIELD_Y);
+    txLine(0, FIELD_Y/2 - startPoint.y, FIELD_X, FIELD_Y/2 - startPoint.y);
+    txLine(FIELD_X/2 - startPoint.x, 0, FIELD_X/2 - startPoint.x, FIELD_Y);
 
     // оцифровка осей
     txSetTextAlign(TA_RIGHT);
-    for (unsigned int i = TEXTSTART; i <= FIELD_X - TEXTSTART; i += TEXTSTART) {
+
+    for (int i =  -startPoint.x%TEXTSTART; i <= FIELD_X - startPoint.x%TEXTSTART; i += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
-        txLine(i, FIELD_Y/2 - DELTA/2, i, FIELD_Y/2 + DELTA/2);
-        GetStrFromInt(lable, mult*(i-FIELD_X/2));
-        txDrawText(i - TEXTMAXLEN/2, FIELD_Y/2 + DELTA, i + TEXTMAXLEN/2, FIELD_Y/2 + DELTA + TEXTHIGN, lable);
+        txLine(i, FIELD_Y/2 - DELTA/2 - startPoint.y, i, FIELD_Y/2 + DELTA/2 - startPoint.y);
+        GetStrFromInt(lable, mult*(i-FIELD_X/2 + startPoint.x));
+        txDrawText(
+                i - TEXTMAXLEN/2, 
+                FIELD_Y/2 + DELTA - startPoint.y, 
+                i + TEXTMAXLEN/2, 
+                FIELD_Y/2 + DELTA + TEXTHIGN - startPoint.y, 
+                lable
+        );
     }
 
-    for (unsigned int i = TEXTSTART; i <= FIELD_Y - TEXTSTART; i += TEXTSTART) {
+    for (int i = -startPoint.y; i <= FIELD_Y - startPoint.y; i += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
-        txLine(FIELD_X/2 - DELTA/2, i, FIELD_X/2 + DELTA/2, i);
-        GetStrFromInt(lable, -mult*(i-FIELD_Y/2)); // минус тк нумирация не сверху а снизу
-        txDrawText(FIELD_X/2 - TEXTMAXLEN - DELTA, i - TEXTHIGN/2, FIELD_X/2 - DELTA, i + TEXTHIGN/2, lable);
+        txLine(FIELD_X/2 - DELTA/2 - startPoint.x, i, FIELD_X/2 + DELTA/2 - startPoint.x, i);
+        GetStrFromInt(lable, -mult*(i-FIELD_Y/2 + startPoint.y)); // минус тк нумирация не сверху а снизу
+        txDrawText(
+                FIELD_X/2 - TEXTMAXLEN - DELTA - startPoint.x, 
+                i - TEXTHIGN/2, 
+                FIELD_X/2 - DELTA - startPoint.x, 
+                i + TEXTHIGN/2, 
+                lable
+        );
     }
     txSetTextAlign();
 
@@ -55,9 +89,43 @@ void BuiltGraphic(double a, double b, double c)
         double y = a*x*x + b*x + c;
         double y_pix = FIELD_Y/2 - y/mult;
         if (y_pix > 0 || y_pix < FIELD_Y) {
-            txSetPixel(x_pix, y_pix, TX_LIGHTRED);
+            txSetPixel(x_pix - startPoint.x, y_pix - startPoint.y, TX_LIGHTRED);
         }
     }
     txUpdateWindow(true);
     txUpdateWindow(false);
+}
+
+WORK_RESULT CheckButtonIsPressed(Point *StartPoint, int *mult)
+{
+    assert(StartPoint != NULL);
+    assert(mult != NULL);
+
+    while(txDC() != NULL) {
+        if (txGetAsyncKeyState(A)) {
+            (StartPoint -> x) -= MOOVE;
+            return ALL_GOOD;
+
+        }
+        else if (txGetAsyncKeyState(D)) {
+            (StartPoint -> x) += MOOVE;
+            return ALL_GOOD;
+        }
+        else if (txGetAsyncKeyState(W)) {
+            (StartPoint -> y) -= MOOVE;
+            return ALL_GOOD;
+        }
+        else if (txGetAsyncKeyState(S)) {
+            (StartPoint -> y) += MOOVE;
+            return ALL_GOOD;
+        }
+        // else if (txGetAsyncKeyState(E)) {
+        //     *mult += 1;
+        // }
+        // else if (txGetAsyncKeyState(R)) {
+        //     *mult += 1;
+        // }
+
+    }
+    return SMTH_BAD;
 }

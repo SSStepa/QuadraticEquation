@@ -42,9 +42,10 @@ WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char 
 void ShowHelp()
 {
     printf("Our flags:\n");
-    printf("-h --help           Info about flags\n");
-    printf("-s --settings       Change color of input and output\n");
-    printf("-t --test           Run tests\n");
-    printf("-i --insert_file    File to take input from\n");
+    printf("-h --help                   Info about flags\n");
+    printf("-s --settings               Change color of input and output\n");
+    printf("-t --test                   Run tests\n");
+    printf("-f --file <file_name>       File to take input from\n");
+    printf("-g --graphic                Built graphic instead of solving");
 }
 
