@@ -25,8 +25,6 @@ void BuiltGraphic(double a, double b, double c)
     do {
     PaintGraphic(mult, a, b, c, startPoint);
     } while (CheckButtonIsPressed(&startPoint, &mult) == ALL_GOOD);
-
-
 }
 
 void SettingWindow()
@@ -38,44 +36,43 @@ void SettingWindow()
     txSetFillColor(TX_BLACK);
     txClearConsole();
     txClear();
-
 }
 
 void PaintGraphic(double mult, double a, double b, double c, Point startPoint)
 {
-
     // Поле
     txClear();
     txSetColor(TX_WHITE);
     txSelectFont("Calibri", TEXTHIGN);
+
     txLine(0, FIELD_Y/2 - startPoint.y, FIELD_X, FIELD_Y/2 - startPoint.y);
     txLine(FIELD_X/2 - startPoint.x, 0, FIELD_X/2 - startPoint.x, FIELD_Y);
 
     // оцифровка осей
     txSetTextAlign(TA_RIGHT);
 
-    for (int i =  -startPoint.x%TEXTSTART; i <= FIELD_X - startPoint.x%TEXTSTART; i += TEXTSTART) {
+    for (int x = -startPoint.x%TEXTSTART; x <= FIELD_X - startPoint.x%TEXTSTART; x += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
-        txLine(i, FIELD_Y/2 - DELTA/2 - startPoint.y, i, FIELD_Y/2 + DELTA/2 - startPoint.y);
-        GetStrFromDouble(lable, mult*(double)(i-FIELD_X/2 + startPoint.x));
+        txLine(x, FIELD_Y/2 - DELTA/2 - startPoint.y, x, FIELD_Y/2 + DELTA/2 - startPoint.y);
+        GetStrFromDouble(lable, mult*(double)(x-FIELD_X/2 + startPoint.x));
         txDrawText(
-                i - TEXTMAXLEN/2, 
+                x - TEXTMAXLEN/2, 
                 FIELD_Y/2 + DELTA - startPoint.y, 
-                i + TEXTMAXLEN/2,   
+                x + TEXTMAXLEN/2,   
                 FIELD_Y/2 + DELTA + TEXTHIGN - startPoint.y, 
                 lable
         );
     }
 
-    for (int i = -startPoint.y; i <= FIELD_Y - startPoint.y; i += TEXTSTART) {
+    for (int y = -startPoint.y%TEXTSTART; y <= FIELD_Y - startPoint.y%TEXTSTART; y += TEXTSTART) {
         char lable[MAXWORDLEN] = {};
-        txLine(FIELD_X/2 - DELTA/2 - startPoint.x, i, FIELD_X/2 + DELTA/2 - startPoint.x, i);
-        GetStrFromDouble(lable, -mult*(double)(i-FIELD_Y/2 + startPoint.y)); // минус тк нумирация не сверху а снизу
+        txLine(FIELD_X/2 - DELTA/2 - startPoint.x, y, FIELD_X/2 + DELTA/2 - startPoint.x, y);
+        GetStrFromDouble(lable, -mult*(double)(y-FIELD_Y/2 + startPoint.y)); // минус тк нумирация не сверху а снизу
         txDrawText(
                 FIELD_X/2 - TEXTMAXLEN - DELTA - startPoint.x, 
-                i - TEXTHIGN/2, 
+                y - TEXTHIGN/2, 
                 FIELD_X/2 - DELTA - startPoint.x, 
-                i + TEXTHIGN/2, 
+                y + TEXTHIGN/2, 
                 lable
         );
     }
@@ -85,11 +82,11 @@ void PaintGraphic(double mult, double a, double b, double c, Point startPoint)
 
     // порабола
     for(double x_pix = 0; x_pix <= FIELD_X; x_pix += STEP){
-        double x = (x_pix - FIELD_X/2)*mult;
+        double x = (x_pix + startPoint.x - FIELD_X/2)*mult;
         double y = a*x*x + b*x + c;
-        double y_pix = FIELD_Y/2 - y/mult;
+        double y_pix = FIELD_Y/2 - y/mult - startPoint.y;
         if (y_pix > 0 || y_pix < FIELD_Y) {
-            txSetPixel(x_pix - startPoint.x, y_pix - startPoint.y, TX_LIGHTRED);
+            txSetPixel(x_pix, y_pix, TX_LIGHTRED);
         }
     }
     txUpdateWindow(true);
@@ -105,28 +102,26 @@ WORK_RESULT CheckButtonIsPressed(Point *StartPoint, double *mult)
         if (txGetAsyncKeyState(A)) {
             (StartPoint -> x) -= MOOVE;
             return ALL_GOOD;
-        }
-        else if (txGetAsyncKeyState(D)) {
+        
+        } else if (txGetAsyncKeyState(D)) {
             (StartPoint -> x) += MOOVE;
             return ALL_GOOD;
-        }
-        else if (txGetAsyncKeyState(W)) {
+        } else if (txGetAsyncKeyState(W)) {
             (StartPoint -> y) -= MOOVE;
             return ALL_GOOD;
-        }
-        else if (txGetAsyncKeyState(S)) {
+        
+        } else if (txGetAsyncKeyState(S)) {
             (StartPoint -> y) += MOOVE;
             return ALL_GOOD;
-        }
-        else if (txGetAsyncKeyState(E)) {
-            *mult *= 1.1;
+        
+        } else if (txGetAsyncKeyState(E)) {
+            *mult *= 1.5;
+            return ALL_GOOD;
+        
+        } else if (txGetAsyncKeyState(R)) {
+            *mult /= 1.5;
             return ALL_GOOD;
         }
-        else if (txGetAsyncKeyState(R)) {
-            *mult /= 1.1;
-            return ALL_GOOD;
-        }
-
     }
     return SMTH_BAD;
 }

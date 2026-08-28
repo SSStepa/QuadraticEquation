@@ -17,7 +17,7 @@ struct TestCase {
 void RunTests();
 WORK_RESULT RunOneTest(TestCase test);
 void TestErrorMessage(TestCase test, int nRoots, double x1, double x2);
-WORK_RESULT GetTestcase(int testNum, TestCase *test, FILE *file);
+WORK_RESULT GetTestcase(TestCase *test, FILE *file);
 void SortArgs(double *x1Exp, double *x2Exp);
 
 #endif

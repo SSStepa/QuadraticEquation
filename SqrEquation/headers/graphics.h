@@ -18,7 +18,7 @@ const int FIELD_X = 1000;
 const int FIELD_Y = 800;
 const int DELTA = 5;
 const double STEP = 0.001;
-const int MOOVE = 5;
+const int MOOVE = 20;
 
 const int TEXTHIGN = 15;
 const int TEXTMAXLEN = 50;

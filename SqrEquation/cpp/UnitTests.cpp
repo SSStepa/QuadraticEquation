@@ -10,9 +10,8 @@ void RunTests()
     FILE *file = fopen("./texts/Testcases.txt", "r");
     if (file == NULL) {
         slowPrintf(RED "NO FILE WITH TESTS\n" COLOR_RESET);
-    }
-    else {
-        while (GetTestcase(nTests, &test, file) != SMTH_BAD) {
+    } else {
+        while (GetTestcase(&test, file) != SMTH_BAD) {
             nTests++;
             if (RunOneTest(test) == ALL_GOOD) 
                 nGoodTests++;
@@ -30,12 +29,11 @@ WORK_RESULT RunOneTest(TestCase test)
     assert(isfinite(test.a));
     assert(isfinite(test.b));
     assert(isfinite(test.c));
-    assert(isfinite(test.nRootsExp));
 
     double x1 = NAN, x2 = NAN;
     int nRoots = (int) SquareFind(test.a, test.b, test.c, &x1, &x2);
 
-    if (nRoots == test.nRootsExp){
+    if (nRoots == test.nRootsExp) {
         switch (nRoots) {
             case NO_ROOTS: case INF_ROOTS:
                 if (!isnan(x1) && !isnan(x2)) {
@@ -67,7 +65,6 @@ WORK_RESULT RunOneTest(TestCase test)
     }
     TestErrorMessage(test, nRoots, x1, x2);
     return SMTH_BAD;
-
 }
 
 void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)
@@ -75,8 +72,6 @@ void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)
     assert(isfinite(test.a));
     assert(isfinite(test.b));
     assert(isfinite(test.c));
-    assert(isfinite(test.nRootsExp));
-    assert(isfinite(nRoots));
 
     slowPrintf(RED "Testing FAILED:\n" COLOR_RESET);
     slowPrintf("Input params: a = %lg b = %lg c = %lg\n\n",test.a, test.b, test.c);
@@ -105,10 +100,9 @@ void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)
     }
 }
 
-WORK_RESULT GetTestcase(int testNum, TestCase *test, FILE *file)
+WORK_RESULT GetTestcase(TestCase *test, FILE *file)
 {
-    assert(isfinite(testNum));
-    assert(test != 0);
+    assert(test != NULL);
     assert(file != NULL);
 
     if (fscanf( file, "%lg %lg %lg %d %lg %lg", 

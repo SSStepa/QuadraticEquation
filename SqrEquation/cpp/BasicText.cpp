@@ -59,5 +59,5 @@ void slowPrintf(const char *output, ...)
 
 void GetStrFromDouble(char lable[], double num)
 {
-    sprintf(lable, "%.2lg", num);
+    sprintf(lable, "%.2f", num);
 }

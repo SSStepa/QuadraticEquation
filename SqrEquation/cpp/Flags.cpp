@@ -8,6 +8,7 @@ WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char 
         int i = 0;
         for (i = 0; i < FLAGSNUM && usedFlags[i] != 0; i++)
             if (arg == usedFlags[i]) arg = 0;
+            
         usedFlags[i] = arg;
         switch (arg)
         {
