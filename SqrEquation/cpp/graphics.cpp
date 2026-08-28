@@ -20,11 +20,11 @@ void BuiltGraphic(double a, double b, double c)
 
     Point startPoint = {.x = 0, .y = 0};
 
-    SettingWindow();
+     
 
     do {
     PaintGraphic(mult, a, b, c, startPoint);
-    } while (CheckButtonIsPressed(&startPoint, &mult) == ALL_GOOD);
+    } while (CheckButtonIsPressed(&startPoint, &mult, &a, &b, &c) == ALL_GOOD);
 }
 
 void SettingWindow()
@@ -80,6 +80,13 @@ void PaintGraphic(double mult, double a, double b, double c, Point startPoint)
 
     txUpdateWindow(false);
 
+    // Coeffs
+    PutCoeff(a, 'a');
+    PutCoeff(b, 'b');
+    PutCoeff(c, 'c');
+
+    
+
     // порабола
     for(double x_pix = 0; x_pix <= FIELD_X; x_pix += STEP){
         double x = (x_pix + startPoint.x - FIELD_X/2)*mult;
@@ -93,7 +100,7 @@ void PaintGraphic(double mult, double a, double b, double c, Point startPoint)
     txUpdateWindow(false);
 }
 
-WORK_RESULT CheckButtonIsPressed(Point *StartPoint, double *mult)
+WORK_RESULT CheckButtonIsPressed(Point *StartPoint, double *mult, double *a, double *b, double *c)
 {
     assert(StartPoint != NULL);
     assert(mult != NULL);
@@ -115,13 +122,53 @@ WORK_RESULT CheckButtonIsPressed(Point *StartPoint, double *mult)
             return ALL_GOOD;
         
         } else if (txGetAsyncKeyState(E)) {
-            *mult *= 1.5;
+            *mult *= SCALE;
             return ALL_GOOD;
         
         } else if (txGetAsyncKeyState(R)) {
-            *mult /= 1.5;
+            *mult /= SCALE;
+            return ALL_GOOD;
+
+        } else if (txGetAsyncKeyState(Z)) {
+            *a -= COEFF_CHANGE;
+            return ALL_GOOD;
+
+        } else if (txGetAsyncKeyState(X)) {
+            *a += COEFF_CHANGE;
+            return ALL_GOOD;
+
+        } else if (txGetAsyncKeyState(C)) {
+            *b -= COEFF_CHANGE;
+            return ALL_GOOD;
+
+        } else if (txGetAsyncKeyState(V)) {
+            *b += COEFF_CHANGE;
+            return ALL_GOOD;
+
+        } else if (txGetAsyncKeyState(B)) {
+            *c -= COEFF_CHANGE;
+            return ALL_GOOD;
+        } else if (txGetAsyncKeyState(N)) {
+            *c += COEFF_CHANGE;
             return ALL_GOOD;
         }
+
     }
     return SMTH_BAD;
+}
+
+void PutCoeff(double a, char name) 
+{
+    char Str_coeff[MAXWORDLEN] = {};
+    Str_coeff[0] = name;
+    Str_coeff[1] = '=';
+    GetStrFromDouble(&Str_coeff[2], a);
+    int num = 1 + name - 'a';
+    txDrawText(
+        TEXTSTART, 
+        COEFFSSTART_Y + num*TEXTHIGN, 
+        2*TEXTSTART, 
+        COEFFSSTART_Y + (num+1)*TEXTHIGN, 
+        Str_coeff
+    );
 }

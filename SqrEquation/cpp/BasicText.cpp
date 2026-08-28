@@ -1,11 +1,19 @@
 #include <TXLib.h>
 #include "../headers/BasicText.h"
 
+/**
+ * @file BasicText.h
+ * @brief Provides basic text utility operations.
+ * @date 2026-08-28
+ */
+
 void ClearBuffer()
 {
     while (getchar() != '\n');
 }
-
+/**
+* @param ans arr to write line in.
+*/
 void GetLine(char *ans)
 {
     assert(ans);

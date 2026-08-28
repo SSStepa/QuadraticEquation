@@ -1,0 +1,26 @@
+var NAVTREEINDEX0 =
+{
+"_basic_text_8h.html":[1,0,0,0],
+"_basic_text_8h.html#a9977af79c5951795a9b567632364bb55":[1,0,0,0,0],
+"_basic_text_8h_source.html":[1,0,0,0],
+"_colors_list_8h_source.html":[1,0,0,2],
+"_flags_8h_source.html":[1,0,0,3],
+"_solvers_8h_source.html":[1,0,0,6],
+"_unit_tests_8h_source.html":[1,0,0,8],
+"_user_con_8h_source.html":[1,0,0,9],
+"annotated.html":[0,0],
+"classes.html":[0,1],
+"color_8h_source.html":[1,0,0,1],
+"dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html":[1,0,0],
+"files.html":[1,0],
+"globals.html":[1,1,0],
+"globals_func.html":[1,1,1],
+"graphics_8h_source.html":[1,0,0,4],
+"index.html":[],
+"main_8h_source.html":[1,0,0,5],
+"pages.html":[],
+"struct_colors.html":[0,0,0],
+"struct_point.html":[0,0,1],
+"struct_test_case.html":[0,0,2],
+"structs_8h_source.html":[1,0,0,7]
+};

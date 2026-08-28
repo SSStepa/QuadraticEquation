@@ -1,0 +1,34 @@
+\doxysection{Flags.\+h}
+\hypertarget{_flags_8h_source}{}\label{_flags_8h_source}\index{headers/Flags.h@{headers/Flags.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_FLAGS\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_FLAGS\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <getopt.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}UnitTests.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}graphics.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}structs.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ WORK\_RESULT\ FlagsCheck(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **InColor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **OutColor,\ \textcolor{keywordtype}{char}\ **fileToRead,\ \textcolor{keywordtype}{bool}\ *Graphic);}
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ ShowHelp();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ SHORTFLAGS\ =\ \textcolor{stringliteral}{"{}gtshf:"{}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ FLAGSNUM\ =\ 5;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{const}\ option\ long\_options[]\ =\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \{\textcolor{stringliteral}{"{}help"{}},\ \ \ \ \ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'h'}\},}
+\DoxyCodeLine{00021\ \ \ \ \ \{\textcolor{stringliteral}{"{}test"{}},\ \ \ \ \ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'t'}\},}
+\DoxyCodeLine{00022\ \ \ \ \ \{\textcolor{stringliteral}{"{}settings"{}},\ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'s'}\},}
+\DoxyCodeLine{00023\ \ \ \ \ \{\textcolor{stringliteral}{"{}file"{}},\ \ \ \ \ \ \ \ 1,\ NULL,\ \textcolor{charliteral}{'f'}\},}
+\DoxyCodeLine{00024\ \ \ \ \ \{\textcolor{stringliteral}{"{}graphic"{}},\ \ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'g'}\},}
+\DoxyCodeLine{00025\ \ \ \ \ \{0,\ 0,\ 0,\ 0\}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

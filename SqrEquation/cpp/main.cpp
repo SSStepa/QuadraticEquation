@@ -1,8 +1,6 @@
 #include <TXLib.h>
 #include "../headers/main.h"
 
-// ?Если ввести число и симфолы за ним, то схавает
-
 int main(int argc, char *argv[])
 {
     srand((unsigned int) time(NULL));

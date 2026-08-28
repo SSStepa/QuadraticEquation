@@ -1,0 +1,65 @@
+\doxysection{headers/\+\+Basic\+Text.h File Reference}
+\hypertarget{_basic_text_8h}{}\label{_basic_text_8h}\index{headers/BasicText.h@{headers/BasicText.h}}
+
+
+Provides basic text utility operations.  
+
+
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include $<$time.\+h$>$}\newline
+{\ttfamily \+\#include "{}structs.\+h"{}}\newline
+{\ttfamily \+\#include "{}color.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_basic_text_8h_af28fe6832f4dd3f13033e5c666525f07}\label{_basic_text_8h_af28fe6832f4dd3f13033e5c666525f07} 
+void {\bfseries Clear\+Buffer} ()
+\item 
+void \doxymbox{\hyperlink{_basic_text_8h_a9977af79c5951795a9b567632364bb55}{Get\+Line}} (char \texorpdfstring{$\ast$}{*}ans)
+\begin{DoxyCompactList}\small\item\em Getting one line from buffer. \end{DoxyCompactList}\item 
+\Hypertarget{_basic_text_8h_a35c601c63b81f492afab06b6269b7963}\label{_basic_text_8h_a35c601c63b81f492afab06b6269b7963} 
+bool {\bfseries File\+Is\+Valid} (char \texorpdfstring{$\ast$}{*}file\+Name)
+\item 
+\Hypertarget{_basic_text_8h_abcc481eed8541de54a6fb16990209b31}\label{_basic_text_8h_abcc481eed8541de54a6fb16990209b31} 
+void {\bfseries Get\+Str\+From\+Double} (char lable\+[$\,$]\+, double num)
+\item 
+\Hypertarget{_basic_text_8h_a58f49803246e313efc26ab3f4f155ae3}\label{_basic_text_8h_a58f49803246e313efc26ab3f4f155ae3} 
+void {\bfseries slow\+Printf} (const char \texorpdfstring{$\ast$}{*}output,...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_basic_text_8h_a862b36501fbf1d9cf31603acddde34a1}\label{_basic_text_8h_a862b36501fbf1d9cf31603acddde34a1} 
+const int {\bfseries MAXPRINTF} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides basic text utility operations. 
+
+\begin{DoxyDate}{Date}
+2026-\/08-\/28 
+\end{DoxyDate}
+
+
+\label{_basic_text_8h_doc-func-members}
+\Hypertarget{_basic_text_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_basic_text_8h_a9977af79c5951795a9b567632364bb55}\index{BasicText.h@{BasicText.h}!GetLine@{GetLine}}
+\index{GetLine@{GetLine}!BasicText.h@{BasicText.h}}
+\doxysubsubsection{\texorpdfstring{GetLine()}{GetLine()}}
+{\footnotesize\ttfamily \label{_basic_text_8h_a9977af79c5951795a9b567632364bb55} 
+void Get\+Line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ans}{}\end{DoxyParamCaption})}
+
+
+
+Getting one line from buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ans} & arr to write line in. \\
+\hline
+\end{DoxyParams}
