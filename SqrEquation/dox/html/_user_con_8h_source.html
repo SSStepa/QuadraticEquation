@@ -111,41 +111,58 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_user_con_8h_s
   <div class="headertitle"><div class="title">UserCon.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __USERCON__</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __USERCON__</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;ctype.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;color.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_basic_text_8h.html">BasicText.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Solvers.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;graphics.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> ShowAns(Roots NumRoots, <span class="keywordtype">double</span> x1, <span class="keywordtype">double</span> x2, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> GetUserCoeffs(<span class="keywordtype">double</span> *a, <span class="keywordtype">double</span> *b, <span class="keywordtype">double</span> *c, <span class="keyword">const</span> <span class="keywordtype">char</span> *, <span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> GetUserCoeff(<span class="keywordtype">double</span> *a, <span class="keyword">const</span> <span class="keywordtype">char</span> *, <span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>WORK_RESULT GetFileCoeffs(<span class="keywordtype">double</span> *a, <span class="keywordtype">double</span> *b, <span class="keywordtype">double</span> *c, FILE *file);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">bool</span> SolveEquaAgain(<span class="keyword">const</span> <span class="keywordtype">char</span> *InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>WORK_RESULT WorkWithFileInput(<span class="keywordtype">char</span> *fileToRead, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor, <span class="keywordtype">bool</span> Graphic);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>WORK_RESULT WorkWithUserInput(<span class="keyword">const</span> <span class="keywordtype">char</span> *InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor, <span class="keywordtype">bool</span> Graphic);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<a href="_user_con_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef __USERCON__</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define __USERCON__</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;ctype.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="structs_8h.html">structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="color_8h.html">color.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_basic_text_8h.html">BasicText.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="_solvers_8h.html">Solvers.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="graphics_8h.html">graphics.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="_user_con_8h.html#aeba50c94c183ffd67a486ea9e7652afb">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_user_con_8h.html#aeba50c94c183ffd67a486ea9e7652afb">ShowAns</a>(<a class="code hl_enumeration" href="structs_8h.html#a34f6126547cfdaeca6fb82d45a97692a">Roots</a> NumRoots, <span class="keywordtype">double</span> x1, <span class="keywordtype">double</span> x2, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_user_con_8h.html#a5261e4d4d800e3326e173c48ac70735a">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_user_con_8h.html#a5261e4d4d800e3326e173c48ac70735a">GetUserCoeffs</a>(<span class="keywordtype">double</span> *a, <span class="keywordtype">double</span> *b, <span class="keywordtype">double</span> *c, <span class="keyword">const</span> <span class="keywordtype">char</span> * InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> * OutColor);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_user_con_8h.html#a2d92ac966decc3eee11e93949bfdf3a1">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_user_con_8h.html#a2d92ac966decc3eee11e93949bfdf3a1">GetUserCoeff</a>(<span class="keywordtype">double</span> *a, <span class="keyword">const</span> <span class="keywordtype">char</span> *InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_user_con_8h.html#a129ab7542ecd1638140171237828bef0">   57</a></span><a class="code hl_enumeration" href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a> <a class="code hl_function" href="_user_con_8h.html#a129ab7542ecd1638140171237828bef0">GetFileCoeffs</a>(<span class="keywordtype">double</span> *a, <span class="keywordtype">double</span> *b, <span class="keywordtype">double</span> *c, FILE *file);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="_user_con_8h.html#ac080b53158409be080459a5a8f20c7c2">   65</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_user_con_8h.html#ac080b53158409be080459a5a8f20c7c2">SolveEquaAgain</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="_user_con_8h.html#a0349a7c5e805f207ec12d1e7d1453c1b">   74</a></span><a class="code hl_enumeration" href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a> <a class="code hl_function" href="_user_con_8h.html#a0349a7c5e805f207ec12d1e7d1453c1b">WorkWithFileInput</a>(<span class="keywordtype">char</span> *fileToRead, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor, <span class="keywordtype">bool</span> Graphic);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="_user_con_8h.html#a3c9af1639f7f771d1559da8590c1bc61">   82</a></span><a class="code hl_enumeration" href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a> <a class="code hl_function" href="_user_con_8h.html#a3c9af1639f7f771d1559da8590c1bc61">WorkWithUserInput</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> *OutColor, <span class="keywordtype">bool</span> Graphic);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif </span><span class="comment">// __USERCON__</span></div>
 <div class="ttc" id="a_basic_text_8h_html"><div class="ttname"><a href="_basic_text_8h.html">BasicText.h</a></div><div class="ttdoc">Provides basic text utility operations.</div></div>
+<div class="ttc" id="a_solvers_8h_html"><div class="ttname"><a href="_solvers_8h.html">Solvers.h</a></div><div class="ttdoc">mathimatic functions( solving equation)</div></div>
+<div class="ttc" id="a_user_con_8h_html_a0349a7c5e805f207ec12d1e7d1453c1b"><div class="ttname"><a href="_user_con_8h.html#a0349a7c5e805f207ec12d1e7d1453c1b">WorkWithFileInput</a></div><div class="ttdeci">WORK_RESULT WorkWithFileInput(char *fileToRead, const char *OutColor, bool Graphic)</div><div class="ttdoc">This function realises solving equation with info from file. meow.</div></div>
+<div class="ttc" id="a_user_con_8h_html_a129ab7542ecd1638140171237828bef0"><div class="ttname"><a href="_user_con_8h.html#a129ab7542ecd1638140171237828bef0">GetFileCoeffs</a></div><div class="ttdeci">WORK_RESULT GetFileCoeffs(double *a, double *b, double *c, FILE *file)</div><div class="ttdoc">Gets coeffs form file and runs solving.</div></div>
+<div class="ttc" id="a_user_con_8h_html_a2d92ac966decc3eee11e93949bfdf3a1"><div class="ttname"><a href="_user_con_8h.html#a2d92ac966decc3eee11e93949bfdf3a1">GetUserCoeff</a></div><div class="ttdeci">void GetUserCoeff(double *a, const char *InColor, const char *OutColor)</div><div class="ttdoc">Gets one argument from user and saves it.</div></div>
+<div class="ttc" id="a_user_con_8h_html_a3c9af1639f7f771d1559da8590c1bc61"><div class="ttname"><a href="_user_con_8h.html#a3c9af1639f7f771d1559da8590c1bc61">WorkWithUserInput</a></div><div class="ttdeci">WORK_RESULT WorkWithUserInput(const char *InColor, const char *OutColor, bool Graphic)</div><div class="ttdoc">This function fealises solving equation with info from user.</div></div>
+<div class="ttc" id="a_user_con_8h_html_a5261e4d4d800e3326e173c48ac70735a"><div class="ttname"><a href="_user_con_8h.html#a5261e4d4d800e3326e173c48ac70735a">GetUserCoeffs</a></div><div class="ttdeci">void GetUserCoeffs(double *a, double *b, double *c, const char *InColor, const char *OutColor)</div><div class="ttdoc">Gets coeffs from user and saves them.</div></div>
+<div class="ttc" id="a_user_con_8h_html_ac080b53158409be080459a5a8f20c7c2"><div class="ttname"><a href="_user_con_8h.html#ac080b53158409be080459a5a8f20c7c2">SolveEquaAgain</a></div><div class="ttdeci">bool SolveEquaAgain(const char *InColor, const char *OutColor)</div><div class="ttdoc">Function asks user if he want to solve one more equation.</div></div>
+<div class="ttc" id="a_user_con_8h_html_aeba50c94c183ffd67a486ea9e7652afb"><div class="ttname"><a href="_user_con_8h.html#aeba50c94c183ffd67a486ea9e7652afb">ShowAns</a></div><div class="ttdeci">void ShowAns(Roots NumRoots, double x1, double x2, const char *OutColor)</div><div class="ttdoc">Prints result of calculation.</div></div>
+<div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div><div class="ttdoc">Functions to work with color of output/input settings.</div></div>
+<div class="ttc" id="agraphics_8h_html"><div class="ttname"><a href="graphics_8h.html">graphics.h</a></div><div class="ttdoc">Worhing with graphics.</div></div>
+<div class="ttc" id="astructs_8h_html"><div class="ttname"><a href="structs_8h.html">structs.h</a></div><div class="ttdoc">basic consts and enums used everywhere.</div></div>
+<div class="ttc" id="astructs_8h_html_a34f6126547cfdaeca6fb82d45a97692a"><div class="ttname"><a href="structs_8h.html#a34f6126547cfdaeca6fb82d45a97692a">Roots</a></div><div class="ttdeci">Roots</div><div class="ttdoc">Amount of root equation can have.</div><div class="ttdef"><b>Definition</b> structs.h:28</div></div>
+<div class="ttc" id="astructs_8h_html_ad37f55d70d918eb9d9f5d9fb33cb966f"><div class="ttname"><a href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a></div><div class="ttdeci">WORK_RESULT</div><div class="ttdoc">Type to reduce magic numbers. Used for functioons to return.</div><div class="ttdef"><b>Definition</b> structs.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>headers</b></li><li class="navelem"><b>UserCon.h</b></li>
+    <li class="navelem"><b>headers</b></li><li class="navelem"><a href="_user_con_8h.html">UserCon.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

@@ -111,51 +111,64 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('color_8h_sourc
   <div class="headertitle"><div class="title">color.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __COLOR__</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __COLOR__</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;ColorsList.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;UserCon.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_basic_text_8h.html">BasicText.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_colors.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_colors.html">Colors</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *name;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *code;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<a href="color_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef __COLOR__</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define __COLOR__</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_colors_list_8h.html">ColorsList.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_user_con_8h.html">UserCon.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_basic_text_8h.html">BasicText.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="structs_8h.html">structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_colors.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_colors.html">Colors</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *name; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *code; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define COLORNUM 9</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">const</span> <a class="code hl_struct" href="struct_colors.html">Colors</a> color[] = {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                        {<span class="stringliteral">&quot;default&quot;</span>,   COLOR_RESET},</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                        {<span class="stringliteral">&quot;black&quot;</span>,     BLK        },</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                        {<span class="stringliteral">&quot;red&quot;</span>,       RED        },</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                        {<span class="stringliteral">&quot;green&quot;</span>,     GRN        },</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                        {<span class="stringliteral">&quot;yellow&quot;</span>,    YEL        },</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                        {<span class="stringliteral">&quot;blue&quot;</span>,      BLU        },</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                        {<span class="stringliteral">&quot;purple&quot;</span>,    MAG        },</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                        {<span class="stringliteral">&quot;turquoise&quot;</span>, CYN        },</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                        {<span class="stringliteral">&quot;white&quot;</span>,     WHT        },</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> ChangeColorSettings(<span class="keyword">const</span> <span class="keywordtype">char</span> **InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> **OutColor);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">const</span> <span class="keywordtype">char</span> *ChangeColor();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> ShowColors();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="color_8h.html#ae89345485f2054614d71e994783abc03">   31</a></span><span class="keyword">const</span> <a class="code hl_struct" href="struct_colors.html">Colors</a> <a class="code hl_variable" href="color_8h.html#ae89345485f2054614d71e994783abc03">color</a>[] = </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {<span class="stringliteral">&quot;default&quot;</span>,   COLOR_RESET},</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {<span class="stringliteral">&quot;black&quot;</span>,     BLK        },</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {<span class="stringliteral">&quot;red&quot;</span>,       RED        },</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {<span class="stringliteral">&quot;green&quot;</span>,     GRN        },</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {<span class="stringliteral">&quot;yellow&quot;</span>,    YEL        },</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {<span class="stringliteral">&quot;blue&quot;</span>,      BLU        },</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {<span class="stringliteral">&quot;purple&quot;</span>,    MAG        },</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {<span class="stringliteral">&quot;turquoise&quot;</span>, CYN        },</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {<span class="stringliteral">&quot;white&quot;</span>,     WHT        },</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {<span class="stringliteral">&quot;&quot;</span>,          0          },</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="color_8h.html#a604e94cd6e1de3e880e8bbb820140b5c">   50</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="color_8h.html#a604e94cd6e1de3e880e8bbb820140b5c">ChangeColorSettings</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> **InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> **OutColor);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="color_8h.html#ae20da06bfd018e7a853b99eae49f3b48">   56</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="color_8h.html#ae20da06bfd018e7a853b99eae49f3b48">ChangeColor</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="color_8h.html#aadc20fc6e07d9b465f3f2bbe2d714076">   61</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="color_8h.html#aadc20fc6e07d9b465f3f2bbe2d714076">ShowColors</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_basic_text_8h_html"><div class="ttname"><a href="_basic_text_8h.html">BasicText.h</a></div><div class="ttdoc">Provides basic text utility operations.</div></div>
-<div class="ttc" id="astruct_colors_html"><div class="ttname"><a href="struct_colors.html">Colors</a></div><div class="ttdef"><b>Definition</b> color.h:11</div></div>
+<div class="ttc" id="a_colors_list_8h_html"><div class="ttname"><a href="_colors_list_8h.html">ColorsList.h</a></div><div class="ttdoc">escapes for all colors.</div></div>
+<div class="ttc" id="a_user_con_8h_html"><div class="ttname"><a href="_user_con_8h.html">UserCon.h</a></div><div class="ttdoc">Functions to communicate with user.</div></div>
+<div class="ttc" id="acolor_8h_html_a604e94cd6e1de3e880e8bbb820140b5c"><div class="ttname"><a href="color_8h.html#a604e94cd6e1de3e880e8bbb820140b5c">ChangeColorSettings</a></div><div class="ttdeci">void ChangeColorSettings(const char **InColor, const char **OutColor)</div><div class="ttdoc">changes settings of collor for output and input.</div></div>
+<div class="ttc" id="acolor_8h_html_aadc20fc6e07d9b465f3f2bbe2d714076"><div class="ttname"><a href="color_8h.html#aadc20fc6e07d9b465f3f2bbe2d714076">ShowColors</a></div><div class="ttdeci">void ShowColors()</div><div class="ttdoc">shows list of all colors to choose.</div></div>
+<div class="ttc" id="acolor_8h_html_ae20da06bfd018e7a853b99eae49f3b48"><div class="ttname"><a href="color_8h.html#ae20da06bfd018e7a853b99eae49f3b48">ChangeColor</a></div><div class="ttdeci">const char * ChangeColor()</div><div class="ttdoc">checkes if user input is valid and finds color to it.</div></div>
+<div class="ttc" id="acolor_8h_html_ae89345485f2054614d71e994783abc03"><div class="ttname"><a href="color_8h.html#ae89345485f2054614d71e994783abc03">color</a></div><div class="ttdeci">const Colors color[]</div><div class="ttdoc">initialization of colors list.</div><div class="ttdef"><b>Definition</b> color.h:31</div></div>
+<div class="ttc" id="astruct_colors_html"><div class="ttname"><a href="struct_colors.html">Colors</a></div><div class="ttdef"><b>Definition</b> color.h:22</div></div>
+<div class="ttc" id="astructs_8h_html"><div class="ttname"><a href="structs_8h.html">structs.h</a></div><div class="ttdoc">basic consts and enums used everywhere.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>headers</b></li><li class="navelem"><b>color.h</b></li>
+    <li class="navelem"><b>headers</b></li><li class="navelem"><a href="color_8h.html">color.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

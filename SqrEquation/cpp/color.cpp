@@ -18,7 +18,7 @@ const char *ChangeColor()
 
     while (true) {
         GetLine(ans);
-        for (int i = 0; i < COLORNUM; i++) {
+        for (int i = 0; strcmp(color[i].name, "") != 0; i++) {
             if (strcmp(color[i].name, ans) == 0) {
                 return color[i].code;
             }
@@ -36,7 +36,7 @@ const char *ChangeColor()
 
 void ShowColors()
 {
-    for (int i = 0; i < COLORNUM; i++) {
+    for (int i = 0; strcmp(color[i].name, "") != 0; i++) {
         slowPrintf("%s", color[i].code);
         slowPrintf("%s", color[i].name);
         slowPrintf("\n");

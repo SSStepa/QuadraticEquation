@@ -1,9 +1,10 @@
 #include "../headers/Flags.h"
 
-WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic)
+WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic) 
 {
     int arg = 0;
     int usedFlags[FLAGSNUM] = {};
+
     while((arg = getopt_long(argc, argv, SHORTFLAGS, long_options, NULL)) != -1) {
         int i = 0;
         for (i = 0; i < FLAGSNUM && usedFlags[i] != 0; i++)

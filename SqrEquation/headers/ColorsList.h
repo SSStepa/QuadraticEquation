@@ -1,5 +1,10 @@
 //from https://gist.github.com/RabaDabaDoba/145049536f815903c79944599c6f952a
 
+/**
+ * @file ColorsList.h
+ * @brief escapes for all colors.
+ * @date 2026-08-29
+ */
 #ifndef __COLORLIST__
 #define __COLORLIST__
 

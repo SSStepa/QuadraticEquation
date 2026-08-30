@@ -111,32 +111,40 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_solvers_8h_so
   <div class="headertitle"><div class="title">Solvers.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __SOLVERS__</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __SOLVERS__</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
+<a href="_solvers_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef __SOLVERS__</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define __SOLVERS__</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>Roots SquareFind(</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> c,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">double</span> *x1, <span class="keywordtype">double</span> *x2</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    );</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>Roots LineFind(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> *x1);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">bool</span> IsZero(<span class="keywordtype">double</span> a);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="structs_8h.html">structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_solvers_8h.html#a9771fc635f817ae63fbda34ff22a321f">   28</a></span><a class="code hl_enumeration" href="structs_8h.html#a34f6126547cfdaeca6fb82d45a97692a">Roots</a> <a class="code hl_function" href="_solvers_8h.html#a9771fc635f817ae63fbda34ff22a321f">SquareFind</a>(</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> c,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">double</span> *x1, <span class="keywordtype">double</span> *x2</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    );</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_solvers_8h.html#ab1b8eda353b7f3cef6d53f4958dfa433">   41</a></span><a class="code hl_enumeration" href="structs_8h.html#a34f6126547cfdaeca6fb82d45a97692a">Roots</a> <a class="code hl_function" href="_solvers_8h.html#ab1b8eda353b7f3cef6d53f4958dfa433">LineFind</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> *x1);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_solvers_8h.html#a1ad918ef2fe7a690fb3b42f44c7be1f4">   50</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_solvers_8h.html#a1ad918ef2fe7a690fb3b42f44c7be1f4">IsZero</a>(<span class="keywordtype">double</span> a);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_solvers_8h_html_a1ad918ef2fe7a690fb3b42f44c7be1f4"><div class="ttname"><a href="_solvers_8h.html#a1ad918ef2fe7a690fb3b42f44c7be1f4">IsZero</a></div><div class="ttdeci">bool IsZero(double a)</div><div class="ttdoc">Checks is double equal to zero.</div></div>
+<div class="ttc" id="a_solvers_8h_html_a9771fc635f817ae63fbda34ff22a321f"><div class="ttname"><a href="_solvers_8h.html#a9771fc635f817ae63fbda34ff22a321f">SquareFind</a></div><div class="ttdeci">Roots SquareFind(double a, double b, double c, double *x1, double *x2)</div><div class="ttdoc">Solves quadratic equation ax^2+bx+c = 0. if liner - coals LineFind.</div></div>
+<div class="ttc" id="a_solvers_8h_html_ab1b8eda353b7f3cef6d53f4958dfa433"><div class="ttname"><a href="_solvers_8h.html#ab1b8eda353b7f3cef6d53f4958dfa433">LineFind</a></div><div class="ttdeci">Roots LineFind(double a, double b, double *x1)</div><div class="ttdoc">Solves liner equation ax = b.</div></div>
+<div class="ttc" id="astructs_8h_html"><div class="ttname"><a href="structs_8h.html">structs.h</a></div><div class="ttdoc">basic consts and enums used everywhere.</div></div>
+<div class="ttc" id="astructs_8h_html_a34f6126547cfdaeca6fb82d45a97692a"><div class="ttname"><a href="structs_8h.html#a34f6126547cfdaeca6fb82d45a97692a">Roots</a></div><div class="ttdeci">Roots</div><div class="ttdoc">Amount of root equation can have.</div><div class="ttdef"><b>Definition</b> structs.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>headers</b></li><li class="navelem"><b>Solvers.h</b></li>
+    <li class="navelem"><b>headers</b></li><li class="navelem"><a href="_solvers_8h.html">Solvers.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

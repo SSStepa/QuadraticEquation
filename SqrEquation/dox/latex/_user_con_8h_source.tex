@@ -1,33 +1,37 @@
 \doxysection{User\+Con.\+h}
 \hypertarget{_user_con_8h_source}{}\label{_user_con_8h_source}\index{headers/UserCon.h@{headers/UserCon.h}}
-
+\doxymbox{\hyperlink{_user_con_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_USERCON\_\_}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_USERCON\_\_}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <assert.h>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <math.h>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}structs.h"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}color.h"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_basic_text_8h}{BasicText.h}}"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Solvers.h"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}graphics.h"{}}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ ShowAns(Roots\ NumRoots,\ \textcolor{keywordtype}{double}\ x1,\ \textcolor{keywordtype}{double}\ x2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor);}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ GetUserCoeffs(\textcolor{keywordtype}{double}\ *a,\ \textcolor{keywordtype}{double}\ *b,\ \textcolor{keywordtype}{double}\ *c,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *);}
-\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ GetUserCoeff(\textcolor{keywordtype}{double}\ *a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *);}
-\DoxyCodeLine{00020\ WORK\_RESULT\ GetFileCoeffs(\textcolor{keywordtype}{double}\ *a,\ \textcolor{keywordtype}{double}\ *b,\ \textcolor{keywordtype}{double}\ *c,\ FILE\ *file);}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keywordtype}{bool}\ SolveEquaAgain(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *InColor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor);}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ WORK\_RESULT\ WorkWithFileInput(\textcolor{keywordtype}{char}\ *fileToRead,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor,\ \textcolor{keywordtype}{bool}\ Graphic);}
-\DoxyCodeLine{00025\ WORK\_RESULT\ WorkWithUserInput(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *InColor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor,\ \textcolor{keywordtype}{bool}\ Graphic);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ \_\_USERCON\_\_}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ \_\_USERCON\_\_}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{color_8h}{color.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_basic_text_8h}{BasicText.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_solvers_8h}{Solvers.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{graphics_8h}{graphics.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_user_con_8h_aeba50c94c183ffd67a486ea9e7652afb}{ShowAns}}(\doxymbox{\hyperlink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}}\ NumRoots,\ \textcolor{keywordtype}{double}\ x1,\ \textcolor{keywordtype}{double}\ x2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_user_con_8h_a5261e4d4d800e3326e173c48ac70735a}{GetUserCoeffs}}(\textcolor{keywordtype}{double}\ *a,\ \textcolor{keywordtype}{double}\ *b,\ \textcolor{keywordtype}{double}\ *c,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ InColor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ OutColor);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_user_con_8h_a2d92ac966decc3eee11e93949bfdf3a1}{GetUserCoeff}}(\textcolor{keywordtype}{double}\ *a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *InColor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\_RESULT}}\ \doxymbox{\hyperlink{_user_con_8h_a129ab7542ecd1638140171237828bef0}{GetFileCoeffs}}(\textcolor{keywordtype}{double}\ *a,\ \textcolor{keywordtype}{double}\ *b,\ \textcolor{keywordtype}{double}\ *c,\ FILE\ *file);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{_user_con_8h_ac080b53158409be080459a5a8f20c7c2}{SolveEquaAgain}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *InColor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\_RESULT}}\ \doxymbox{\hyperlink{_user_con_8h_a0349a7c5e805f207ec12d1e7d1453c1b}{WorkWithFileInput}}(\textcolor{keywordtype}{char}\ *fileToRead,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor,\ \textcolor{keywordtype}{bool}\ Graphic);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\_RESULT}}\ \doxymbox{\hyperlink{_user_con_8h_a3c9af1639f7f771d1559da8590c1bc61}{WorkWithUserInput}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *InColor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *OutColor,\ \textcolor{keywordtype}{bool}\ Graphic);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_USERCON\_\_}}
 
 \end{DoxyCode}

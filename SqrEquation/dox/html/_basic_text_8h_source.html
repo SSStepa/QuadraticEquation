@@ -117,26 +117,37 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_basic_text_8h
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define __BASICTEXT__</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;color.h&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> ClearBuffer();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_basic_text_8h.html#a9977af79c5951795a9b567632364bb55">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_basic_text_8h.html#a9977af79c5951795a9b567632364bb55">GetLine</a>(<span class="keywordtype">char</span> *ans);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">bool</span> FileIsValid(<span class="keywordtype">char</span> *fileName);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> GetStrFromDouble(<span class="keywordtype">char</span> lable[], <span class="keywordtype">double</span> num);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> slowPrintf(<span class="keyword">const</span> <span class="keywordtype">char</span> *output, ...);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">const</span> <span class="keywordtype">int</span> MAXPRINTF = 100;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="structs_8h.html">structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="color_8h.html">color.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_basic_text_8h.html#af28fe6832f4dd3f13033e5c666525f07">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_basic_text_8h.html#af28fe6832f4dd3f13033e5c666525f07">ClearBuffer</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_basic_text_8h.html#a9977af79c5951795a9b567632364bb55">   30</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_basic_text_8h.html#a9977af79c5951795a9b567632364bb55">GetLine</a>(<span class="keywordtype">char</span> *ans);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_basic_text_8h.html#a35c601c63b81f492afab06b6269b7963">   37</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_basic_text_8h.html#a35c601c63b81f492afab06b6269b7963">FileIsValid</a>(<span class="keywordtype">char</span> *fileName);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_basic_text_8h.html#abcc481eed8541de54a6fb16990209b31">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_basic_text_8h.html#abcc481eed8541de54a6fb16990209b31">GetStrFromDouble</a>(<span class="keywordtype">char</span> lable[], <span class="keywordtype">double</span> num);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="_basic_text_8h.html#a4434b8f03ff31683e1409bd274f6f363">   51</a></span><a class="code hl_function" href="_basic_text_8h.html#a4434b8f03ff31683e1409bd274f6f363">__attribute__</a>((format(__printf__, 1, 2))) <span class="comment">// TODO: read what this line does</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>void slowPrintf(const <span class="keywordtype">char</span> *output, ...);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_basic_text_8h.html#a862b36501fbf1d9cf31603acddde34a1">   57</a></span>const <span class="keywordtype">int</span> <a class="code hl_variable" href="_basic_text_8h.html#a862b36501fbf1d9cf31603acddde34a1">MAXPRINTF</a> = 100;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_basic_text_8h_html_a35c601c63b81f492afab06b6269b7963"><div class="ttname"><a href="_basic_text_8h.html#a35c601c63b81f492afab06b6269b7963">FileIsValid</a></div><div class="ttdeci">bool FileIsValid(char *fileName)</div><div class="ttdoc">tryes to open the file and check it is valid</div></div>
+<div class="ttc" id="a_basic_text_8h_html_a4434b8f03ff31683e1409bd274f6f363"><div class="ttname"><a href="_basic_text_8h.html#a4434b8f03ff31683e1409bd274f6f363">__attribute__</a></div><div class="ttdeci">__attribute__((format(__printf__, 1, 2))) void slowPrintf(const char *output</div><div class="ttdoc">helps you to write symbols slowly(almost like AI).</div></div>
+<div class="ttc" id="a_basic_text_8h_html_a862b36501fbf1d9cf31603acddde34a1"><div class="ttname"><a href="_basic_text_8h.html#a862b36501fbf1d9cf31603acddde34a1">MAXPRINTF</a></div><div class="ttdeci">const int MAXPRINTF</div><div class="ttdoc">const to describe max printf length.</div><div class="ttdef"><b>Definition</b> BasicText.h:57</div></div>
 <div class="ttc" id="a_basic_text_8h_html_a9977af79c5951795a9b567632364bb55"><div class="ttname"><a href="_basic_text_8h.html#a9977af79c5951795a9b567632364bb55">GetLine</a></div><div class="ttdeci">void GetLine(char *ans)</div><div class="ttdoc">Getting one line from buffer.</div></div>
+<div class="ttc" id="a_basic_text_8h_html_abcc481eed8541de54a6fb16990209b31"><div class="ttname"><a href="_basic_text_8h.html#abcc481eed8541de54a6fb16990209b31">GetStrFromDouble</a></div><div class="ttdeci">void GetStrFromDouble(char lable[], double num)</div><div class="ttdoc">changes double to str(rewrites to arr).</div></div>
+<div class="ttc" id="a_basic_text_8h_html_af28fe6832f4dd3f13033e5c666525f07"><div class="ttname"><a href="_basic_text_8h.html#af28fe6832f4dd3f13033e5c666525f07">ClearBuffer</a></div><div class="ttdeci">void ClearBuffer()</div><div class="ttdoc">Cleans buffer.</div></div>
+<div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div><div class="ttdoc">Functions to work with color of output/input settings.</div></div>
+<div class="ttc" id="astructs_8h_html"><div class="ttname"><a href="structs_8h.html">structs.h</a></div><div class="ttdoc">basic consts and enums used everywhere.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

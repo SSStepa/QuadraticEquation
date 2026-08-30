@@ -1,19 +1,13 @@
 #include <TXLib.h>
 #include "../headers/BasicText.h"
 
-/**
- * @file BasicText.h
- * @brief Provides basic text utility operations.
- * @date 2026-08-28
- */
+
 
 void ClearBuffer()
 {
-    while (getchar() != '\n');
+    while (getchar() != '\n' || getchar() != EOF);
 }
-/**
-* @param ans arr to write line in.
-*/
+
 void GetLine(char *ans)
 {
     assert(ans);
@@ -26,7 +20,6 @@ void GetLine(char *ans)
     if (ans[i] != '\n')
         ClearBuffer();
     ans[i] = '\0';
-
 }
 
 bool FileIsValid(char *fileName)
@@ -50,12 +43,13 @@ void slowPrintf(const char *output, ...)
     char buf[MAXPRINTF] = {};
     vsprintf(buf, output, args);
 
+    // WHAT THE FUCK IS THIS??
     for (int i = 0; buf[i] != '\0'; i++) {
         int port = rand() % 4 + 3;
         for (int j = 0; j < port; j++) {
             putchar(buf[i]);
             txSleep(20);
-            
+
             i++;
         }
         i--;

@@ -1,0 +1,116 @@
+\doxysection{headers/\+\+Unit\+Tests.h File Reference}
+\hypertarget{_unit_tests_8h}{}\label{_unit_tests_8h}\index{headers/UnitTests.h@{headers/UnitTests.h}}
+
+
+Unit tests.  
+
+
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include "{}Solvers.\+h"{}}\newline
+{\ttfamily \+\#include "{}structs.\+h"{}}\newline
+{\ttfamily \+\#include "{}color.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_test_case}{Test\+Case}}
+\begin{DoxyCompactList}\small\item\em Struct to describe one testcase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_unit_tests_8h_a42dac6ca34e006a4c6eccfd7842df376}\label{_unit_tests_8h_a42dac6ca34e006a4c6eccfd7842df376} 
+void {\bfseries Run\+Tests} ()
+\begin{DoxyCompactList}\small\item\em pripares for running test and start cheching. ther prints result \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} \doxymbox{\hyperlink{_unit_tests_8h_a3ce06d2e19da1a9739bd144b3804a6ae}{Run\+One\+Test}} (\doxymbox{\hyperlink{struct_test_case}{Test\+Case}} test)
+\begin{DoxyCompactList}\small\item\em runs one test \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_unit_tests_8h_a20c4ac617d03c566f6cdd3d87c34ee0f}{Test\+Error\+Message}} (\doxymbox{\hyperlink{struct_test_case}{Test\+Case}} test, int n\+Roots, double x1, double x2)
+\begin{DoxyCompactList}\small\item\em Shows error message in case test and function are different. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_test_case}{Test\+Case}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{_unit_tests_8h_a9e267135abdd6d21b2ce3ac757861972}{Get\+Testcases}} (int \texorpdfstring{$\ast$}{*}n\+Tests, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Reads tests from file. unpacks them to have readeble format( ot list of structs Test\+Case). \end{DoxyCompactList}\item 
+\Hypertarget{_unit_tests_8h_a5548f1324da643c5d306475eef55a23b}\label{_unit_tests_8h_a5548f1324da643c5d306475eef55a23b} 
+void {\bfseries Sort\+Args} (double \texorpdfstring{$\ast$}{*}x1\+Exp, double \texorpdfstring{$\ast$}{*}x2\+Exp)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_unit_tests_8h_a76ac9362c63255356481a8f10962787a}\label{_unit_tests_8h_a76ac9362c63255356481a8f10962787a} 
+const int {\bfseries STARTMEMORY} = 50
+\begin{DoxyCompactList}\small\item\em lenght of the dynamic memory arr at the begining. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests. 
+
+\begin{DoxyDate}{Date}
+2026-\/08-\/29 
+\end{DoxyDate}
+
+
+\label{_unit_tests_8h_doc-func-members}
+\Hypertarget{_unit_tests_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_unit_tests_8h_a9e267135abdd6d21b2ce3ac757861972}\index{UnitTests.h@{UnitTests.h}!GetTestcases@{GetTestcases}}
+\index{GetTestcases@{GetTestcases}!UnitTests.h@{UnitTests.h}}
+\doxysubsubsection{\texorpdfstring{GetTestcases()}{GetTestcases()}}
+{\footnotesize\ttfamily \label{_unit_tests_8h_a9e267135abdd6d21b2ce3ac757861972} 
+\doxymbox{\hyperlink{struct_test_case}{Test\+Case}} \texorpdfstring{$\ast$}{*} Get\+Testcases (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{n\+Tests}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Reads tests from file. unpacks them to have readeble format( ot list of structs Test\+Case). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em n\+Tests} & Total nummber of tests in file. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em file} & File to get testcases from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to list if \doxylink{struct_test_case}{Test\+Case} structs with data. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_test_case}{Test\+Case} 
+\end{DoxySeeAlso}
+\Hypertarget{_unit_tests_8h_a3ce06d2e19da1a9739bd144b3804a6ae}\index{UnitTests.h@{UnitTests.h}!RunOneTest@{RunOneTest}}
+\index{RunOneTest@{RunOneTest}!UnitTests.h@{UnitTests.h}}
+\doxysubsubsection{\texorpdfstring{RunOneTest()}{RunOneTest()}}
+{\footnotesize\ttfamily \label{_unit_tests_8h_a3ce06d2e19da1a9739bd144b3804a6ae} 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} Run\+One\+Test (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_test_case}{Test\+Case}}}]{test}{}\end{DoxyParamCaption})}
+
+
+
+runs one test 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em test} & struct with testcase info \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ALL\+\_\+\+GOOD if test is right, SMTH\+\_\+\+BAD otherwise 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT} 
+\end{DoxySeeAlso}
+\Hypertarget{_unit_tests_8h_a20c4ac617d03c566f6cdd3d87c34ee0f}\index{UnitTests.h@{UnitTests.h}!TestErrorMessage@{TestErrorMessage}}
+\index{TestErrorMessage@{TestErrorMessage}!UnitTests.h@{UnitTests.h}}
+\doxysubsubsection{\texorpdfstring{TestErrorMessage()}{TestErrorMessage()}}
+{\footnotesize\ttfamily \label{_unit_tests_8h_a20c4ac617d03c566f6cdd3d87c34ee0f} 
+void Test\+Error\+Message (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_test_case}{Test\+Case}}}]{test}{, }\item[{int}]{n\+Roots}{, }\item[{double}]{x1}{, }\item[{double}]{x2}{}\end{DoxyParamCaption})}
+
+
+
+Shows error message in case test and function are different. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em test} & Struct with expected values. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em n\+Roots} & Number of roots we got. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em x1} & first root we got. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em x2} & second root we got. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,199 @@
+\doxysection{headers/\+\+User\+Con.h File Reference}
+\hypertarget{_user_con_8h}{}\label{_user_con_8h}\index{headers/UserCon.h@{headers/UserCon.h}}
+
+
+Functions to communicate with user.  
+
+
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include $<$math.\+h$>$}\newline
+{\ttfamily \+\#include $<$ctype.\+h$>$}\newline
+{\ttfamily \+\#include "{}structs.\+h"{}}\newline
+{\ttfamily \+\#include "{}color.\+h"{}}\newline
+{\ttfamily \+\#include "{}Basic\+Text.\+h"{}}\newline
+{\ttfamily \+\#include "{}Solvers.\+h"{}}\newline
+{\ttfamily \+\#include "{}graphics.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{_user_con_8h_aeba50c94c183ffd67a486ea9e7652afb}{Show\+Ans}} (\doxymbox{\hyperlink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}} Num\+Roots, double x1, double x2, const char \texorpdfstring{$\ast$}{*}Out\+Color)
+\begin{DoxyCompactList}\small\item\em Prints result of calculation. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_user_con_8h_a5261e4d4d800e3326e173c48ac70735a}{Get\+User\+Coeffs}} (double \texorpdfstring{$\ast$}{*}a, double \texorpdfstring{$\ast$}{*}b, double \texorpdfstring{$\ast$}{*}c, const char \texorpdfstring{$\ast$}{*}In\+Color, const char \texorpdfstring{$\ast$}{*}Out\+Color)
+\begin{DoxyCompactList}\small\item\em Gets coeffs from user and saves them. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_user_con_8h_a2d92ac966decc3eee11e93949bfdf3a1}{Get\+User\+Coeff}} (double \texorpdfstring{$\ast$}{*}a, const char \texorpdfstring{$\ast$}{*}In\+Color, const char \texorpdfstring{$\ast$}{*}Out\+Color)
+\begin{DoxyCompactList}\small\item\em Gets one argument from user and saves it. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} \doxymbox{\hyperlink{_user_con_8h_a129ab7542ecd1638140171237828bef0}{Get\+File\+Coeffs}} (double \texorpdfstring{$\ast$}{*}a, double \texorpdfstring{$\ast$}{*}b, double \texorpdfstring{$\ast$}{*}c, FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Gets coeffs form file and runs solving. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{_user_con_8h_ac080b53158409be080459a5a8f20c7c2}{Solve\+Equa\+Again}} (const char \texorpdfstring{$\ast$}{*}In\+Color, const char \texorpdfstring{$\ast$}{*}Out\+Color)
+\begin{DoxyCompactList}\small\item\em Function asks user if he want to solve one more equation. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} \doxymbox{\hyperlink{_user_con_8h_a0349a7c5e805f207ec12d1e7d1453c1b}{Work\+With\+File\+Input}} (char \texorpdfstring{$\ast$}{*}file\+To\+Read, const char \texorpdfstring{$\ast$}{*}Out\+Color, bool Graphic)
+\begin{DoxyCompactList}\small\item\em This function realises solving equation with info from file. meow. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} \doxymbox{\hyperlink{_user_con_8h_a3c9af1639f7f771d1559da8590c1bc61}{Work\+With\+User\+Input}} (const char \texorpdfstring{$\ast$}{*}In\+Color, const char \texorpdfstring{$\ast$}{*}Out\+Color, bool Graphic)
+\begin{DoxyCompactList}\small\item\em This function fealises solving equation with info from user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to communicate with user. 
+
+\begin{DoxyDate}{Date}
+2026-\/08-\/29 
+\end{DoxyDate}
+
+
+\label{_user_con_8h_doc-func-members}
+\Hypertarget{_user_con_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_user_con_8h_a129ab7542ecd1638140171237828bef0}\index{UserCon.h@{UserCon.h}!GetFileCoeffs@{GetFileCoeffs}}
+\index{GetFileCoeffs@{GetFileCoeffs}!UserCon.h@{UserCon.h}}
+\doxysubsubsection{\texorpdfstring{GetFileCoeffs()}{GetFileCoeffs()}}
+{\footnotesize\ttfamily \label{_user_con_8h_a129ab7542ecd1638140171237828bef0} 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} Get\+File\+Coeffs (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{c}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Gets coeffs form file and runs solving. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em a} & a-\/coeff. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em b} & b-\/coeff. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em c} & c-\/coeff. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em file} & file to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ALL\+\_\+\+GOOD if file read with no errors. If something bad happends return SMTH\+\_\+\+BAD. 
+\end{DoxyReturn}
+\Hypertarget{_user_con_8h_a2d92ac966decc3eee11e93949bfdf3a1}\index{UserCon.h@{UserCon.h}!GetUserCoeff@{GetUserCoeff}}
+\index{GetUserCoeff@{GetUserCoeff}!UserCon.h@{UserCon.h}}
+\doxysubsubsection{\texorpdfstring{GetUserCoeff()}{GetUserCoeff()}}
+{\footnotesize\ttfamily \label{_user_con_8h_a2d92ac966decc3eee11e93949bfdf3a1} 
+void Get\+User\+Coeff (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{In\+Color}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{Out\+Color}{}\end{DoxyParamCaption})}
+
+
+
+Gets one argument from user and saves it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em a} & one coeff to be written in. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em In\+Color} & Color user input will be shown. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Out\+Color} & Color output will be shown. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_user_con_8h_a5261e4d4d800e3326e173c48ac70735a}\index{UserCon.h@{UserCon.h}!GetUserCoeffs@{GetUserCoeffs}}
+\index{GetUserCoeffs@{GetUserCoeffs}!UserCon.h@{UserCon.h}}
+\doxysubsubsection{\texorpdfstring{GetUserCoeffs()}{GetUserCoeffs()}}
+{\footnotesize\ttfamily \label{_user_con_8h_a5261e4d4d800e3326e173c48ac70735a} 
+void Get\+User\+Coeffs (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{c}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{In\+Color}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{Out\+Color}{}\end{DoxyParamCaption})}
+
+
+
+Gets coeffs from user and saves them. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em a} & a-\/coeff. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em b} & b-\/coeff. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em c} & c-\/coeff. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em In\+Color} & Color user input will be shown. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Out\+Color} & Color output will be shown. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_user_con_8h_aeba50c94c183ffd67a486ea9e7652afb}\index{UserCon.h@{UserCon.h}!ShowAns@{ShowAns}}
+\index{ShowAns@{ShowAns}!UserCon.h@{UserCon.h}}
+\doxysubsubsection{\texorpdfstring{ShowAns()}{ShowAns()}}
+{\footnotesize\ttfamily \label{_user_con_8h_aeba50c94c183ffd67a486ea9e7652afb} 
+void Show\+Ans (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}}}]{Num\+Roots}{, }\item[{double}]{x1}{, }\item[{double}]{x2}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{Out\+Color}{}\end{DoxyParamCaption})}
+
+
+
+Prints result of calculation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em Num\+Roots} & Number of roots equation has. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em x1} & First root of equation. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em x2} & Second root of equation. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Out\+Color} & color text will be printed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}. 
+\end{DoxySeeAlso}
+\Hypertarget{_user_con_8h_ac080b53158409be080459a5a8f20c7c2}\index{UserCon.h@{UserCon.h}!SolveEquaAgain@{SolveEquaAgain}}
+\index{SolveEquaAgain@{SolveEquaAgain}!UserCon.h@{UserCon.h}}
+\doxysubsubsection{\texorpdfstring{SolveEquaAgain()}{SolveEquaAgain()}}
+{\footnotesize\ttfamily \label{_user_con_8h_ac080b53158409be080459a5a8f20c7c2} 
+bool Solve\+Equa\+Again (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{In\+Color}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{Out\+Color}{}\end{DoxyParamCaption})}
+
+
+
+Function asks user if he want to solve one more equation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em In\+Color} & Color users input will be shown. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Out\+Color} & Color output will be shown. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if user wants to continue, false otherwise. т-\/т 
+\end{DoxyReturn}
+\Hypertarget{_user_con_8h_a0349a7c5e805f207ec12d1e7d1453c1b}\index{UserCon.h@{UserCon.h}!WorkWithFileInput@{WorkWithFileInput}}
+\index{WorkWithFileInput@{WorkWithFileInput}!UserCon.h@{UserCon.h}}
+\doxysubsubsection{\texorpdfstring{WorkWithFileInput()}{WorkWithFileInput()}}
+{\footnotesize\ttfamily \label{_user_con_8h_a0349a7c5e805f207ec12d1e7d1453c1b} 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} Work\+With\+File\+Input (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+To\+Read}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{Out\+Color}{, }\item[{bool}]{Graphic}{}\end{DoxyParamCaption})}
+
+
+
+This function realises solving equation with info from file. meow. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em file\+To\+Read} & name of file to read from. xD \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Out\+Color} & Color output will be shown. :( \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Graphic} & true if graphic is needed, false otherwise. ;) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+When proccess finished error .\_. 
+\end{DoxyReturn}
+\Hypertarget{_user_con_8h_a3c9af1639f7f771d1559da8590c1bc61}\index{UserCon.h@{UserCon.h}!WorkWithUserInput@{WorkWithUserInput}}
+\index{WorkWithUserInput@{WorkWithUserInput}!UserCon.h@{UserCon.h}}
+\doxysubsubsection{\texorpdfstring{WorkWithUserInput()}{WorkWithUserInput()}}
+{\footnotesize\ttfamily \label{_user_con_8h_a3c9af1639f7f771d1559da8590c1bc61} 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} Work\+With\+User\+Input (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{In\+Color}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{Out\+Color}{, }\item[{bool}]{Graphic}{}\end{DoxyParamCaption})}
+
+
+
+This function fealises solving equation with info from user. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em In\+Color} & Color output will be shown. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Out\+Color} & Color user input will be shown. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Graphic} & True if graphic is needed, false otherwise. \\
+\hline
+\end{DoxyParams}

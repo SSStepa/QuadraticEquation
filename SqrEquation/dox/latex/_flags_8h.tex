@@ -1,0 +1,107 @@
+\doxysection{headers/\+\+Flags.h File Reference}
+\hypertarget{_flags_8h}{}\label{_flags_8h}\index{headers/Flags.h@{headers/Flags.h}}
+
+
+working with console input flags.  
+
+
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$unistd.\+h$>$}\newline
+{\ttfamily \+\#include $<$getopt.\+h$>$}\newline
+{\ttfamily \+\#include "{}Unit\+Tests.\+h"{}}\newline
+{\ttfamily \+\#include "{}graphics.\+h"{}}\newline
+{\ttfamily \+\#include "{}structs.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} \doxymbox{\hyperlink{_flags_8h_aa3179e8b6c5c77043b2228db6cdb9dbe}{Flags\+Check}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}In\+Color, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Out\+Color, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file\+To\+Read, bool \texorpdfstring{$\ast$}{*}Graphic)
+\begin{DoxyCompactList}\small\item\em checks flags and runs functions according to them \end{DoxyCompactList}\item 
+\Hypertarget{_flags_8h_ab180efaa64feefae6244d2c4b4eb7809}\label{_flags_8h_ab180efaa64feefae6244d2c4b4eb7809} 
+void {\bfseries Show\+Help} ()
+\begin{DoxyCompactList}\small\item\em prints help about flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_flags_8h_ad2447a235cbc0eef77bf64d658cd33a6}\label{_flags_8h_ad2447a235cbc0eef77bf64d658cd33a6} 
+const char \texorpdfstring{$\ast$}{*}const {\bfseries SHORTFLAGS} = "{}gtshf:\+"{}
+\begin{DoxyCompactList}\small\item\em list of short flags name, needed to getopt function. \end{DoxyCompactList}\item 
+\Hypertarget{_flags_8h_a42bba208730a15cb2a8238aab2e345f2}\label{_flags_8h_a42bba208730a15cb2a8238aab2e345f2} 
+const int {\bfseries FLAGSNUM} = 5
+\begin{DoxyCompactList}\small\item\em amount of all flags. \end{DoxyCompactList}\item 
+const option \doxymbox{\hyperlink{_flags_8h_a3ca8454445b0739f5894088d4203319b}{long\+\_\+options}} \+[$\,$]
+\begin{DoxyCompactList}\small\item\em special arr to getopt\+\_\+long usage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+working with console input flags. 
+
+\begin{DoxyDate}{Date}
+2026-\/08-\/29 
+\end{DoxyDate}
+
+
+\label{_flags_8h_doc-func-members}
+\Hypertarget{_flags_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_flags_8h_aa3179e8b6c5c77043b2228db6cdb9dbe}\index{Flags.h@{Flags.h}!FlagsCheck@{FlagsCheck}}
+\index{FlagsCheck@{FlagsCheck}!Flags.h@{Flags.h}}
+\doxysubsubsection{\texorpdfstring{FlagsCheck()}{FlagsCheck()}}
+{\footnotesize\ttfamily \label{_flags_8h_aa3179e8b6c5c77043b2228db6cdb9dbe} 
+\doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\+\_\+\+RESULT}} Flags\+Check (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$], }\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{In\+Color}{, }\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{Out\+Color}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file\+To\+Read}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{Graphic}{}\end{DoxyParamCaption})}
+
+
+
+checks flags and runs functions according to them 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em argc} & main arg, number of comand line args. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em argv} & main arg, arr of comand line args. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em In\+Color} & pointer to color of input name. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em Out\+Color} & pointer to color of output name. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em file\+To\+Read} & pointer to file from which we will read data. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em Graphic} & info is graphic is needed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+file\+To\+Read points to NULL if there is no file.
+\end{DoxyNote}
+flags are checked with getopt\+\_\+long. if there is uncatched flag error will appear. works with short form(ex: -\/s -\/l === -\/sl). \begin{DoxyReturn}{Returns}
+if main should countinue working returns ALL\+\_\+\+GOOD, SMTH\+\_\+\+BAD oterwise. 
+\end{DoxyReturn}
+
+
+\label{_flags_8h_doc-var-members}
+\Hypertarget{_flags_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{_flags_8h_a3ca8454445b0739f5894088d4203319b}\index{Flags.h@{Flags.h}!long\_options@{long\_options}}
+\index{long\_options@{long\_options}!Flags.h@{Flags.h}}
+\doxysubsubsection{\texorpdfstring{long\_options}{long\_options}}
+{\footnotesize\ttfamily \label{_flags_8h_a3ca8454445b0739f5894088d4203319b} 
+const option long\+\_\+options\+[$\,$]}
+
+{\bfseries Initial value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}help"{}},\ \ \ \ \ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'h'}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}test"{}},\ \ \ \ \ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'t'}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}settings"{}},\ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'s'}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}file"{}},\ \ \ \ \ \ \ \ 1,\ NULL,\ \textcolor{charliteral}{'f'}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}graphic"{}},\ \ \ \ \ 0,\ NULL,\ \textcolor{charliteral}{'g'}\},}
+\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 0\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+special arr to getopt\+\_\+long usage. 
+
+each element is struct option which: full text, args to flag, varible to write in, return value. \begin{DoxyWarning}{Warning}
+last element must be \{0, 0, 0, 0\}. 
+\end{DoxyWarning}

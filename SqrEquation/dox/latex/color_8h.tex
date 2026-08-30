@@ -1,0 +1,110 @@
+\doxysection{headers/\+color.h File Reference}
+\hypertarget{color_8h}{}\label{color_8h}\index{headers/color.h@{headers/color.h}}
+
+
+Functions to work with color of output/\+input settings.  
+
+
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include "{}Colors\+List.\+h"{}}\newline
+{\ttfamily \+\#include "{}User\+Con.\+h"{}}\newline
+{\ttfamily \+\#include "{}Basic\+Text.\+h"{}}\newline
+{\ttfamily \+\#include "{}structs.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_colors}{Colors}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{color_8h_a604e94cd6e1de3e880e8bbb820140b5c}{Change\+Color\+Settings}} (const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}In\+Color, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Out\+Color)
+\begin{DoxyCompactList}\small\item\em changes settings of collor for output and input. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{color_8h_ae20da06bfd018e7a853b99eae49f3b48}{Change\+Color}} ()
+\begin{DoxyCompactList}\small\item\em checkes if user input is valid and finds color to it. \end{DoxyCompactList}\item 
+\Hypertarget{color_8h_aadc20fc6e07d9b465f3f2bbe2d714076}\label{color_8h_aadc20fc6e07d9b465f3f2bbe2d714076} 
+void {\bfseries Show\+Colors} ()
+\begin{DoxyCompactList}\small\item\em shows list of all colors to choose. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \doxymbox{\hyperlink{struct_colors}{Colors}} \doxymbox{\hyperlink{color_8h_ae89345485f2054614d71e994783abc03}{color}} \+[$\,$]
+\begin{DoxyCompactList}\small\item\em initialization of colors list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to work with color of output/\+input settings. 
+
+\begin{DoxyDate}{Date}
+2006-\/08-\/29 
+\end{DoxyDate}
+
+
+\label{color_8h_doc-func-members}
+\Hypertarget{color_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{color_8h_ae20da06bfd018e7a853b99eae49f3b48}\index{color.h@{color.h}!ChangeColor@{ChangeColor}}
+\index{ChangeColor@{ChangeColor}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{ChangeColor()}{ChangeColor()}}
+{\footnotesize\ttfamily \label{color_8h_ae20da06bfd018e7a853b99eae49f3b48} 
+const char \texorpdfstring{$\ast$}{*} Change\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+checkes if user input is valid and finds color to it. 
+
+\begin{DoxyReturn}{Returns}
+line of color escape code. 
+\end{DoxyReturn}
+\Hypertarget{color_8h_a604e94cd6e1de3e880e8bbb820140b5c}\index{color.h@{color.h}!ChangeColorSettings@{ChangeColorSettings}}
+\index{ChangeColorSettings@{ChangeColorSettings}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{ChangeColorSettings()}{ChangeColorSettings()}}
+{\footnotesize\ttfamily \label{color_8h_a604e94cd6e1de3e880e8bbb820140b5c} 
+void Change\+Color\+Settings (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{In\+Color}{, }\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{Out\+Color}{}\end{DoxyParamCaption})}
+
+
+
+changes settings of collor for output and input. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em In\+Color} & color of input. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em Out\+Color} & color of output. \\
+\hline
+\end{DoxyParams}
+
+
+\label{color_8h_doc-var-members}
+\Hypertarget{color_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{color_8h_ae89345485f2054614d71e994783abc03}\index{color.h@{color.h}!color@{color}}
+\index{color@{color}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{color_8h_ae89345485f2054614d71e994783abc03} 
+const \doxymbox{\hyperlink{struct_colors}{Colors}} color\+[$\,$]}
+
+{\bfseries Initial value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ }
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}default"{}},\ \ \ COLOR\_RESET\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}black"{}},\ \ \ \ \ BLK\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}red"{}},\ \ \ \ \ \ \ RED\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}green"{}},\ \ \ \ \ GRN\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}yellow"{}},\ \ \ \ YEL\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}blue"{}},\ \ \ \ \ \ BLU\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}purple"{}},\ \ \ \ MAG\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}turquoise"{}},\ CYN\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}white"{}},\ \ \ \ \ WHT\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}"{}},\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+initialization of colors list. 
+
+\begin{DoxyWarning}{Warning}
+last element must me \{"{}"{}, 0\} 
+\end{DoxyWarning}

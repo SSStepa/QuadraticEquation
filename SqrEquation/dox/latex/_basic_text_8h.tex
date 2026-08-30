@@ -5,8 +5,8 @@
 Provides basic text utility operations.  
 
 
-{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
 {\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
 {\ttfamily \+\#include $<$stdarg.\+h$>$}\newline
 {\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \+\#include $<$time.\+h$>$}\newline
@@ -15,26 +15,22 @@ Provides basic text utility operations.
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{_basic_text_8h_af28fe6832f4dd3f13033e5c666525f07}\label{_basic_text_8h_af28fe6832f4dd3f13033e5c666525f07} 
-void {\bfseries Clear\+Buffer} ()
-\item 
+void \doxymbox{\hyperlink{_basic_text_8h_af28fe6832f4dd3f13033e5c666525f07}{Clear\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Cleans buffer. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{_basic_text_8h_a9977af79c5951795a9b567632364bb55}{Get\+Line}} (char \texorpdfstring{$\ast$}{*}ans)
 \begin{DoxyCompactList}\small\item\em Getting one line from buffer. \end{DoxyCompactList}\item 
-\Hypertarget{_basic_text_8h_a35c601c63b81f492afab06b6269b7963}\label{_basic_text_8h_a35c601c63b81f492afab06b6269b7963} 
-bool {\bfseries File\+Is\+Valid} (char \texorpdfstring{$\ast$}{*}file\+Name)
-\item 
-\Hypertarget{_basic_text_8h_abcc481eed8541de54a6fb16990209b31}\label{_basic_text_8h_abcc481eed8541de54a6fb16990209b31} 
-void {\bfseries Get\+Str\+From\+Double} (char lable\+[$\,$]\+, double num)
-\item 
-\Hypertarget{_basic_text_8h_a58f49803246e313efc26ab3f4f155ae3}\label{_basic_text_8h_a58f49803246e313efc26ab3f4f155ae3} 
-void {\bfseries slow\+Printf} (const char \texorpdfstring{$\ast$}{*}output,...)
-\end{DoxyCompactItemize}
+bool \doxymbox{\hyperlink{_basic_text_8h_a35c601c63b81f492afab06b6269b7963}{File\+Is\+Valid}} (char \texorpdfstring{$\ast$}{*}file\+Name)
+\begin{DoxyCompactList}\small\item\em tryes to open the file and check it is valid \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_basic_text_8h_abcc481eed8541de54a6fb16990209b31}{Get\+Str\+From\+Double}} (char lable\+[$\,$]\+, double num)
+\begin{DoxyCompactList}\small\item\em changes double to str(rewrites to arr). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{_basic_text_8h_a4434b8f03ff31683e1409bd274f6f363}{\+\_\+\+\_\+attribute\+\_\+\_}} ((format(\+\_\+\+\_\+printf\+\_\+\_, 1, 2))) void slow\+Printf(const char \texorpdfstring{$\ast$}{*}output
+\begin{DoxyCompactList}\small\item\em helps you to write symbols slowly(almost like AI). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{_basic_text_8h_a862b36501fbf1d9cf31603acddde34a1}\label{_basic_text_8h_a862b36501fbf1d9cf31603acddde34a1} 
 const int {\bfseries MAXPRINTF} = 100
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em const to describe max printf length. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -48,6 +44,54 @@ Provides basic text utility operations.
 \label{_basic_text_8h_doc-func-members}
 \Hypertarget{_basic_text_8h_doc-func-members}
 \doxysubsection{Function Documentation}
+\Hypertarget{_basic_text_8h_a4434b8f03ff31683e1409bd274f6f363}\index{BasicText.h@{BasicText.h}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!BasicText.h@{BasicText.h}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \label{_basic_text_8h_a4434b8f03ff31683e1409bd274f6f363} 
+\+\_\+\+\_\+attribute\+\_\+\_ (\begin{DoxyParamCaption}\item[{(format(\+\_\+\+\_\+printf\+\_\+\_, 1, 2))}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+helps you to write symbols slowly(almost like AI). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em output} & line to print(with \%). \\
+\hline
+\doxymbox{\texttt{in}}  & {\em ...} & list of args we need to insert to our line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_basic_text_8h_af28fe6832f4dd3f13033e5c666525f07}\index{BasicText.h@{BasicText.h}!ClearBuffer@{ClearBuffer}}
+\index{ClearBuffer@{ClearBuffer}!BasicText.h@{BasicText.h}}
+\doxysubsubsection{\texorpdfstring{ClearBuffer()}{ClearBuffer()}}
+{\footnotesize\ttfamily \label{_basic_text_8h_af28fe6832f4dd3f13033e5c666525f07} 
+void Clear\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleans buffer. 
+
+\begin{DoxyWarning}{Warning}
+if buffer is clear, function will wait untill some sumbols appear. 
+\end{DoxyWarning}
+\Hypertarget{_basic_text_8h_a35c601c63b81f492afab06b6269b7963}\index{BasicText.h@{BasicText.h}!FileIsValid@{FileIsValid}}
+\index{FileIsValid@{FileIsValid}!BasicText.h@{BasicText.h}}
+\doxysubsubsection{\texorpdfstring{FileIsValid()}{FileIsValid()}}
+{\footnotesize\ttfamily \label{_basic_text_8h_a35c601c63b81f492afab06b6269b7963} 
+bool File\+Is\+Valid (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+tryes to open the file and check it is valid 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em file\+Name} & file name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if file is good and false otherwise. 
+\end{DoxyReturn}
 \Hypertarget{_basic_text_8h_a9977af79c5951795a9b567632364bb55}\index{BasicText.h@{BasicText.h}!GetLine@{GetLine}}
 \index{GetLine@{GetLine}!BasicText.h@{BasicText.h}}
 \doxysubsubsection{\texorpdfstring{GetLine()}{GetLine()}}
@@ -59,7 +103,24 @@ void Get\+Line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]
 Getting one line from buffer. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em ans} & arr to write line in. \\
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em ans} & arr to write line in. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_basic_text_8h_abcc481eed8541de54a6fb16990209b31}\index{BasicText.h@{BasicText.h}!GetStrFromDouble@{GetStrFromDouble}}
+\index{GetStrFromDouble@{GetStrFromDouble}!BasicText.h@{BasicText.h}}
+\doxysubsubsection{\texorpdfstring{GetStrFromDouble()}{GetStrFromDouble()}}
+{\footnotesize\ttfamily \label{_basic_text_8h_abcc481eed8541de54a6fb16990209b31} 
+void Get\+Str\+From\+Double (\begin{DoxyParamCaption}\item[{char}]{lable}{\+[$\,$], }\item[{double}]{num}{}\end{DoxyParamCaption})}
+
+
+
+changes double to str(rewrites to arr). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em lable} & arr to write result in. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em num} & double number, we want to change. \\
 \hline
 \end{DoxyParams}

@@ -111,39 +111,54 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_unit_tests_8h
   <div class="headertitle"><div class="title">UnitTests.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __UNITTESTS__</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __UNITTESTS__</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Solvers.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;color.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_test_case.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_test_case.html">TestCase</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">double</span> a, b, c;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> nRootsExp;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">double</span> x1Exp, x2Exp;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+<a href="_unit_tests_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef __UNITTESTS__</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define __UNITTESTS__</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_solvers_8h.html">Solvers.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="structs_8h.html">structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="color_8h.html">color.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_unit_tests_8h.html#a76ac9362c63255356481a8f10962787a">   19</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_unit_tests_8h.html#a76ac9362c63255356481a8f10962787a">STARTMEMORY</a> = 50;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_test_case.html">   27</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_test_case.html">TestCase</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">double</span> a, b, c;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> nRootsExp;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">double</span> x1Exp, x2Exp;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> RunTests();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>WORK_RESULT RunOneTest(<a class="code hl_struct" href="struct_test_case.html">TestCase</a> test);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> TestErrorMessage(<a class="code hl_struct" href="struct_test_case.html">TestCase</a> test, <span class="keywordtype">int</span> nRoots, <span class="keywordtype">double</span> x1, <span class="keywordtype">double</span> x2);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>WORK_RESULT GetTestcase(<a class="code hl_struct" href="struct_test_case.html">TestCase</a> *test, FILE *file);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> SortArgs(<span class="keywordtype">double</span> *x1Exp, <span class="keywordtype">double</span> *x2Exp);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_test_case_html"><div class="ttname"><a href="struct_test_case.html">TestCase</a></div><div class="ttdef"><b>Definition</b> UnitTests.h:11</div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_unit_tests_8h.html#a42dac6ca34e006a4c6eccfd7842df376">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_unit_tests_8h.html#a42dac6ca34e006a4c6eccfd7842df376">RunTests</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_unit_tests_8h.html#a3ce06d2e19da1a9739bd144b3804a6ae">   44</a></span><a class="code hl_enumeration" href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a> <a class="code hl_function" href="_unit_tests_8h.html#a3ce06d2e19da1a9739bd144b3804a6ae">RunOneTest</a>(<a class="code hl_struct" href="struct_test_case.html">TestCase</a> test);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_unit_tests_8h.html#a20c4ac617d03c566f6cdd3d87c34ee0f">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_unit_tests_8h.html#a20c4ac617d03c566f6cdd3d87c34ee0f">TestErrorMessage</a>(<a class="code hl_struct" href="struct_test_case.html">TestCase</a> test, <span class="keywordtype">int</span> nRoots, <span class="keywordtype">double</span> x1, <span class="keywordtype">double</span> x2);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="_unit_tests_8h.html#a9e267135abdd6d21b2ce3ac757861972">   62</a></span><a class="code hl_struct" href="struct_test_case.html">TestCase</a> *<a class="code hl_function" href="_unit_tests_8h.html#a9e267135abdd6d21b2ce3ac757861972">GetTestcases</a>(<span class="keywordtype">int</span> *nTests, FILE *file);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> SortArgs(<span class="keywordtype">double</span> *x1Exp, <span class="keywordtype">double</span> *x2Exp);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_solvers_8h_html"><div class="ttname"><a href="_solvers_8h.html">Solvers.h</a></div><div class="ttdoc">mathimatic functions( solving equation)</div></div>
+<div class="ttc" id="a_unit_tests_8h_html_a20c4ac617d03c566f6cdd3d87c34ee0f"><div class="ttname"><a href="_unit_tests_8h.html#a20c4ac617d03c566f6cdd3d87c34ee0f">TestErrorMessage</a></div><div class="ttdeci">void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)</div><div class="ttdoc">Shows error message in case test and function are different.</div></div>
+<div class="ttc" id="a_unit_tests_8h_html_a3ce06d2e19da1a9739bd144b3804a6ae"><div class="ttname"><a href="_unit_tests_8h.html#a3ce06d2e19da1a9739bd144b3804a6ae">RunOneTest</a></div><div class="ttdeci">WORK_RESULT RunOneTest(TestCase test)</div><div class="ttdoc">runs one test</div></div>
+<div class="ttc" id="a_unit_tests_8h_html_a42dac6ca34e006a4c6eccfd7842df376"><div class="ttname"><a href="_unit_tests_8h.html#a42dac6ca34e006a4c6eccfd7842df376">RunTests</a></div><div class="ttdeci">void RunTests()</div><div class="ttdoc">pripares for running test and start cheching. ther prints result</div></div>
+<div class="ttc" id="a_unit_tests_8h_html_a76ac9362c63255356481a8f10962787a"><div class="ttname"><a href="_unit_tests_8h.html#a76ac9362c63255356481a8f10962787a">STARTMEMORY</a></div><div class="ttdeci">const int STARTMEMORY</div><div class="ttdoc">lenght of the dynamic memory arr at the begining.</div><div class="ttdef"><b>Definition</b> UnitTests.h:19</div></div>
+<div class="ttc" id="a_unit_tests_8h_html_a9e267135abdd6d21b2ce3ac757861972"><div class="ttname"><a href="_unit_tests_8h.html#a9e267135abdd6d21b2ce3ac757861972">GetTestcases</a></div><div class="ttdeci">TestCase * GetTestcases(int *nTests, FILE *file)</div><div class="ttdoc">Reads tests from file. unpacks them to have readeble format( ot list of structs TestCase).</div></div>
+<div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div><div class="ttdoc">Functions to work with color of output/input settings.</div></div>
+<div class="ttc" id="astruct_test_case_html"><div class="ttname"><a href="struct_test_case.html">TestCase</a></div><div class="ttdoc">Struct to describe one testcase.</div><div class="ttdef"><b>Definition</b> UnitTests.h:27</div></div>
+<div class="ttc" id="astructs_8h_html"><div class="ttname"><a href="structs_8h.html">structs.h</a></div><div class="ttdoc">basic consts and enums used everywhere.</div></div>
+<div class="ttc" id="astructs_8h_html_ad37f55d70d918eb9d9f5d9fb33cb966f"><div class="ttname"><a href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a></div><div class="ttdeci">WORK_RESULT</div><div class="ttdoc">Type to reduce magic numbers. Used for functioons to return.</div><div class="ttdef"><b>Definition</b> structs.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>headers</b></li><li class="navelem"><b>UnitTests.h</b></li>
+    <li class="navelem"><b>headers</b></li><li class="navelem"><a href="_unit_tests_8h.html">UnitTests.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

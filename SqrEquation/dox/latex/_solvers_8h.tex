@@ -1,0 +1,110 @@
+\doxysection{headers/\+\+Solvers.h File Reference}
+\hypertarget{_solvers_8h}{}\label{_solvers_8h}\index{headers/Solvers.h@{headers/Solvers.h}}
+
+
+mathimatic functions( solving equation)  
+
+
+{\ttfamily \+\#include $<$math.\+h$>$}\newline
+{\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include "{}structs.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}} \doxymbox{\hyperlink{_solvers_8h_a9771fc635f817ae63fbda34ff22a321f}{Square\+Find}} (double a, double b, double c, double \texorpdfstring{$\ast$}{*}x1, double \texorpdfstring{$\ast$}{*}x2)
+\begin{DoxyCompactList}\small\item\em Solves quadratic equation ax\texorpdfstring{$^\wedge$}{\string^}2+bx+c = 0. if liner -\/ coals Line\+Find. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}} \doxymbox{\hyperlink{_solvers_8h_ab1b8eda353b7f3cef6d53f4958dfa433}{Line\+Find}} (double a, double b, double \texorpdfstring{$\ast$}{*}x1)
+\begin{DoxyCompactList}\small\item\em Solves liner equation ax = b. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{_solvers_8h_a1ad918ef2fe7a690fb3b42f44c7be1f4}{Is\+Zero}} (double a)
+\begin{DoxyCompactList}\small\item\em Checks is double equal to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+mathimatic functions( solving equation) 
+
+\begin{DoxyDate}{Date}
+2026-\/08-\/29 
+\end{DoxyDate}
+
+
+\label{_solvers_8h_doc-func-members}
+\Hypertarget{_solvers_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_solvers_8h_a1ad918ef2fe7a690fb3b42f44c7be1f4}\index{Solvers.h@{Solvers.h}!IsZero@{IsZero}}
+\index{IsZero@{IsZero}!Solvers.h@{Solvers.h}}
+\doxysubsubsection{\texorpdfstring{IsZero()}{IsZero()}}
+{\footnotesize\ttfamily \label{_solvers_8h_a1ad918ef2fe7a690fb3b42f44c7be1f4} 
+bool Is\+Zero (\begin{DoxyParamCaption}\item[{double}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Checks is double equal to zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em a} & Number to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True is zero, else false.
+\end{DoxyReturn}
+To say a is zero we compare it with EPSILON which is preatty small. \begin{DoxySeeAlso}{See also}
+\doxylink{structs_8h_a002b2f4894492820fe708b1b7e7c5e70}{EPSILON} 
+\end{DoxySeeAlso}
+\Hypertarget{_solvers_8h_ab1b8eda353b7f3cef6d53f4958dfa433}\index{Solvers.h@{Solvers.h}!LineFind@{LineFind}}
+\index{LineFind@{LineFind}!Solvers.h@{Solvers.h}}
+\doxysubsubsection{\texorpdfstring{LineFind()}{LineFind()}}
+{\footnotesize\ttfamily \label{_solvers_8h_ab1b8eda353b7f3cef6d53f4958dfa433} 
+\doxymbox{\hyperlink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}} Line\+Find (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{x1}{}\end{DoxyParamCaption})}
+
+
+
+Solves liner equation ax = b. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em a} & a-\/coeff. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em b} & b-\/coeff. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em x1} & root of the equation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of roots in type \doxylink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots} 
+\end{DoxySeeAlso}
+\Hypertarget{_solvers_8h_a9771fc635f817ae63fbda34ff22a321f}\index{Solvers.h@{Solvers.h}!SquareFind@{SquareFind}}
+\index{SquareFind@{SquareFind}!Solvers.h@{Solvers.h}}
+\doxysubsubsection{\texorpdfstring{SquareFind()}{SquareFind()}}
+{\footnotesize\ttfamily \label{_solvers_8h_a9771fc635f817ae63fbda34ff22a321f} 
+\doxymbox{\hyperlink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}} Square\+Find (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{x1}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{x2}{}\end{DoxyParamCaption})}
+
+
+
+Solves quadratic equation ax\texorpdfstring{$^\wedge$}{\string^}2+bx+c = 0. if liner -\/ coals Line\+Find. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em a} & a-\/coeff. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em b} & b-\/coeff. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em c} & c-\/coeff. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em x1} & pointer to first root. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em x2} & pointer to second root. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of roots in type \doxylink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structs_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots} 
+
+\doxylink{_solvers_8h_ab1b8eda353b7f3cef6d53f4958dfa433}{Line\+Find()} 
+\end{DoxySeeAlso}

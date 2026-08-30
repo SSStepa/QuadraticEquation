@@ -5,17 +5,18 @@ void RunTests()
     int nTests = 0;
     int nGoodTests = 0;
 
-    TestCase test = {};
 
     FILE *file = fopen("./texts/Testcases.txt", "r");
     if (file == NULL) {
         slowPrintf(RED "NO FILE WITH TESTS\n" COLOR_RESET);
     } else {
-        while (GetTestcase(&test, file) != SMTH_BAD) {
-            nTests++;
-            if (RunOneTest(test) == ALL_GOOD) 
+        TestCase *tests = GetTestcases(&nTests, file);
+        for (int test = 0; test < nTests; test++) {
+            if (RunOneTest(tests[test]) == ALL_GOOD) 
                 nGoodTests++;
         }
+
+        free(tests);
     }
 
     fclose(file);
@@ -100,18 +101,56 @@ void TestErrorMessage(TestCase test, int nRoots, double x1, double x2)
     }
 }
 
-WORK_RESULT GetTestcase(TestCase *test, FILE *file)
+TestCase *GetTestcases(int *nTests, FILE *file)
 {
-    assert(test != NULL);
+    assert(nTests != NULL);
     assert(file != NULL);
 
-    if (fscanf( file, "%lg %lg %lg %d %lg %lg", 
-                &(test -> a), &(test -> b), &(test -> c),
-                &(test -> nRootsExp), &(test -> x1Exp), &(test -> x2Exp)) != EOF) { 
-        SortArgs(&(test -> x1Exp), &(test -> x2Exp));
-        return ALL_GOOD;
-    } 
-    return SMTH_BAD;
+    fseek(file, 0L, SEEK_END);
+    int length = ftell(file);
+    fseek(file, 0L, SEEK_SET);
+
+    TestCase *tests = (TestCase *) calloc(STARTMEMORY, sizeof(TestCase));
+
+    char *file_text = (char *) calloc(length, sizeof(char));
+    char *first_file = file_text;
+    if (file_text == NULL) {
+        printf(RED "NOT ENOUGHT MAMORY" COLOR_RESET);
+        return tests;
+    }
+
+    fread(file_text, sizeof(char), length, file);
+
+    *nTests = STARTMEMORY;
+    if (tests == NULL)
+        printf(RED "NOT ENOUGHT MAMORY" COLOR_RESET);
+    
+    int ind = 0;
+    int lineInd = 0;
+    while (sscanf(file_text, 
+        "%lg %lg %lg %d %lg %lg%n", 
+        &tests[ind].a, &tests[ind].b, &tests[ind].c, 
+        &tests[ind].nRootsExp, &tests[ind].x1Exp, &tests[ind].x2Exp, &lineInd) == 6) {  
+
+            SortArgs(&tests[ind].x1Exp, &tests[ind].x2Exp);
+
+            file_text = &file_text[lineInd];
+            (ind)++;
+            if (ind == *nTests) {
+                *nTests *= 2;
+                TestCase *temp = (TestCase *) realloc(tests, sizeof(TestCase)*(*nTests));
+                if (temp == NULL) {
+                    printf(RED "NOT ENOUGHT MAMORY" COLOR_RESET); // AHAHAHAHA ЭНОХТ МАМОРИ
+                    return tests;
+                } else 
+                    tests = temp;
+                
+            }
+        }
+    free(first_file);
+    *nTests = ind;
+    tests = (TestCase *) realloc(tests, sizeof(TestCase)*ind);
+    return tests;
 }
 
 void SortArgs(double *x1Exp, double *x2Exp)

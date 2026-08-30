@@ -114,38 +114,111 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_basic_text_8h
 
 <p>Provides basic text utility operations.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;assert.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdarg.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
-<code>#include &quot;structs.h&quot;</code><br />
-<code>#include &quot;color.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="structs_8h_source.html">structs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="color_8h_source.html">color.h</a>&quot;</code><br />
 </div>
 <p><a href="_basic_text_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af28fe6832f4dd3f13033e5c666525f07" id="r_af28fe6832f4dd3f13033e5c666525f07"><td class="memItemLeft"><a id="af28fe6832f4dd3f13033e5c666525f07" name="af28fe6832f4dd3f13033e5c666525f07"></a>
-void&#160;</td><td class="memItemRight"><b>ClearBuffer</b> ()</td></tr>
+<tr class="memitem:af28fe6832f4dd3f13033e5c666525f07" id="r_af28fe6832f4dd3f13033e5c666525f07"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af28fe6832f4dd3f13033e5c666525f07">ClearBuffer</a> ()</td></tr>
+<tr class="memdesc:af28fe6832f4dd3f13033e5c666525f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans buffer.  <br /></td></tr>
 <tr class="memitem:a9977af79c5951795a9b567632364bb55" id="r_a9977af79c5951795a9b567632364bb55"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9977af79c5951795a9b567632364bb55">GetLine</a> (char *ans)</td></tr>
 <tr class="memdesc:a9977af79c5951795a9b567632364bb55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getting one line from buffer.  <br /></td></tr>
-<tr class="memitem:a35c601c63b81f492afab06b6269b7963" id="r_a35c601c63b81f492afab06b6269b7963"><td class="memItemLeft"><a id="a35c601c63b81f492afab06b6269b7963" name="a35c601c63b81f492afab06b6269b7963"></a>
-bool&#160;</td><td class="memItemRight"><b>FileIsValid</b> (char *fileName)</td></tr>
-<tr class="memitem:abcc481eed8541de54a6fb16990209b31" id="r_abcc481eed8541de54a6fb16990209b31"><td class="memItemLeft"><a id="abcc481eed8541de54a6fb16990209b31" name="abcc481eed8541de54a6fb16990209b31"></a>
-void&#160;</td><td class="memItemRight"><b>GetStrFromDouble</b> (char lable[], double num)</td></tr>
-<tr class="memitem:a58f49803246e313efc26ab3f4f155ae3" id="r_a58f49803246e313efc26ab3f4f155ae3"><td class="memItemLeft"><a id="a58f49803246e313efc26ab3f4f155ae3" name="a58f49803246e313efc26ab3f4f155ae3"></a>
-void&#160;</td><td class="memItemRight"><b>slowPrintf</b> (const char *output,...)</td></tr>
+<tr class="memitem:a35c601c63b81f492afab06b6269b7963" id="r_a35c601c63b81f492afab06b6269b7963"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a35c601c63b81f492afab06b6269b7963">FileIsValid</a> (char *fileName)</td></tr>
+<tr class="memdesc:a35c601c63b81f492afab06b6269b7963"><td class="mdescLeft">&#160;</td><td class="mdescRight">tryes to open the file and check it is valid  <br /></td></tr>
+<tr class="memitem:abcc481eed8541de54a6fb16990209b31" id="r_abcc481eed8541de54a6fb16990209b31"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abcc481eed8541de54a6fb16990209b31">GetStrFromDouble</a> (char lable[], double num)</td></tr>
+<tr class="memdesc:abcc481eed8541de54a6fb16990209b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes double to str(rewrites to arr).  <br /></td></tr>
+<tr class="memitem:a4434b8f03ff31683e1409bd274f6f363" id="r_a4434b8f03ff31683e1409bd274f6f363"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4434b8f03ff31683e1409bd274f6f363">__attribute__</a> ((format(__printf__, 1, 2))) void slowPrintf(const char *output</td></tr>
+<tr class="memdesc:a4434b8f03ff31683e1409bd274f6f363"><td class="mdescLeft">&#160;</td><td class="mdescRight">helps you to write symbols slowly(almost like AI).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a862b36501fbf1d9cf31603acddde34a1" id="r_a862b36501fbf1d9cf31603acddde34a1"><td class="memItemLeft"><a id="a862b36501fbf1d9cf31603acddde34a1" name="a862b36501fbf1d9cf31603acddde34a1"></a>
 const int&#160;</td><td class="memItemRight"><b>MAXPRINTF</b> = 100</td></tr>
+<tr class="memdesc:a862b36501fbf1d9cf31603acddde34a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">const to describe max printf length. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides basic text utility operations. </p>
 <dl class="section date"><dt>Date</dt><dd>2026-08-28 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a4434b8f03ff31683e1409bd274f6f363" name="a4434b8f03ff31683e1409bd274f6f363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4434b8f03ff31683e1409bd274f6f363">&#9670;&#160;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(format(__printf__, 1, 2))</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>helps you to write symbols slowly(almost like AI). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>line to print(with %). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>list of args we need to insert to our line. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af28fe6832f4dd3f13033e5c666525f07" name="af28fe6832f4dd3f13033e5c666525f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28fe6832f4dd3f13033e5c666525f07">&#9670;&#160;</a></span>ClearBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClearBuffer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cleans buffer. </p>
+<dl class="section warning"><dt>Warning</dt><dd>if buffer is clear, function will wait untill some sumbols appear. </dd></dl>
+
+</div>
+</div>
+<a id="a35c601c63b81f492afab06b6269b7963" name="a35c601c63b81f492afab06b6269b7963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c601c63b81f492afab06b6269b7963">&#9670;&#160;</a></span>FileIsValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FileIsValid </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>tryes to open the file and check it is valid </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">fileName</td><td>file name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns true if file is good and false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="a9977af79c5951795a9b567632364bb55" name="a9977af79c5951795a9b567632364bb55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9977af79c5951795a9b567632364bb55">&#9670;&#160;</a></span>GetLine()</h2>
 
@@ -164,7 +237,37 @@ const int&#160;</td><td class="memItemRight"><b>MAXPRINTF</b> = 100</td></tr>
 <p>Getting one line from buffer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ans</td><td>arr to write line in. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ans</td><td>arr to write line in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abcc481eed8541de54a6fb16990209b31" name="abcc481eed8541de54a6fb16990209b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc481eed8541de54a6fb16990209b31">&#9670;&#160;</a></span>GetStrFromDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetStrFromDouble </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>lable</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>changes double to str(rewrites to arr). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">lable</td><td>arr to write result in. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>double number, we want to change. </td></tr>
   </table>
   </dd>
 </dl>

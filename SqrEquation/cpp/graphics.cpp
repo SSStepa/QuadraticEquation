@@ -21,6 +21,7 @@ void BuiltGraphic(double a, double b, double c)
     Point startPoint = {.x = 0, .y = 0};
 
      
+    SettingWindow();
 
     do {
     PaintGraphic(mult, a, b, c, startPoint);
@@ -88,11 +89,11 @@ void PaintGraphic(double mult, double a, double b, double c, Point startPoint)
     
 
     // порабола
-    for(double x_pix = 0; x_pix <= FIELD_X; x_pix += STEP){
+    for(double x_pix = 0; x_pix <= (double) FIELD_X; x_pix += STEP){
         double x = (x_pix + startPoint.x - FIELD_X/2)*mult;
         double y = a*x*x + b*x + c;
         double y_pix = FIELD_Y/2 - y/mult - startPoint.y;
-        if (y_pix > 0 || y_pix < FIELD_Y) {
+        if (y_pix > 0 || y_pix < (double) FIELD_Y) {
             txSetPixel(x_pix, y_pix, TX_LIGHTRED);
         }
     }

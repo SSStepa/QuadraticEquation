@@ -111,41 +111,55 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_flags_8h_sour
   <div class="headertitle"><div class="title">Flags.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __FLAGS__</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __FLAGS__</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;getopt.h&gt;</span></div>
+<a href="_flags_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef __FLAGS__</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define __FLAGS__</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;UnitTests.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;graphics.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>WORK_RESULT FlagsCheck(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keyword">const</span> <span class="keywordtype">char</span> **InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> **OutColor, <span class="keywordtype">char</span> **fileToRead, <span class="keywordtype">bool</span> *Graphic);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> ShowHelp();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> SHORTFLAGS = <span class="stringliteral">&quot;gtshf:&quot;</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">const</span> <span class="keywordtype">int</span> FLAGSNUM = 5;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">const</span> option long_options[] = {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {<span class="stringliteral">&quot;help&quot;</span>,        0, NULL, <span class="charliteral">&#39;h&#39;</span>},</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {<span class="stringliteral">&quot;test&quot;</span>,        0, NULL, <span class="charliteral">&#39;t&#39;</span>},</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {<span class="stringliteral">&quot;settings&quot;</span>,    0, NULL, <span class="charliteral">&#39;s&#39;</span>},</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {<span class="stringliteral">&quot;file&quot;</span>,        1, NULL, <span class="charliteral">&#39;f&#39;</span>},</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {<span class="stringliteral">&quot;graphic&quot;</span>,     0, NULL, <span class="charliteral">&#39;g&#39;</span>},</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {0, 0, 0, 0}</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;getopt.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_unit_tests_8h.html">UnitTests.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="graphics_8h.html">graphics.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="structs_8h.html">structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_flags_8h.html#ad2447a235cbc0eef77bf64d658cd33a6">   21</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> <a class="code hl_variable" href="_flags_8h.html#ad2447a235cbc0eef77bf64d658cd33a6">SHORTFLAGS</a> = <span class="stringliteral">&quot;gtshf:&quot;</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_flags_8h.html#a42bba208730a15cb2a8238aab2e345f2">   26</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_flags_8h.html#a42bba208730a15cb2a8238aab2e345f2">FLAGSNUM</a> = 5;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="_flags_8h.html#a3ca8454445b0739f5894088d4203319b">   33</a></span><span class="keyword">const</span> option <a class="code hl_variable" href="_flags_8h.html#a3ca8454445b0739f5894088d4203319b">long_options</a>[] = {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {<span class="stringliteral">&quot;help&quot;</span>,        0, NULL, <span class="charliteral">&#39;h&#39;</span>},</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {<span class="stringliteral">&quot;test&quot;</span>,        0, NULL, <span class="charliteral">&#39;t&#39;</span>},</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {<span class="stringliteral">&quot;settings&quot;</span>,    0, NULL, <span class="charliteral">&#39;s&#39;</span>},</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {<span class="stringliteral">&quot;file&quot;</span>,        1, NULL, <span class="charliteral">&#39;f&#39;</span>},</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {<span class="stringliteral">&quot;graphic&quot;</span>,     0, NULL, <span class="charliteral">&#39;g&#39;</span>},</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {0, 0, 0, 0}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="_flags_8h.html#aa3179e8b6c5c77043b2228db6cdb9dbe">   55</a></span><a class="code hl_enumeration" href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a> <a class="code hl_function" href="_flags_8h.html#aa3179e8b6c5c77043b2228db6cdb9dbe">FlagsCheck</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keyword">const</span> <span class="keywordtype">char</span> **InColor, <span class="keyword">const</span> <span class="keywordtype">char</span> **OutColor, <span class="keywordtype">char</span> **fileToRead, <span class="keywordtype">bool</span> *Graphic);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="_flags_8h.html#ab180efaa64feefae6244d2c4b4eb7809">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_flags_8h.html#ab180efaa64feefae6244d2c4b4eb7809">ShowHelp</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_flags_8h_html_a3ca8454445b0739f5894088d4203319b"><div class="ttname"><a href="_flags_8h.html#a3ca8454445b0739f5894088d4203319b">long_options</a></div><div class="ttdeci">const option long_options[]</div><div class="ttdoc">special arr to getopt_long usage.</div><div class="ttdef"><b>Definition</b> Flags.h:33</div></div>
+<div class="ttc" id="a_flags_8h_html_a42bba208730a15cb2a8238aab2e345f2"><div class="ttname"><a href="_flags_8h.html#a42bba208730a15cb2a8238aab2e345f2">FLAGSNUM</a></div><div class="ttdeci">const int FLAGSNUM</div><div class="ttdoc">amount of all flags.</div><div class="ttdef"><b>Definition</b> Flags.h:26</div></div>
+<div class="ttc" id="a_flags_8h_html_aa3179e8b6c5c77043b2228db6cdb9dbe"><div class="ttname"><a href="_flags_8h.html#aa3179e8b6c5c77043b2228db6cdb9dbe">FlagsCheck</a></div><div class="ttdeci">WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char **OutColor, char **fileToRead, bool *Graphic)</div><div class="ttdoc">checks flags and runs functions according to them</div></div>
+<div class="ttc" id="a_flags_8h_html_ab180efaa64feefae6244d2c4b4eb7809"><div class="ttname"><a href="_flags_8h.html#ab180efaa64feefae6244d2c4b4eb7809">ShowHelp</a></div><div class="ttdeci">void ShowHelp()</div><div class="ttdoc">prints help about flags.</div></div>
+<div class="ttc" id="a_flags_8h_html_ad2447a235cbc0eef77bf64d658cd33a6"><div class="ttname"><a href="_flags_8h.html#ad2447a235cbc0eef77bf64d658cd33a6">SHORTFLAGS</a></div><div class="ttdeci">const char *const SHORTFLAGS</div><div class="ttdoc">list of short flags name, needed to getopt function.</div><div class="ttdef"><b>Definition</b> Flags.h:21</div></div>
+<div class="ttc" id="a_unit_tests_8h_html"><div class="ttname"><a href="_unit_tests_8h.html">UnitTests.h</a></div><div class="ttdoc">Unit tests.</div></div>
+<div class="ttc" id="agraphics_8h_html"><div class="ttname"><a href="graphics_8h.html">graphics.h</a></div><div class="ttdoc">Worhing with graphics.</div></div>
+<div class="ttc" id="astructs_8h_html"><div class="ttname"><a href="structs_8h.html">structs.h</a></div><div class="ttdoc">basic consts and enums used everywhere.</div></div>
+<div class="ttc" id="astructs_8h_html_ad37f55d70d918eb9d9f5d9fb33cb966f"><div class="ttname"><a href="structs_8h.html#ad37f55d70d918eb9d9f5d9fb33cb966f">WORK_RESULT</a></div><div class="ttdeci">WORK_RESULT</div><div class="ttdoc">Type to reduce magic numbers. Used for functioons to return.</div><div class="ttdef"><b>Definition</b> structs.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>headers</b></li><li class="navelem"><b>Flags.h</b></li>
+    <li class="navelem"><b>headers</b></li><li class="navelem"><a href="_flags_8h.html">Flags.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

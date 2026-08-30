@@ -1,29 +1,35 @@
 \doxysection{Unit\+Tests.\+h}
 \hypertarget{_unit_tests_8h_source}{}\label{_unit_tests_8h_source}\index{headers/UnitTests.h@{headers/UnitTests.h}}
-
+\doxymbox{\hyperlink{_unit_tests_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_UNITTESTS\_\_}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_UNITTESTS\_\_}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <assert.h>}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Solvers.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}structs.h"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}color.h"{}}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_test_case}{TestCase}}\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ a,\ b,\ c;}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ nRootsExp;}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ x1Exp,\ x2Exp;}
-\DoxyCodeLine{00015\ \};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ RunTests();}
-\DoxyCodeLine{00018\ WORK\_RESULT\ RunOneTest(\doxymbox{\hyperlink{struct_test_case}{TestCase}}\ test);}
-\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ TestErrorMessage(\doxymbox{\hyperlink{struct_test_case}{TestCase}}\ test,\ \textcolor{keywordtype}{int}\ nRoots,\ \textcolor{keywordtype}{double}\ x1,\ \textcolor{keywordtype}{double}\ x2);}
-\DoxyCodeLine{00020\ WORK\_RESULT\ GetTestcase(\doxymbox{\hyperlink{struct_test_case}{TestCase}}\ *test,\ FILE\ *file);}
-\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ SortArgs(\textcolor{keywordtype}{double}\ *x1Exp,\ \textcolor{keywordtype}{double}\ *x2Exp);}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ \_\_UNITTESTS\_\_}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ \_\_UNITTESTS\_\_}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_solvers_8h}{Solvers.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{color_8h}{color.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{_unit_tests_8h_a76ac9362c63255356481a8f10962787a}{STARTMEMORY}}\ =\ 50;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_test_case}{TestCase}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ a,\ b,\ c;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ nRootsExp;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ x1Exp,\ x2Exp;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_unit_tests_8h_a42dac6ca34e006a4c6eccfd7842df376}{RunTests}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \doxymbox{\hyperlink{structs_8h_ad37f55d70d918eb9d9f5d9fb33cb966f}{WORK\_RESULT}}\ \doxymbox{\hyperlink{_unit_tests_8h_a3ce06d2e19da1a9739bd144b3804a6ae}{RunOneTest}}(\doxymbox{\hyperlink{struct_test_case}{TestCase}}\ test);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_unit_tests_8h_a20c4ac617d03c566f6cdd3d87c34ee0f}{TestErrorMessage}}(\doxymbox{\hyperlink{struct_test_case}{TestCase}}\ test,\ \textcolor{keywordtype}{int}\ nRoots,\ \textcolor{keywordtype}{double}\ x1,\ \textcolor{keywordtype}{double}\ x2);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \doxymbox{\hyperlink{struct_test_case}{TestCase}}\ *\doxymbox{\hyperlink{_unit_tests_8h_a9e267135abdd6d21b2ce3ac757861972}{GetTestcases}}(\textcolor{keywordtype}{int}\ *nTests,\ FILE\ *file);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ SortArgs(\textcolor{keywordtype}{double}\ *x1Exp,\ \textcolor{keywordtype}{double}\ *x2Exp);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
