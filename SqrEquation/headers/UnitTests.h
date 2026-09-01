@@ -19,6 +19,11 @@
 const int STARTMEMORY = 50;
 
 /**
+ * @brief Amount of tests to generate in one portion;
+ */
+const int TESTNUM = 100;
+
+/**
  * @brief Struct to describe one testcase
  * @details coeffs a, b, c
  * num of roots nRootsExp
@@ -60,6 +65,17 @@ void TestErrorMessage(TestCase test, int nRoots, double x1, double x2);
  * @see TestCase
  */
 TestCase *GetTestcases(int *nTests, FILE *file);
+
+/**
+ * @brief Sorts two numbers in increasing form.
+ * @param[out] x1Exp first number.
+ * @param[out] x2Exp second number.
+ */
 void SortArgs(double *x1Exp, double *x2Exp);
+
+/**
+ * @brief Generates TESTNUM tests
+ */
+WORK_RESULT GenerateTestCases();
 
 #endif

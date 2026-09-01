@@ -15,7 +15,7 @@
 /**
  * @brief Small number which we can regurd as 0.
  */
-#define EPSILON 0.0001
+#define EPSILON 0.01
 
 /**
  * @brief Type to reduce magic numbers. Used for functioons to return.

@@ -164,3 +164,29 @@ void SortArgs(double *x1Exp, double *x2Exp)
         *x2Exp = i;
     }
 }
+
+WORK_RESULT GenerateTestCases()
+{
+    FILE *file = fopen("./texts/Testcases.txt", "w");
+    if (file == NULL) {
+        printf(RED "NO FILE WITH TESTS" COLOR_RESET);
+        return SMTH_BAD;
+    }
+
+    fseek(file, 0LL, SEEK_END);
+
+    for (int i = 0; i < TESTNUM; i++) {
+        double x1 = rand()%100;
+        double x2 = rand()%100;
+
+        double a =  rand()%100;
+        while(IsZero(a)) {
+            a = rand()%100;
+        }
+        double b = -(x1 + x2) * a;
+        double c = x1 * x2 * a;
+        fprintf(file, "%lg %lg %lg 2 %lg %lg\n", a, b, c, x1, x2);
+    }
+    fclose(file);
+    return ALL_GOOD;
+}

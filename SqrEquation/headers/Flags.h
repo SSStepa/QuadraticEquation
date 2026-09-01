@@ -18,7 +18,7 @@
 /**
  * @brief list of short flags name, needed to getopt function.
  */
-const char *const SHORTFLAGS = "gtshf:";
+const char *const SHORTFLAGS = "gt::shf:";
 
 /**
  * @brief amount of all flags.
@@ -32,7 +32,7 @@ const int FLAGSNUM = 5;
  */
 const option long_options[] = {
     {"help",        0, NULL, 'h'},
-    {"test",        0, NULL, 't'},
+    {"test",        2, NULL, 't'},
     {"settings",    0, NULL, 's'},
     {"file",        1, NULL, 'f'},
     {"graphic",     0, NULL, 'g'},

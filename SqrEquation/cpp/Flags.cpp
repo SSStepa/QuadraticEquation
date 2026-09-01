@@ -14,6 +14,14 @@ WORK_RESULT FlagsCheck(int argc, char *argv[], const char **InColor, const char 
         switch (arg)
         {
         case 't':
+            if (optarg) {
+                if (strcmp(optarg, "generate") == 0) {
+                    GenerateTestCases();
+                } else {
+                    printf(RED "WRONG ARG TO -t(--test)\n" COLOR_RESET);
+                    return SMTH_BAD;
+                }
+            }
             RunTests();
             break;
         case 's':
@@ -46,7 +54,7 @@ void ShowHelp()
     printf("Our flags:\n");
     printf("-h --help                   Info about flags\n");
     printf("-s --settings               Change color of input and output\n");
-    printf("-t --test                   Run tests\n");
+    printf("-t --test [[generate]]      Run tests\n");
     printf("-f --file <file_name>       File to take input from\n");
     printf("-g --graphic                Built graphic instead of solving");
 }
